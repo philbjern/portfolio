@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lists</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .container {
+        width: 40%;
+        margin: 2em auto;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .list {
+        max-width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Lists</h1>
+      </header>
+
+      <div class="row">
+        <section class="list">
+          <header>
+            <h2>Shopping list for favourite food</h2>
+          </header>
+          <ul>
+            <li>Toast bread</li>
+            <li>Cheese</li>
+            <li>Pizza</li>
+            <li>Bananas</li>
+            <li>Orange juice</li>
+          </ul>
+        </section>
+
+        <section class="list">
+          <header>
+            <h2>What needs to be done today</h2>
+          </header>
+          <ol>
+            <li>Finish foundations part of Odin Project</li>
+            <li>Eat dinner</li>
+          </ol>
+        </section>
+
+        <section class="list">
+          <header>
+            <h2>Places I would like to visit someday</h2>
+          </header>
+          <ul>
+            <li>San Francisco</li>
+            <li>Dublin</li>
+            <li>Italy</li>
+            <li>London</li>
+            <li>Berlin</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="list">
+          <header>
+            <h2>My top 5 video games</h2>
+          </header>
+          <ol>
+            <li>Psychonauts 2</li>
+            <li>Tomb Raider</li>
+            <li>Witcher 3</li>
+            <li>Fallout 4</li>
+            <li>Star Wars Knights of the Old Republic</li>
+          </ol>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
