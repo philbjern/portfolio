@@ -1,21 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Recipes</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <main class="container">
-    <header>
-      <h1>Odin Recipes</h1>
-    </header>
-    <nav>
-      <a href="recipes/magic-egg-salad.html">Magic Egg Salad</a>
-      <a href="recipes/worlds-best-lasagna.html">World's Best Lasagna</a>
-    </nav>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Recipes</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Odin Recipes</h1>
+      </header>
+
+      <section class="recipe">
+        <p>
+          Welcome to Odin Recipes where you can find the best cooking recipes in
+          the entire history of human mitology.
+        </p>
+        <button class="btn">Random recipe</button>
+        <figure class="float-right">
+          <img
+            src="https://lh3.googleusercontent.com/proxy/0TzITvENqQ6i-jWrMNsF_n016Pn-PG0AkS0325_qQKSSmoROAJfPKfPpRthNgs3o269NgWzcz_dy-AL-JZaP8KcT4zP8XvpYq-7x51EGESahQCkeY3xTwrU4"
+            alt="Odin"
+          />
+          <figcaption>Odin Cooks</figcaption>
+        </figure>
+        <nav>
+          <h3>Recipes</h3>
+          <ul>
+            <li><a href="recipes/magic-egg-salad.html">Magic Egg Salad</a></li>
+            <li>
+              <a href="recipes/worlds-best-lasagna.html"
+                >World's Best Lasagna</a
+              >
+            </li>
+            <li>
+              <a href="recipes/best-chocolate-chip-cookie.html"
+                >Best Chocolate Chip Cookies</a
+              >
+            </li>
+          </ul>
+          <p>... and many more to come</p>
+        </nav>
+      </section>
+    </main>
+  </body>
+  <script>
+    let urls = [];
+
+    urls.push("recipes/magic-egg-salad.html");
+    urls.push("recipes/worlds-best-lasagna.html");
+    urls.push("recipes/best-chocolate-chip-cookie.html");
+
+    const randomRecipeButton = document.querySelector(".btn");
+
+    randomRecipeButton.addEventListener("click", (event) => {
+      const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+      window.location.href = randomUrl;
+    });
+  </script>
 </html>
