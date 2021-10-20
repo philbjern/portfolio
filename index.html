@@ -20,9 +20,6 @@
         margin: 0 auto;
       }
 
-      .cards {
-      }
-
       .card {
         display: inline-block;
         width: auto;
@@ -31,6 +28,13 @@
         padding: 20px;
         background-color: lightgoldenrodyellow;
         border-radius: 15px;
+        
+        transition: all 0.5s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
       }
 
       .card img {
@@ -81,10 +85,10 @@
       <section>
         <h2>Projects</h2>
 
-        <article>
-          <h3>Foundations</h3>
-
-          <div class="cards">
+        <h3>Foundations</h3>
+        
+        <div class="cards">
+            <article>
             <div class="card">
               <a
                 href="foundations/03-html-foundations/PROJECT-recipes/index.html"
@@ -99,8 +103,9 @@
               <p>Odin recipes project, using semantic HTML5 elements</p>
               <a href="foundations/03-html-foundations/PROJECT-recipes/index.html"><button>Live App</button></a>
             </div>
-          </div>         
-        </article>
+          </article>
+
+        </div>         
       </section>
     </div>
   </body>
