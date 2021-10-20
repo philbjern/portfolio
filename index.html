@@ -20,6 +20,12 @@
         margin: 0 auto;
       }
 
+      .dash {
+        width: 20px;
+        height: 3px;
+        background-color: black;
+      }
+
       .card {
         display: inline-block;
         width: auto;
@@ -28,13 +34,12 @@
         padding: 20px;
         background-color: lightgoldenrodyellow;
         border-radius: 15px;
-        
         transition: all 0.5s;
       }
 
       .card:hover {
         transform: translateY(-5px);
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
       }
 
       .card img {
@@ -42,6 +47,7 @@
         height: 250px;
         object-fit: cover;
         object-position: 50% 0%;
+        border-radius: 15px;
       }
 
       .card p,
@@ -64,7 +70,7 @@
         font-size: 1.2rem;
         background-color: brown;
         color: white;
-        border: 0;
+        border: 2px solid brown;
         border-radius: 5px;
         padding: 0.5rem 0.7rem;
         opacity: 0.8;
@@ -75,21 +81,33 @@
       .card button:hover {
         opacity: 1;
       }
+
+      .card button.muted {
+        color: brown;
+        background-color: transparent;
+        border: 2px solid brown;
+      }
+
+      .text-right {
+        text-align: right;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <header>
         <h1>The Odin Project</h1>
+        <div class="dash"></div>
       </header>
       <section>
         <h2>Projects</h2>
 
         <h3>Foundations</h3>
-        
+
         <div class="cards">
+          <div class="card">
             <article>
-            <div class="card">
+              <p class="title">Recipes</p>
               <a
                 href="foundations/03-html-foundations/PROJECT-recipes/index.html"
               >
@@ -99,13 +117,20 @@
                 />
               </a>
 
-              <p class="title">Recipes</p>
               <p>Odin recipes project, using semantic HTML5 elements</p>
-              <a href="foundations/03-html-foundations/PROJECT-recipes/index.html"><button>Live App</button></a>
-            </div>
-          </article>
-
-        </div>         
+              <p class="text-right">
+                <a
+                  href="foundations/03-html-foundations/PROJECT-recipes/index.html"
+                  ><button>Live App</button></a
+                >
+                <a
+                  href="https://github.com/fbiernat/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"
+                  ><button class="muted">Code</button></a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
     </div>
   </body>
