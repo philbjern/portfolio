@@ -1,6 +1,8 @@
 # My Odin Project submissions
 My [Odin Project](https://theodinproject.com) submissions
 
+[Projects](https://fbiernat.github.io/odin-project) showcase
+
 ## Content
 ### Foundations
 * Command line basics
