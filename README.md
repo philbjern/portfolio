@@ -10,7 +10,7 @@ All [projects showcase](https://fbiernat.github.io/odin-project) page
 ### Foundations
 * Command line basics
 * Git basics
-* HTML foundations **(Project: [Recipes](https://github.com/fbiernat/odin-project/tree/main/foundations/html/PROJECT-recipes))**
+* HTML foundations **(Project: [Recipes](https://github.com/fbiernat/odin-project/foundations/html/PROJECT-recipes/index.html))**
 * CSS foundations
 * Flexbox **(Project: [Landing Page](https://github.com/fbiernat/odin-project))**
 * JavaScript Basics (*in progress*)
