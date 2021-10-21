@@ -12,8 +12,8 @@
         margin: 0;
         padding: 0;
         font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
-        background-color: rgba(255,255,255,0.2);
-        color: rgba(0,0,0,0.8);
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgba(0, 0, 0, 0.8);
       }
 
       .container {
@@ -28,8 +28,17 @@
         background-color: black;
       }
 
+      .cards {
+        display: flex;
+      }
+
+      .flex-1 {
+        flex: 1;
+      }
+
       .card {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         width: auto;
         max-width: 280px;
         margin: 8px;
@@ -107,31 +116,66 @@
         <h3>Foundations</h3>
 
         <div class="cards">
-          <div class="card">
-            <article>
-              <p class="title">Recipes</p>
-              <a
-                href="foundations/03-html-foundations/PROJECT-recipes/index.html"
-              >
-                <img
-                  src="foundations/03-html-foundations/PROJECT-recipes/assets/demo.gif"
-                  alt="Project recipes screenshot"
-                />
-              </a>
-
-              <p>Odin recipes project, using semantic HTML5 elements</p>
-              <p class="text-right">
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Recipes</p>
                 <a
                   href="foundations/03-html-foundations/PROJECT-recipes/index.html"
-                  ><button>Live App</button></a
                 >
+                  <img
+                    src="foundations/03-html-foundations/PROJECT-recipes/assets/demo.gif"
+                    alt="Project recipes screenshot"
+                  />
+                </a>
+              </div>
+              <div>
+                <p>Odin recipes project, using semantic HTML5 elements</p>
+                <p class="text-right">
+                  <a
+                    href="foundations/03-html-foundations/PROJECT-recipes/index.html"
+                    ><button>Live App</button></a
+                  >
+                  <a
+                    href="https://github.com/fbiernat/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"
+                    ><button class="muted">Code</button></a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article>
+            <div class="card">
+              <div class="flex-">
+                <p class="title">Landing page</p>
                 <a
-                  href="https://github.com/fbiernat/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"
-                  ><button class="muted">Code</button></a
+                  href="foundations/05-flex/00-PROJECT-landing-page/index.html"
                 >
-              </p>
-            </article>
-          </div>
+                  <img
+                    src="foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
+                    alt="Project recipes screenshot"
+                  />
+                </a>
+              </div>
+              <div>
+                <p>
+                  HTML5 + CSS3 with Flexbox project, landing page for fictional
+                  company Guitarly - Mobile guitar service
+                </p>
+                <p class="text-right">
+                  <a
+                    href="foundations/05-flex/00-PROJECT-landing-page/index.html"
+                    ><button>Live App</button></a
+                  >
+                  <a
+                    href="https://github.com/fbiernat/odin-project/tree/main/foundations/05-flex/00-PROJECT-landing-page"
+                    ><button class="muted">Code</button></a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </div>
