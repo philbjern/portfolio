@@ -82,6 +82,7 @@ p {
 
 .hero-wrapper {
   display: flex;
+  gap: 10px;
   padding: 50px 0;
   align-items: center;
 }
@@ -141,10 +142,12 @@ p {
   font-weight: 700;
   opacity: 0.9;
   cursor: pointer;
+  transition: all 0.25s;
 }
 
 .btn:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .btn-primary {
