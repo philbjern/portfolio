@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Practice</title>
+</head>
+<body>
+  <script>
+
+    // 1
+    function add7(number) {
+      return number + 7;
+    }
+
+    console.log(add7(8));
+
+    // 2
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    console.log(multiply(3, 4));
+
+    // 3
+    function capitalize(string) {
+      let result = '';
+      result += string.substr(0, 1).toUpperCase();
+      result += string.substr(1).toLowerCase();
+      return result;
+    }
+
+    console.log(capitalize('CaPiTALize teST'));
+
+    // 4
+    function lastLetter(string) {
+      return string.slice(-1);
+    }
+
+    console.log(lastLetter('abcd'));
+
+  </script>
+</body>
+</html>
