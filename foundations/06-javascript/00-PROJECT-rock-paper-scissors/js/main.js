@@ -123,7 +123,7 @@ let game = {
   unknownCommand() {
     addBubble(
       OPPONENT,
-      "Sorry, I didn't understand that. Try these commands: <b>restart</b> - Restart game,<br/> <b>score</b> - Show current score</br> <b>rocks, scissors, paper</b> - Start new round"
+      "Sorry, I didn't understand that. Try these commands: <b>restart</b> - Restart game,<br/> <b>score</b> - Show current score</br> <b>rock, scissors, paper</b> - Start new round"
     );
   },
 };
