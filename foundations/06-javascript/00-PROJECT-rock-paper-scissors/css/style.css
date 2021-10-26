@@ -22,8 +22,9 @@ h5 {
 
 .container {
   max-width: 600px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .page-title {
@@ -148,5 +149,21 @@ p {
 
   50% {
       transform: translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  html {
+    font-size: 11px;
+  }
+
+  .container {
+    min-width: 325px;
+    width: 90%;
+  }
+
+  .chat-bubble {
+    max-width: 60%;
   }
 }
