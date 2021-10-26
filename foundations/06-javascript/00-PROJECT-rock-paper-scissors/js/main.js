@@ -52,9 +52,9 @@ function addBubble(playerOrOpponent, text) {
   chatBox.appendChild(bubbleElement);
 
   chatBox.scrollTop = chatBox.scrollHeight;
-  setTimeout(function() {
+  setTimeout(function () {
     chatBox.scrollTop = chatBox.scrollHeight;
-  }, responseTimeout)
+  }, responseTimeout);
 }
 
 let game = {
@@ -138,5 +138,7 @@ playerInputForm.addEventListener("submit", function (e) {
   textInput.value = "";
 });
 
-// Start game
-game.restartGame();
+document.addEventListener("DOMContentLoaded", function (e) {
+  // Start game
+  game.restartGame();
+});
