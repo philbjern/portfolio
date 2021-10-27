@@ -21,7 +21,7 @@ h5 {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 550px;
   width: 90%;
   margin: 0 auto;
   padding-bottom: 20px;
@@ -161,6 +161,10 @@ p {
   .container {
     min-width: 325px;
     width: 90%;
+  }
+
+  .chat-box-wrapper {
+    height: 450px;
   }
 
   .chat-bubble {
