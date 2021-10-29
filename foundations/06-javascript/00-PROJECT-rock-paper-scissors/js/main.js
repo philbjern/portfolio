@@ -68,11 +68,10 @@ let game = {
     this.showWelcomeMessage();
   },
   showWelcomeMessage: function () {
-    // show welcome message from bot
     addBubble(
       OPPONENT,
-      "Welcome to Rock Paper Scissors game, choose your weapon! " +
-        "(type 'paper', 'rock', or 'scissors')"
+      "Welcome to Rock Paper Scissors game, I will be your opponent today." +
+        " Choose your weapon! (type 'paper', 'rock', or 'scissors')"
     );
   },
   parseUserInput: function (playerInput) {
@@ -92,9 +91,14 @@ let game = {
       playerInput.includes("scissors")
     ) {
       this.playRound(playerInput);
+    } else if (playerInput.includes("hello") || playerInput.includes("hi")) {
+      this.meetAndGreet();
     } else {
       this.unknownCommand();
     }
+  },
+  meetAndGreet() {
+    addBubble(OPPONENT, "Well, hi there 👋. Let the battle begin!");
   },
   showScore: function () {
     addBubble(
@@ -125,13 +129,11 @@ let game = {
     this.checkForGameEnd();
   },
   checkForGameEnd() {
-    if (this.roundsCount >= 5) {
-      if (this.playerScore > this.opponentScore) {
+    if (this.playerScore >= 5 || this.opponentScore >= 5) {
+      if (this.playerScore >= 5) {
         addBubble(OPPONENT, "Congratulations! You've won 😊");
-      } else if (this.playerScore < this.opponentScore) {
+      } else if (this.opponentScore >= 5) {
         addBubble(OPPONENT, "Too bad, you've lost 😥");
-      } else {
-        addBubble(OPPONENT, "It's a tie!");
       }
       this.showScore();
       addBubble(
@@ -155,7 +157,6 @@ const playerInputForm = document.querySelector(".input-form");
 playerInputForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const textInput = e.target[0];
-  // process user input
   game.parseUserInput(textInput.value);
   textInput.value = "";
 });
