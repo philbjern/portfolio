@@ -71,7 +71,8 @@ let game = {
     // show welcome message from bot
     addBubble(
       OPPONENT,
-      "Welcome to Rock Paper Scissors game, choose your weapon! (type 'paper', 'rock', or 'scissors')"
+      "Welcome to Rock Paper Scissors game, choose your weapon! " +
+        "(type 'paper', 'rock', or 'scissors')"
     );
   },
   parseUserInput: function (playerInput) {
@@ -97,10 +98,12 @@ let game = {
   showScore: function () {
     addBubble(
       OPPONENT,
-      `Current score after <b>${this.roundsCount}</b> rounds - Player <b>${this.playerScore}</b> : <b>${this.opponentScore}</b> Bot`
+      `Current score after <b>${this.roundsCount}</b> rounds - Player ` +
+        `<b>${this.playerScore}</b> : <b>${this.opponentScore}</b> Bot`
     );
   },
   playRound(playerChoice) {
+    this.roundsCount++;
     let botChoice = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
     addBubble(OPPONENT, botChoice.displayStr);
     if (
@@ -108,22 +111,40 @@ let game = {
       (playerChoice === "rock" && botChoice.name === "scissors") ||
       (playerChoice === "scissors" && botChoice.name === "paper")
     ) {
-      // player wins
+      // player wins round
       this.playerScore++;
     } else if (
       (playerChoice === "paper" && botChoice.name === "scissors") ||
       (playerChoice === "rock" && botChoice.name === "paper") ||
       (playerChoice === "scissors" && botChoice.name === "rock")
     ) {
-      // bot wins
+      // bot wins round
       this.opponentScore++;
     }
-    this.roundsCount++;
+    this.checkForGameEnd();
+  },
+  checkForGameEnd() {
+    if (this.roundsCount >= 5) {
+      if (this.playerScore > this.opponentScore) {
+        addBubble(OPPONENT, "Congratulations! You've won 😊");
+      } else if (this.playerScore < this.opponentScore) {
+        addBubble(OPPONENT, "Too bad, you've lost 😥");
+      } else {
+        addBubble(OPPONENT, "It's a tie!");
+      }
+      this.showScore();
+      addBubble(
+        OPPONENT,
+        "Do you want to play again? (type 'restart' or 'new game')"
+      );
+    }
   },
   unknownCommand() {
     addBubble(
       OPPONENT,
-      "Sorry, I didn't understand that. Try these commands: <b>restart</b> - Restart game,<br/> <b>score</b> - Show current score</br> <b>rock, scissors, paper</b> - Start new round"
+      "Sorry, I didn't understand that. Try these commands: " +
+        "<b>restart</b> - Restart game,<br/> <b>score</b> - " +
+        "Show current score</br> <b>rock, scissors, paper</b> - Start new round"
     );
   },
 };
