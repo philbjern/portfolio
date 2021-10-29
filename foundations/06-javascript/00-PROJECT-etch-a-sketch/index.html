@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+
+    <div class="modal">
+
+      <div class="modal-container animate">
+        <div class="modal-header">
+          <h1 class="title">Clear-a-sketch</h1>
+          <div class="modal-cancel">
+
+          </div>
+        </div>
+        <form>
+          <p>Clear sketch and set new grid resolution</p>
+          <div class="alert-message"></div>
+          <label for="new-grid-size">New grid size: <input type="number" name="new-grid-size" id="new-grid-size-input"></label>
+        </form>
+        <div>
+          <button class="btn-modal">Clear and set</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <header>
+        <h1 class="title">Etch-a-Sketch</h1>
+        <p>Hover over tiles and make a sketch, it's that simple!</p>
+        <nav>
+          <button id="clear-sketch-btn">Clear sketch</button>
+          <form id="app-settings">
+            <label for="random-color">
+              <input type="checkbox" name="random-color" id="random-color" />
+              Random Color
+            </label>
+
+            <label for="fade-to-black">
+              <input type="checkbox" name="fade-to-black" id="fade-to-black" />
+              Fade to Black
+            </label>
+          </form>
+        </nav>
+      </header>
+
+      <div id="grid-container" class="grid-container"></div>
+    </div>
+  </body>
+</html>
