@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+
+  <body>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container"></div>
+  </body>
+  <script>
+    const container = document.querySelector("#container");
+
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = "This is the glorious text-content!";
+
+    container.appendChild(content);
+
+    const paragraph = document.createElement("p");
+    paragraph.style.color = "lightcoral";
+    paragraph.textContent = "Hey I'm red";
+
+    container.appendChild(paragraph);
+
+    const heading = document.createElement("h3");
+    heading.style.color = "lightblue";
+    heading.textContent = "I'm blue h3!";
+
+    container.appendChild(heading);
+
+    const pinkContainer = document.createElement("div");
+    pinkContainer.style.backgroundColor = "pink";
+    pinkContainer.style.border = "2px solid black";
+
+    const pinkContainerHeading = document.createElement("h1");
+    pinkContainerHeading.textContent = "I'm in a div";
+    pinkContainer.appendChild(pinkContainerHeading);
+
+    const paragraph2 = document.createElement("p");
+    paragraph2.textContent = "ME TOO!";
+    pinkContainer.appendChild(paragraph2);
+
+    container.appendChild(pinkContainer);
+  </script>
+</html>
