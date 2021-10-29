@@ -82,6 +82,7 @@ let game = {
       this.showScore();
     } else if (
       playerInput.includes("new game") ||
+      playerInput.includes("reset") ||
       playerInput.includes("restart")
     ) {
       this.restartGame();
