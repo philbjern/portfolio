@@ -9,32 +9,37 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-
     <div class="modal">
-
       <div class="modal-container animate">
         <div class="modal-header">
           <h1 class="title">Clear-a-sketch</h1>
-          <div class="modal-cancel">
-
-          </div>
+          <div class="modal-cancel"></div>
         </div>
-        <form>
-          <p>Clear sketch and set new grid resolution</p>
-          <div class="alert-message"></div>
-          <label for="new-grid-size">New grid size: <input type="number" name="new-grid-size" id="new-grid-size-input"></label>
-        </form>
+        <div class="modal-text">
+          <span class="question-icon">?</span>
+          <form>
+            <p>Clear sketch and set new grid resolution</p>
+            <div class="alert-message"></div>
+            <label for="new-grid-size"
+              >New grid size:
+              <input
+                type="number"
+                name="new-grid-size"
+                id="new-grid-size-input"
+                max="100"
+            /></label>
+          </form>
+        </div>
         <div>
           <button class="btn-modal">Clear and set</button>
         </div>
       </div>
-
     </div>
 
     <div class="container">
       <header>
         <h1 class="title">Etch-a-Sketch</h1>
-        <p>Hover over tiles and make a sketch, it's that simple!</p>
+        <p>Move your mouse over tiles and make a sketch, it's that simple!</p>
         <nav>
           <button id="clear-sketch-btn">Clear sketch</button>
           <form id="app-settings">
