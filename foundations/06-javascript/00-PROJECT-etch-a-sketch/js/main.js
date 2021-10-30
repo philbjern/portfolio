@@ -21,28 +21,27 @@ modalCancelBtn.addEventListener("click", (e) => {
   toggleModal();
 });
 
-
 function showAlertMessage() {
-  const alertMessage = document.querySelector('.alert-message');
-  alertMessage.textContent = 'Grid size cannot be greater than 100';
-  alertMessage.style.display = 'block';
+  const alertMessage = document.querySelector(".alert-message");
+  alertMessage.textContent = "Grid size cannot be greater than 100";
+  alertMessage.style.display = "block";
 }
 
 function hideAlertMessage() {
-  const alertMessage = document.querySelector('.alert-message');
-  alertMessage.style.display = 'none';
+  const alertMessage = document.querySelector(".alert-message");
+  alertMessage.style.display = "none";
 }
 
 const newGridValueInput = document.querySelector("#new-grid-size-input");
 
-newGridValueInput.addEventListener('blur', function(e) {
+newGridValueInput.addEventListener("blur", function (e) {
   if (e.target.value > 100) {
     showAlertMessage();
     e.target.value = 100;
   } else {
     hideAlertMessage();
   }
-})
+});
 
 const modalSetBtn = document.querySelector(".btn-modal");
 modalSetBtn.addEventListener("click", (e) => {
@@ -73,9 +72,8 @@ fadeToBlackCheckbox.addEventListener("click", (e) => {
   }
 });
 
-
-const eraseCheckbox = document.querySelector('#erase');
-eraseCheckbox.addEventListener('click', (e) => {
+const eraseCheckbox = document.querySelector("#erase");
+eraseCheckbox.addEventListener("click", (e) => {
   etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.erase = true;
@@ -90,8 +88,8 @@ let etchASketch = {
   fadeToBlack: false,
   dimStep: 1,
   currentColor: null,
-  defaultColor: 'rgb(252, 181, 191)',
-  activeColor : 'rgb(202, 178, 39)',
+  defaultColor: "rgb(252, 181, 191)",
+  activeColor: "rgb(202, 178, 39)",
   erase: false,
   changeGridSize: function (newGridSize) {
     this.gridSize = newGridSize;
@@ -111,7 +109,8 @@ let etchASketch = {
     const gridContainer = document.querySelector("#grid-container");
     const gridItemWidth =
       parseFloat(getComputedStyle(gridContainer).width) / this.gridSize -
-      GAP_SIZE + GAP_SIZE / this.gridSize;
+      GAP_SIZE +
+      GAP_SIZE / this.gridSize;
 
     let gridItemsArr = [];
     for (let i = 0; i < this.gridSize * this.gridSize; i++) {
@@ -155,7 +154,10 @@ let etchASketch = {
             if (this.dimStep > 0) {
               this.dimStep -= 0.05;
             }
-            item.style.backgroundColor = this.getDimmedColorString(item, this.dimStep);
+            item.style.backgroundColor = this.getDimmedColorString(
+              item,
+              this.dimStep
+            );
           } else {
             item.style.backgroundColor = this.activeColor;
           }
@@ -202,7 +204,7 @@ let etchASketch = {
     const newColorString = `rgb(${red}, ${green}, ${blue})`;
 
     return newColorString;
-  }
+  },
 };
 
 document.addEventListener("DOMContentLoaded", function (e) {
