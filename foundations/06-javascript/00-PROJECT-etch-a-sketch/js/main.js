@@ -73,7 +73,7 @@ let etchASketch = {
     const gridContainer = document.querySelector("#grid-container");
     const gridItemWidth =
       parseFloat(getComputedStyle(gridContainer).width) / this.gridSize -
-      GAP_SIZE;
+      GAP_SIZE + GAP_SIZE / this.gridSize;
 
     let gridItemsArr = [];
     for (let i = 0; i < this.gridSize * this.gridSize; i++) {
