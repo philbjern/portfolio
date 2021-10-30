@@ -190,6 +190,11 @@ button:hover {
   justify-content: center;
 }
 
+.alert-message {
+  color: lightcoral;
+  margin: 10px 0;
+}
+
 .modal-container form {
   
   display: flex;

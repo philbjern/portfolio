@@ -21,13 +21,35 @@ modalCancelBtn.addEventListener("click", (e) => {
   toggleModal();
 });
 
+
+function showAlertMessage() {
+  const alertMessage = document.querySelector('.alert-message');
+  alertMessage.textContent = 'Grid size cannot be greater than 100';
+  alertMessage.style.display = 'block';
+}
+
+function hideAlertMessage() {
+  const alertMessage = document.querySelector('.alert-message');
+  alertMessage.style.display = 'none';
+}
+
 const newGridValueInput = document.querySelector("#new-grid-size-input");
+
+newGridValueInput.addEventListener('blur', function(e) {
+  if (e.target.value > 100) {
+    showAlertMessage();
+    e.target.value = 100;
+  } else {
+    hideAlertMessage();
+  }
+})
 
 const modalSetBtn = document.querySelector(".btn-modal");
 modalSetBtn.addEventListener("click", (e) => {
   const newGridValue = newGridValueInput.value;
   etchASketch.changeGridSize(newGridValue);
   toggleModal();
+  hideAlertMessage();
 });
 
 const randomColorCheckbox = document.querySelector("#random-color");
