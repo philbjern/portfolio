@@ -70,10 +70,9 @@ button:hover {
 }
 
 .grid-item {
-  /* width: calc(945px / 16);
-  height: calc(945px / 16); */
   flex: 0 auto;
   background-color: rgb(252, 181, 191);
+  border-radius: 3px;
 }
 
 .grid-item.active {
@@ -192,7 +191,17 @@ button:hover {
 
 .alert-message {
   color: lightcoral;
-  margin: 10px 0;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  flex: 1 1;
+}
+
+.flex{
+  display: flex;
+}
+
+#new-grid-size-input {
+  flex: 1 0;
 }
 
 .modal-container form {
