@@ -200,6 +200,27 @@ button:hover {
   display: flex;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+a:hover {
+  color: black;
+}
+
 #new-grid-size-input {
   flex: 1 0;
 }

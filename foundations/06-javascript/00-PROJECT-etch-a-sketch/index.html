@@ -39,24 +39,31 @@
     </div>
 
     <div class="container">
-      <header>
-        <h1 class="title">Etch-a-Sketch</h1>
-        <p>Move your mouse over tiles and make a sketch, it's that simple!</p>
-        <nav>
-          <button id="clear-sketch-btn">Clear sketch</button>
-          <form id="app-settings">
-            <label for="random-color">
-              <input type="checkbox" name="random-color" id="random-color" />
-              Random Color
-            </label>
+      <div class="flex-column">
+        <header>
+          <h1 class="title">Etch-a-Sketch</h1>
+          <p>Move your mouse over tiles and make a sketch, it's that simple!</p>
+          <nav>
+            <button id="clear-sketch-btn">Clear sketch</button>
+            <form id="app-settings">
+              <label for="random-color">
+                <input type="checkbox" name="random-color" id="random-color" />
+                Random Color
+              </label>
 
-            <label for="fade-to-black">
-              <input type="checkbox" name="fade-to-black" id="fade-to-black" />
-              Fade to Black
-            </label>
-          </form>
-        </nav>
-      </header>
+              <label for="fade-to-black">
+                <input
+                  type="checkbox"
+                  name="fade-to-black"
+                  id="fade-to-black"
+                />
+                Fade to Black
+              </label>
+            </form>
+          </nav>
+        </header>
+        <div class="footer">&copy; Copyright <a href="https://github.com/fbiernat" target="_blank">fbiernat</a> 2021</div>
+      </div>
 
       <div id="grid-container" class="grid-container"></div>
     </div>
