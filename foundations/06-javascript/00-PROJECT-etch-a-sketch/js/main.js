@@ -54,6 +54,7 @@ modalSetBtn.addEventListener("click", (e) => {
 
 const randomColorCheckbox = document.querySelector("#random-color");
 randomColorCheckbox.addEventListener("click", (e) => {
+  etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.randomColor = true;
   } else {
@@ -63,6 +64,7 @@ randomColorCheckbox.addEventListener("click", (e) => {
 
 const fadeToBlackCheckbox = document.querySelector("#fade-to-black");
 fadeToBlackCheckbox.addEventListener("click", (e) => {
+  etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.fadeToBlack = true;
     etchASketch.currentColor = null;
@@ -74,6 +76,7 @@ fadeToBlackCheckbox.addEventListener("click", (e) => {
 
 const eraseCheckbox = document.querySelector('#erase');
 eraseCheckbox.addEventListener('click', (e) => {
+  etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.erase = true;
   } else {
@@ -88,7 +91,7 @@ let etchASketch = {
   dimStep: 1,
   currentColor: null,
   defaultColor: 'rgb(252, 181, 191)',
-  acitiveColor : 'rgba(202, 178, 39, 0.959)',
+  activeColor : 'rgb(202, 178, 39)',
   erase: false,
   changeGridSize: function (newGridSize) {
     this.gridSize = newGridSize;
@@ -149,10 +152,12 @@ let etchASketch = {
           } else if (this.randomColor) {
             item.style.backgroundColor = this.getRandomColorString().toString();
           } else if (this.fadeToBlack) {
-            this.dim(item);
+            if (this.dimStep > 0) {
+              this.dimStep -= 0.05;
+            }
+            item.style.backgroundColor = this.getDimmedColorString(item, this.dimStep);
           } else {
-            item.style.backgroundColor = '';
-            item.classList.add("active");
+            item.style.backgroundColor = this.activeColor;
           }
         }
       });
@@ -171,41 +176,33 @@ let etchASketch = {
 
     return color;
   },
-  getCurrentColor(item) {
-    if (this.currentColor === null) {
-      this.currentColor = getComputedStyle(item).backgroundColor;
-    }
-
-    return this.currentColor;
-  },
-  dim(item) {
-    const colorString = this.getCurrentColor(item);
+  getDimmedColorString(item, threshold) {
+    const colorString = getComputedStyle(item).backgroundColor;
     console.log(colorString);
     const colorArr = colorString.split(",");
 
-    let red = parseFloat(colorArr[0].substr(5));
+    let red = parseFloat(colorArr[0].substr(4));
     let green = parseFloat(colorArr[1]);
     let blue = parseFloat(colorArr[2]);
     let alpha = parseFloat(colorArr[3]);
 
     if (red > 0.1) {
-      red *= 0.9;
+      red *= threshold;
     }
     if (green > 0.1) {
-      green *= 0.9;
+      green *= threshold;
     }
     if (blue > 0.1) {
-      blue *= 0.9;
+      blue *= threshold;
     }
     if (alpha < 1) {
       alpha *= 1.1;
     }
 
-    const newColorString = `rgba(${red}, ${green}, ${blue})`;
+    const newColorString = `rgb(${red}, ${green}, ${blue})`;
 
-    this.currentColor = newColorString;
-    item.style.backgroundColor = newColorString;
-  },
+    return newColorString;
+  }
 };
 
 document.addEventListener("DOMContentLoaded", function (e) {
