@@ -80,7 +80,7 @@
       }
 
       .card .title {
-        font-size: 2.3rem;
+        font-size: 1.9rem;
         margin: 0 0 0.5rem 0;
       }
 
@@ -108,6 +108,10 @@
 
       .text-right {
         text-align: right;
+      }
+
+      .description {
+        min-height: 70px;
       }
 
       @media screen and (max-width: 450px) {
@@ -141,7 +145,7 @@
       <section>
         <h2>Projects</h2>
 
-        <h3>Foundations</h3>
+        <h3>HTML + CSS</h3>
 
         <div class="cards">
           <article>
@@ -158,7 +162,9 @@
                 </a>
               </div>
               <div>
-                <p>Odin recipes project, using semantic HTML5 elements</p>
+                <p class="description">
+                  Odin recipes project, using semantic HTML5 elements
+                </p>
                 <p class="text-right">
                   <a
                     href="foundations/03-html-foundations/PROJECT-recipes/index.html"
@@ -187,7 +193,7 @@
                 </a>
               </div>
               <div>
-                <p>
+                <p class="description">
                   HTML5 + CSS3 with Flexbox project, landing page for fictional
                   company Guitarly - Mobile guitar service
                 </p>
@@ -223,7 +229,7 @@
                 </a>
               </div>
               <div>
-                <p>
+                <p class="description">
                   JavaScript game of Rock Paper Scissors in form of a chat bot.
                 </p>
                 <p class="text-right">
@@ -233,6 +239,36 @@
                   >
                   <a
                     href="https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"
+                    ><button class="muted">Code</button></a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Etch-a-Sketch</p>
+                <a href="foundations/06-javascript/00-PROJECT-etch-a-sketch/">
+                  <img
+                    src="foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
+                    alt="Etch-a-Sketch project screenshot"
+                  />
+                </a>
+              </div>
+              <div>
+                <p class="description">
+                  Etch-a-Sketch application with variable grid size and
+                  different stroke colors
+                </p>
+                <p class="text-right">
+                  <a
+                    href="foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"
+                    ><button>Live App</button></a
+                  >
+                  <a
+                    href="https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch/"
                     ><button class="muted">Code</button></a
                   >
                 </p>

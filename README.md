@@ -15,6 +15,6 @@ All [projects showcase](https://fbiernat.github.io/odin-project) page
 * Flexbox **(Project: [Landing Page](https://github.com/fbiernat/odin-project/tree/main/foundations/05-flex/00-PROJECT-landing-page))**
 * JavaScript Basics 
   * **(Project: [Rock Paper Scissors](https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-rock-paper-scissors))**
-  * **(Project: [Etch-a-Sketch](https://github.com/fbiernat/odin-project))** (*in progress*)
-  * **(Project: [Calculator](https://github.com/fbiernat/odin-project))**
+  * **(Project: [Etch-a-Sketch](https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch))** 
+  * **(Project: [Calculator](https://github.com/fbiernat/odin-project))** (*in progress*)
 * The Back End
