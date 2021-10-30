@@ -170,4 +170,5 @@ let etchASketch = {
 
 document.addEventListener("DOMContentLoaded", function (e) {
   etchASketch.changeGridSize(16);
+  newGridValueInput.value = 16;
 });
