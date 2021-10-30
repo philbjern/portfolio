@@ -71,12 +71,25 @@ fadeToBlackCheckbox.addEventListener("click", (e) => {
   }
 });
 
+
+const eraseCheckbox = document.querySelector('#erase');
+eraseCheckbox.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    etchASketch.erase = true;
+  } else {
+    etchASketch.erase = false;
+  }
+});
+
 let etchASketch = {
   gridSize: 16,
   randomColor: false,
   fadeToBlack: false,
   dimStep: 1,
   currentColor: null,
+  defaultColor: 'rgb(252, 181, 191)',
+  acitiveColor : 'rgba(202, 178, 39, 0.959)',
+  erase: false,
   changeGridSize: function (newGridSize) {
     this.gridSize = newGridSize;
 
@@ -122,20 +135,25 @@ let etchASketch = {
   addMouseOverEventListeners(itemsArr) {
     itemsArr.forEach((item) => {
       item.addEventListener("mouseover", (e) => {
-        if (this.fadeToBlack && this.randomColor) {
-          if (this.dimStep > 0) {
-            this.dimStep -= 0.05;
-          }
-          item.style.backgroundColor = this.getRandomColorString(
-            this.dimStep
-          ).toString();
-          console.log(this.dimStep);
-        } else if (this.randomColor) {
-          item.style.backgroundColor = this.getRandomColorString().toString();
-        } else if (this.fadeToBlack) {
-          this.dim(item);
+        if (this.erase) {
+          item.style.backgroundColor = this.defaultColor;
         } else {
-          item.classList.add("active");
+          if (this.fadeToBlack && this.randomColor) {
+            if (this.dimStep > 0) {
+              this.dimStep -= 0.05;
+            }
+            item.style.backgroundColor = this.getRandomColorString(
+              this.dimStep
+            ).toString();
+            console.log(this.dimStep);
+          } else if (this.randomColor) {
+            item.style.backgroundColor = this.getRandomColorString().toString();
+          } else if (this.fadeToBlack) {
+            this.dim(item);
+          } else {
+            item.style.backgroundColor = '';
+            item.classList.add("active");
+          }
         }
       });
     });
