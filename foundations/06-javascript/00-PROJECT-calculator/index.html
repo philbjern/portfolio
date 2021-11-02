@@ -12,8 +12,8 @@
     <div class="container">
       <div class="calc">
         <div class="display">
-          <div class="equation">6 +</div>
-          <div class="current">7</div>
+          <input type="text" class="equation" disabled>
+          <input type="text" class="current" disabled>
         </div>
         <div class="numpad">
           <div class="row">
@@ -21,74 +21,74 @@
               <button class="btn darker"></button>
             </div>
             <div class="button-wrapper">
-              <button class="btn darker">C</button>
+              <button class="btn darker clear" data-action="clear">C</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn darker">Del</button>
+              <button class="btn darker delete" data-action="delete">Del</button>
             </div>
 
             <div class="button-wrapper">
-              <button class="btn darker">&div;</button>
+              <button class="btn darker operation" data-action="division">&div;</button>
             </div>
           </div>
 
           <div class="row">
             <div class="button-wrapper">
-              <button class="btn">7</button>
+              <button class="btn number">7</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">8</button>
+              <button class="btn number">8</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">9</button>
+              <button class="btn number">9</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn darker">&times;</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="button-wrapper">
-              <button class="btn">4</button>
-            </div>
-            <div class="button-wrapper">
-              <button class="btn">5</button>
-            </div>
-            <div class="button-wrapper">
-              <button class="btn">6</button>
-            </div>
-            <div class="button-wrapper">
-              <button class="btn darker">-</button>
+              <button class="btn darker operation" data-action="multiplication">&times;</button>
             </div>
           </div>
 
           <div class="row">
             <div class="button-wrapper">
-              <button class="btn">1</button>
+              <button class="btn number">4</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">2</button>
+              <button class="btn number">5</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">3</button>
+              <button class="btn number">6</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn darker">+</button>
+              <button class="btn darker operation" data-action="subtraction">-</button>
             </div>
           </div>
 
           <div class="row">
             <div class="button-wrapper">
-              <button class="btn"></button>
+              <button class="btn number">1</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">0</button>
+              <button class="btn number">2</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn">,</button>
+              <button class="btn number">3</button>
             </div>
             <div class="button-wrapper">
-              <button class="btn darker">=</button>
+              <button class="btn darker operation" data-action="add">+</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="button-wrapper">
+              <button class="btn number"></button>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn number">0</button>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn number">,</button>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn darker equals" data-action="equals">=</button>
             </div>
           </div>
         </div>
