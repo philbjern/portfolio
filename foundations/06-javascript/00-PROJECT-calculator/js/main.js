@@ -1,5 +1,4 @@
 function add(a, b) {
-  console.log(a, b);
   return parseFloat(a) + parseFloat(b);
 }
 
@@ -82,7 +81,6 @@ const calculator = {
     this.equationDisplayValue += this.displayValue;
 
     let result;
-
     if (operator === "+") {
       result = this.computeEquation("add");
     } else if (operator === "-") {
@@ -94,7 +92,8 @@ const calculator = {
     }
 
     this.equationDisplayValue = result;
-    if (result.includes('ERROR')) {
+
+    if (typeof result === 'string' && result.includes('ERROR')) {
       this.displayValue = 'ERROR';
     } else {
       this.displayValue = result;
@@ -105,13 +104,11 @@ const calculator = {
   },
   computeEquation(operation) {
     const equation = this.equationDisplayValue;
-
     let result;
     let operands;
 
     if (operation === "add") {
       operands = equation.split("+");
-      console.log(operands);
       if (operands.length === 1) {
         return operands[0];
       }
@@ -177,7 +174,7 @@ numbers.forEach((number) => {
 const operationButtons = document.querySelectorAll(".operation");
 operationButtons.forEach((operationBtn) => {
   operationBtn.addEventListener("click", (e) => {
-    calculator.operate(e.target.textContent);
+    calculator.operate(e.target.textContent.trim());
   });
 });
 
