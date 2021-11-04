@@ -62,6 +62,7 @@ const calculator = {
     this.display.value = this.displayValue;
   },
   delete() {
+    this.displayValue = new String(this.displayValue);
     this.displayValue = this.displayValue.substr(
       0,
       this.displayValue.length - 1
