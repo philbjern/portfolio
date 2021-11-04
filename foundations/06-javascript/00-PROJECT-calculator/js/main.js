@@ -13,7 +13,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  if (b !== 0) {
+  if (b !== '0') {
     let result = a / b;
     return Math.round(result * 10000) / 10000;
   }
@@ -94,7 +94,11 @@ const calculator = {
     }
 
     this.equationDisplayValue = result;
-    this.displayValue = result;
+    if (result.includes('ERROR')) {
+      this.displayValue = 'ERROR';
+    } else {
+      this.displayValue = result;
+    }
 
     this.firstInput = true;
     this.updateDisplay();
