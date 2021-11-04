@@ -114,3 +114,16 @@ a {
   text-decoration: none;
   color: rgb(148, 173, 97);
 }
+
+
+@media screen and (max-width: 428px){
+  
+  .title {
+    display: none;
+  }
+
+  .calc {
+    width: 360px;
+  }
+
+}
