@@ -39,7 +39,7 @@ function addBookToLibrary(book) {
 }
 
 function deleteBookFromLibrary(index) {
- library.splice(index, 1);
+  library.splice(index, 1);
 }
 
 function createBookCardElement(book, index) {
@@ -47,7 +47,7 @@ function createBookCardElement(book, index) {
   card.classList.add("card");
   card.setAttribute("data-index", index);
   if (book.isRead) {
-    card.classList.toggle('read');
+    card.classList.toggle("read");
   }
 
   const cardInfo = document.createElement("div");
@@ -78,7 +78,7 @@ function createBookCardElement(book, index) {
   }
   toggleReadButton.textContent = book.isRead ? "Not Read" : "Read";
   toggleReadButton.addEventListener("click", handleClickToggleRead);
-  toggleReadButton.setAttribute('data-index', index);
+  toggleReadButton.setAttribute("data-index", index);
   cardControls.appendChild(toggleReadButton);
 
   const deleteButton = document.createElement("button");
@@ -86,7 +86,7 @@ function createBookCardElement(book, index) {
   deleteButton.classList.add("btn-danger");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", handleClickDeleteBook);
-  deleteButton.setAttribute('data-index', index);
+  deleteButton.setAttribute("data-index", index);
   cardControls.appendChild(deleteButton);
 
   card.appendChild(cardControls);
@@ -95,22 +95,19 @@ function createBookCardElement(book, index) {
 }
 
 function handleClickToggleRead(e) {
-  console.log("Toggle read index " + e.target.dataset.index);
   const index = e.target.dataset.index;
 
   let isRead = library[index].toggleIsRead();
 
   const card = document.querySelector(`.card[data-index="${index}"]`);
-  card.classList.toggle('read');
+  card.classList.toggle("read");
 
   const toggleButton = document.querySelector(`.btn[data-index="${index}"]`);
-  toggleButton.classList.toggle('btn-muted');
-  toggleButton.textContent = isRead ? 'Not Read' : 'Read';
+  toggleButton.classList.toggle("btn-muted");
+  toggleButton.textContent = isRead ? "Not Read" : "Read";
 }
 
 function handleClickDeleteBook(e) {
-  console.log("Delete book");
-
   const index = e.target.dataset.index;
   deleteBookFromLibrary(index);
   updateCards();
@@ -125,4 +122,41 @@ function updateCards() {
   }
 }
 
-updateCards();
+const newBookModal = document.querySelector(".add-book-modal-wrapper");
+
+function init() {
+  newBookModal.classList.toggle("hide");
+  updateCards();
+}
+
+init();
+
+const title = document.querySelector("#title-input");
+const author = document.querySelector("#author-input");
+const pages = document.querySelector("#pages-input");
+
+const openModalButton = document.querySelector("#new-book-btn");
+openModalButton.addEventListener("click", (e) => {
+  newBookModal.classList.toggle("hide");
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+});
+
+const exitModalButton = document.querySelector("#exit-modal");
+exitModalButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  newBookModal.classList.toggle("hide");
+});
+
+const confirmBookAdd = document.querySelector("#add-book-confirm");
+confirmBookAdd.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const newBook = new Book(title.value, author.value, pages.value, false);
+
+  addBookToLibrary(newBook);
+  updateCards();
+  newBookModal.classList.toggle("hide");
+});

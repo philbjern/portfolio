@@ -1,79 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-</head>
-<body>
-  <div class="container">
-    <h1>Library</h1>
-
-    <div class="cards-wrapper">
-      <div class="controls">
-        <button class="btn">New Book</button>
-      </div>
-      <div class="cards">
-
-        <div class="card" data-index="1">
-          <h2 class="card-title">Harry Potter i Kamień Filozoficzny</h2>
-          <p>J.K. Rowling</p>
-          <p>329 stron</p>
-
-          <div class="card-controls">
-            <button class="btn">Read</button>
-            <button class="btn btn-danger">Delete</button>
-          </div>
-        </div>
-
-        <div class="card" data-index="1">
-          <div class="card-info">
-            <h2 class="card-title">The Hobbit</h2>
-            <p>J.R.R. Tolkien</p>
-            <p>329 stron</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="add-book-modal-wrapper">
+      <div class="add-book-modal">
+        <h1>Add New Book</h1>
+        <form>
+          <div class="row">
+            <label for="title-input">Title</label>
+            <input type="text" id="title-input" />
           </div>
 
-          <div class="card-controls">
-            <button class="btn">Read</button>
-            <button class="btn btn-danger">Delete</button>
-          </div>
-        </div>
-
-
-        <div class="card" data-index="1">
-          <h2 class="card-title">Harry Potter i Kamień Filozoficzny</h2>
-          <p>J.K. Rowling</p>
-          <p>329 stron</p>
-
-          <div class="card-controls">
-            <button class="btn">Read</button>
-            <button class="btn btn-danger">Delete</button>
-          </div>
-        </div>
-
-        <div class="card" data-index="1">
-          <div class="card-info">
-            <h2 class="card-title">The Hobbit</h2>
-            <p>J.R.R. Tolkien</p>
-            <p>329 stron</p>
+          <div class="row">
+            <label for="author-input">Author</label>
+            <input type="text" id="author-input" />
           </div>
 
-          <div class="card-controls">
-            <button class="btn">Read</button>
-            <button class="btn btn-danger">Delete</button>
+          <div class="row">
+            <label for="pages-input">Pages</label>
+            <input type="number" id="pages-input" />
           </div>
-        </div>
 
-
+          <button type="submit" class="btn" id="add-book-confirm">Add Book</button>
+          <button class="btn btn-danger" id="exit-modal">Cancel</button>
+        </form>
       </div>
     </div>
-  </div>
+    <div class="container">
+      <h1>Library</h1>
 
-  <footer>
-    Created by <a href="https://github.com/fbiernat">fbiernat</a> 2021
-  </footer>
-</body>
+      <div class="cards-wrapper">
+        <div class="controls">
+          <button class="btn" id="new-book-btn">New Book</button>
+        </div>
+        <div class="cards">
+          <div class="card" data-index="1">
+            <h2 class="card-title">Harry Potter i Kamień Filozoficzny</h2>
+            <p>J.K. Rowling</p>
+            <p>329 stron</p>
+
+            <div class="card-controls">
+              <button class="btn">Read</button>
+              <button class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+
+          <div class="card" data-index="1">
+            <div class="card-info">
+              <h2 class="card-title">The Hobbit</h2>
+              <p>J.R.R. Tolkien</p>
+              <p>329 stron</p>
+            </div>
+
+            <div class="card-controls">
+              <button class="btn">Read</button>
+              <button class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Created by <a href="https://github.com/fbiernat">fbiernat</a> 2021
+    </footer>
+  </body>
 </html>
