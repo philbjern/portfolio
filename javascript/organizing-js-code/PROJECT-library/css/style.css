@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
 
 body {
-  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   height: 100vh;
   display: flex;
@@ -107,7 +107,7 @@ footer a:visited {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -120,10 +120,23 @@ footer a:visited {
 }
 
 .add-book-modal {
-  width: 40%;
+  width: 550px;
   padding: 30px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 15px;
+  animation: slide-in 0.5s;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .row {
