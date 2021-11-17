@@ -48,6 +48,10 @@ footer a:visited {
   flex-direction: column;
 }
 
+.read {
+  background-color: rgb(212, 250, 212);
+}
+
 .card-info {
   flex: 1;
 }
@@ -76,7 +80,7 @@ footer a:visited {
   background-color: darkcyan;
   padding: 0.5rem 1.2rem;
   border-radius: 27px;
-  border: 0;
+  border: 2px solid darkcyan;
   color: white;
   font-size: 0.85rem;
   cursor: pointer;
@@ -90,4 +94,11 @@ footer a:visited {
 
 .btn-danger {
   background-color: lightcoral;
+  border: 2px lightcoral;
+}
+
+.btn-muted {
+  border: 2px solid darkcyan;
+  background-color: transparent;
+  color: darkcyan;
 }
