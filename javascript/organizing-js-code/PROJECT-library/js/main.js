@@ -26,7 +26,7 @@ const book3 = new Book(
   "Harry Potter i Kamień Filozoficzny",
   "J.K. Rowling",
   328,
-  true
+  false
 );
 book3.setCoverImageURL(
   "https://ecsmedia.pl/c/harry-potter-i-kamien-filozoficzny-tom-1-b-iext81316007.jpg"
