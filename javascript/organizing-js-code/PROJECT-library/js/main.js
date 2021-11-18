@@ -28,11 +28,9 @@ const book3 = new Book(
   328,
   false
 );
-book3.setCoverImageURL(
-  "https://ecsmedia.pl/c/harry-potter-i-kamien-filozoficzny-tom-1-b-iext81316007.jpg"
-);
 
-let library = [book1, book2, book3];
+// let library = [book1, book2, book3];
+let library = loadBooksFromLocalStorage();
 
 function addBookToLibrary(book) {
   library.push(book);
@@ -116,9 +114,15 @@ function handleClickDeleteBook(e) {
 function updateCards() {
   const cardsContainer = document.querySelector(".cards");
 
-  cardsContainer.textContent = "";
-  for (let i = 0; i < library.length; i++) {
-    cardsContainer.appendChild(createBookCardElement(library[i], i));
+  if (library.length === 0) {
+    cardsContainer.textContent = 'No books, try adding some';
+  } else {
+    cardsContainer.textContent = "";
+    for (let i = 0; i < library.length; i++) {
+      cardsContainer.appendChild(createBookCardElement(library[i], i));
+    }
+    console.log(library);
+    saveBooksToLocalStorage(library);
   }
 }
 
@@ -131,6 +135,7 @@ function init() {
 
 init();
 
+// Modal
 const title = document.querySelector("#title-input");
 const author = document.querySelector("#author-input");
 const pages = document.querySelector("#pages-input");
@@ -160,3 +165,24 @@ confirmBookAdd.addEventListener("click", (e) => {
   updateCards();
   newBookModal.classList.toggle("hide");
 });
+
+// Local Storage
+function loadBooksFromLocalStorage() {
+  let library = JSON.parse(localStorage.getItem('library'));
+  if (library == null) {
+    library = [];
+  } else {
+    library.forEach(function (item) {
+      item.toggleIsRead = function () {
+        this.isRead = !this.isRead;
+        return this.isRead;
+      };
+    })
+  }
+  return library;
+}
+
+function saveBooksToLocalStorage(library) {
+  localStorage.setItem('library', JSON.stringify(library));
+}
+
