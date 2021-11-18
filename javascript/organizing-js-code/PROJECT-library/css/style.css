@@ -46,6 +46,7 @@ footer a:visited {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s;
 }
 
 .read {
