@@ -48,6 +48,7 @@ footer a:visited {
   display: flex;
   flex-direction: column;
   transition: all 0.5s;
+  min-height: 300px;
 }
 
 .read {
