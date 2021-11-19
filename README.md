@@ -18,3 +18,6 @@ All [projects showcase](https://fbiernat.github.io/odin-project) page
   * **(Project: [Etch-a-Sketch](https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch))** 
   * **(Project: [Calculator](https://github.com/fbiernat/odin-project/tree/main/foundations/06-javascript/00-PROJECT-calculator))** 
 * The Back End
+
+### JavaScript
+* Objects and Object Constructors **(Project: [Library](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library))**
