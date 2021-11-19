@@ -28,6 +28,7 @@ footer a:visited {
   max-width: 1100px;
   width: 90%;
   margin: auto;
+  padding: 5px;
   flex: 1;
 }
 
