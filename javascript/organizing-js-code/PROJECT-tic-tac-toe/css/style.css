@@ -5,12 +5,53 @@
   --color-gray: gray;
   --width-field: 200px;
   --animation-duration: 0.8s;
+  --dark-mode-background: rgb(37, 34, 34);
+  --dark-mode-light: rgb(224, 223, 223);
 }
 
 body {
   font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-mode {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-light);
+}
+
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 20px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: chocolate;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px 15px;
+  border: 2px solid chocolate;
+  border-radius: 25px;
+  background-color: transparent;
+  color: chocolate;
+  cursor: pointer;
+  transition: all 0.25s;
+  opacity: 0.8;
+}
+
+.btn:hover {
+  opacity: 1;
 }
 
 * {
@@ -19,14 +60,19 @@ body {
 
 .title {
   text-align: center;
+  font-size: 2.8rem;
+  margin: 0.8rem;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
+  flex: 1;
 }
 
-.gameboard-wrapper {}
+.container nav {
+  padding: 0 0 20px 0;
+}
 
 .gameboard {
   width: calc(var(--width-field) * 3);
@@ -79,6 +125,15 @@ body {
   animation: show-minus-45-deg var(--animation-duration);
 }
 
+.dark-mode .gamefield.player-X::after {
+  background-color: var(--dark-mode-light);
+}
+
+.dark-mode .gamefield.player-X::before {
+  background-color: var(--dark-mode-light);
+}
+
+
 .gamefield.player-O::after {
   content: '';
   width: calc(var(--width-field) - 40px);
@@ -104,6 +159,15 @@ body {
   animation: show var(--animation-duration);
 }
 
+.dark-mode .gamefield.player-O::after {
+  background-color: var(--dark-mode-light);
+}
+
+.dark-mode .gamefield.player-O::before {
+  background-color: var(--dark-mode-background)
+}
+
+
 @keyframes show {
   0% {
     transform: scale(1.2) rotate(45deg);
@@ -126,4 +190,43 @@ body {
     transform: scale(1) rotate(-45deg);
     opacity: 1;
   }
+}
+
+.controls-wrapper {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-toggle {
+  width: 30px;
+  height: 20px;
+  border: 2px solid var(--color-dark);
+  margin-right: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.dark-mode .dark-mode-toggle {
+  border: 2px solid var(--dark-mode-light);
+}
+
+.dark-mode-toggle::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: chocolate;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: all 0.25s;
+}
+
+.dark-mode-toggle.on::after {
+  left: 13px;
 }
