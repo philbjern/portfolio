@@ -53,6 +53,8 @@ a:hover {
 
 .btn:hover {
   opacity: 1;
+  color: var(--dark-mode-light);
+  background-color: chocolate;
 }
 
 * {
