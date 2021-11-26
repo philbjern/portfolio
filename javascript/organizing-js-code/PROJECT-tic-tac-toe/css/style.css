@@ -63,6 +63,7 @@ a:hover {
   text-align: center;
   font-size: 2.8rem;
   margin: 0.8rem;
+  font-weight: 200;
 }
 
 .container {
@@ -73,6 +74,14 @@ a:hover {
 
 .container nav {
   padding: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  text-align: center;
+  flex: 1;
+  font-size: 1.8rem;
 }
 
 .gameboard {
@@ -86,7 +95,7 @@ a:hover {
 
 .row:nth-child(1),
 .row:nth-child(2) {
-  border-bottom: 2px solid var(--color-gray);
+  border-bottom: 2px dashed var(--color-gray);
 }
 
 .gamefield {
@@ -99,7 +108,7 @@ a:hover {
 
 .gamefield:nth-child(1),
 .gamefield:nth-child(2) {
-  border-right: 2px solid var(--color-gray);
+  border-right: 2px dashed var(--color-gray);
 }
 
 .gamefield.player-X::after {
@@ -222,7 +231,7 @@ a:hover {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: chocolate;
+  background-color: var(--dark-mode-light);
   position: absolute;
   top: 3px;
   left: 3px;
@@ -231,4 +240,15 @@ a:hover {
 
 .dark-mode-toggle.on::after {
   left: 13px;
+  background-color: chocolate;
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --width-field: 100px;
+  }
+
+  .title {
+    margin-top: 2rem;
+  }
 }
