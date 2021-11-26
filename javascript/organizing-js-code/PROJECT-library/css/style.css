@@ -108,8 +108,11 @@ footer a:visited {
 
 .add-book-modal-wrapper {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 10;
   display: flex;
@@ -143,8 +146,8 @@ footer a:visited {
 }
 
 .row {
-  margin: 10px;
-  width: 70%;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .add-book-modal input {
@@ -164,4 +167,10 @@ footer a:visited {
 
 .add-book-modal form button {
   margin: 20px 0 0 0;
+}
+
+@media screen and (max-width: 550px) {
+  .add-book-modal {
+    width: 350px;
+  }
 }
