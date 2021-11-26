@@ -21,3 +21,4 @@ All [projects showcase](https://fbiernat.github.io/odin-project) page
 
 ### JavaScript
 * Objects and Object Constructors **(Project: [Library](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library))**
+* Factory Functions and the Module Pattern **(Project: [Tic Tac Toe](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe))**
