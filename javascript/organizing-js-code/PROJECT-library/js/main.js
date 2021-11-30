@@ -1,18 +1,20 @@
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
+
+  toggleIsRead() {
+    this.isRead = !this.isRead;
+    return this.isRead;
+  }
+
+  setCoverImageURL(url) {
+    this.coverImageURL = url;
+  }
 }
-
-Book.prototype.toggleIsRead = function () {
-  this.isRead = !this.isRead;
-  return this.isRead;
-};
-
-Book.prototype.setCoverImageURL = function (url) {
-  this.coverImageURL = url;
-};
 
 const book1 = new Book(
   "The Fellowship of the Ring",
@@ -115,7 +117,7 @@ function updateCards() {
   const cardsContainer = document.querySelector(".cards");
 
   if (library.length === 0) {
-    cardsContainer.textContent = 'No books, try adding some';
+    cardsContainer.textContent = "No books, try adding some";
   } else {
     cardsContainer.textContent = "";
     for (let i = 0; i < library.length; i++) {
@@ -168,7 +170,7 @@ confirmBookAdd.addEventListener("click", (e) => {
 
 // Local Storage
 function loadBooksFromLocalStorage() {
-  let library = JSON.parse(localStorage.getItem('library'));
+  let library = JSON.parse(localStorage.getItem("library"));
   if (library == null) {
     library = [];
   } else {
@@ -177,12 +179,11 @@ function loadBooksFromLocalStorage() {
         this.isRead = !this.isRead;
         return this.isRead;
       };
-    })
+    });
   }
   return library;
 }
 
 function saveBooksToLocalStorage(library) {
-  localStorage.setItem('library', JSON.stringify(library));
+  localStorage.setItem("library", JSON.stringify(library));
 }
-
