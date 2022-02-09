@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-</head>
-<body class="dark-mode">
-  <div class="controls-wrapper">
-    <div class="dark-mode-toggle"></div>
-    Theme
-  </div>
-  <div class="container">
-    <header>
-      <h1 class="title">Tic Tac Toe</h1>
-      <nav>
-        <button class="btn restart-btn">Restart</button>
-        <div class="message"></div>
-      </nav>
-    </header>
-    <div class="gameboard-wrapper">
-      <div class="gameboard">
-        <div class="row">
-          <div class="gamefield" data-index="0"></div>
-          <div class="gamefield" data-index="1"></div>
-          <div class="gamefield" data-index="2"></div>
-        </div>
-        <div class="row">
-          <div class="gamefield" data-index="3"></div>
-          <div class="gamefield" data-index="4"></div>
-          <div class="gamefield" data-index="5"></div>
-        </div>
-        <div class="row">
-          <div class="gamefield" data-index="6"></div>
-          <div class="gamefield" data-index="7"></div>
-          <div class="gamefield" data-index="8"></div>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-N2Y7KJXY1P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-N2Y7KJXY1P");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="dark-mode">
+    <div class="controls-wrapper">
+      <div class="dark-mode-toggle"></div>
+      Theme
+    </div>
+    <div class="container">
+      <header>
+        <h1 class="title">Tic Tac Toe</h1>
+        <nav>
+          <button class="btn restart-btn">Restart</button>
+          <div class="message"></div>
+        </nav>
+      </header>
+      <div class="gameboard-wrapper">
+        <div class="gameboard">
+          <div class="row">
+            <div class="gamefield" data-index="0"></div>
+            <div class="gamefield" data-index="1"></div>
+            <div class="gamefield" data-index="2"></div>
+          </div>
+          <div class="row">
+            <div class="gamefield" data-index="3"></div>
+            <div class="gamefield" data-index="4"></div>
+            <div class="gamefield" data-index="5"></div>
+          </div>
+          <div class="row">
+            <div class="gamefield" data-index="6"></div>
+            <div class="gamefield" data-index="7"></div>
+            <div class="gamefield" data-index="8"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer>
-    Created by <a href="https://github.com/fbiernat" target="_blank">fbiernat</a> 2021
-  </footer>
-</body>
+    <footer>
+      Created by
+      <a href="https://github.com/fbiernat" target="_blank">fbiernat</a> 2021
+    </footer>
+  </body>
 </html>
