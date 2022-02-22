@@ -44,7 +44,8 @@
       }
 
       .cards {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .flex-1 {
@@ -131,6 +132,29 @@
 
       a:hover {
         text-decoration: underline;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .container {
+          width: 80%;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .cards {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .container {
+          margin: auto;
+          width: 90%;
+        }
       }
 
       @media screen and (max-width: 450px) {
@@ -406,6 +430,34 @@
                     ><button>Live App</button></a
                   >
                   <a href="https://github.com/fbiernat/restaurant-page"
+                    ><button class="muted">Code</button></a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Todo List</p>
+                <a href="https://fbiernat.github.io/todo-list/">
+                  <img
+                    src="https://raw.githubusercontent.com/fbiernat/todo-list/main/dist/assets/demo/demo-todo-list.gif"
+                    alt="Project Todo List screenshot"
+                  />
+                </a>
+              </div>
+              <div>
+                <p class="description">
+                  Simple Todo List application, offering CRUD features with
+                  tasks to do and projects containing tasks.
+                </p>
+                <p class="text-right">
+                  <a href="https://fbiernat.github.io/todo-list/"
+                    ><button>Live App</button></a
+                  >
+                  <a href="https://github.com/fbiernat/todo-list"
                     ><button class="muted">Code</button></a
                   >
                 </p>

@@ -23,3 +23,4 @@ About [Odin Project](https://theodinproject.com)
 * Objects and Object Constructors **(Project: [Library](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library))**
 * Factory Functions and the Module Pattern **(Project: [Tic Tac Toe](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe))**
 * ES6 Classes and Modules **(Project: [Restaurant Page](https://github.com/fbiernat/restaurant-page))**
+* OOP principles **(Project: [Todo List](https://github.com/fbiernat/todo-list))**
