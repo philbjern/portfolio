@@ -1,9 +1,5 @@
 # My Odin Project progress
-All my projects [showcase page](https://fbiernat.github.io/odin-project) 
-
-![The Odin Project Logo](https://www.theodinproject.com/assets/odin-logo-bd86cf893a3de1f1daceabc1377f58669776616a91ab70c601fd5c16a4686468.svg)
-
-About [Odin Project](https://theodinproject.com)
+All my projects portfolio [page](https://fbiernat.github.io/odin-project) 
 
 ## Content
 
@@ -24,3 +20,6 @@ About [Odin Project](https://theodinproject.com)
 * Factory Functions and the Module Pattern **(Project: [Tic Tac Toe](https://github.com/fbiernat/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe))**
 * ES6 Classes and Modules **(Project: [Restaurant Page](https://github.com/fbiernat/restaurant-page))**
 * OOP principles **(Project: [Todo List](https://github.com/fbiernat/todo-list))**
+
+## Odin project
+About [Odin Project](https://theodinproject.com)
