@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,8 +56,20 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
+      .flex {
+        display: flex;
+      }
+
+      .flex-direction-row-reverse {
+        flex-direction: row-reverse;
+      }
+
       .flex-1 {
         flex: 1;
+      }
+
+      .color-primary {
+        color: coral;
       }
 
       .card {
@@ -127,12 +140,16 @@
         text-align: right;
       }
 
+      p {
+        line-height: 1.5rem;
+      }
+
       .description {
         min-height: 70px;
       }
 
       .title {
-        font-size: 3.7rem;
+        font-size: 3.2rem;
         font-size: 700;
         margin: 0.5rem 0;
       }
@@ -149,11 +166,11 @@
 
       .narrow {
         margin: 0;
-        max-width: 370px;
+        max-width: 420px;
       }
 
       .section-header {
-        margin: 2.7rem 0;
+        margin: 1.3rem 1rem;
       }
 
       a.text-link {
@@ -169,6 +186,25 @@
         text-decoration: none;
         color: rgb(250, 249, 234);
         background-color: coral;
+      }
+
+      .starred {
+        position: relative;
+      }
+
+      .starred::after {
+        content: '🎖️';
+        font-size: 2.3rem;
+        position: absolute;
+        top: -15px;
+        left: -33px;
+        background-color: whitesmoke;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       @media screen and (max-width: 1000px) {
@@ -203,6 +239,15 @@
         .container {
           padding: 20px;
         }
+
+        :root {
+          font-size: 13px;
+        }
+
+        .featured.flex.flex-direction-row-reverse {
+          display: block;
+        }
+
       }
 
       .page-background {
@@ -220,23 +265,62 @@
   <body>
     <div class="container">
       <header>
-        <h1 class="title">fbiernat Odin Project Portfolio 👨🏻‍💻🎸</h1>
+        <h1 class="title"><span class="color-primary">fbiernat</span> Odin Project portfolio 👨🏻‍💻🎸</h1>
         
         <div class="dash"></div>
       </header>
       <section>
-        <header class="section-header">
-          
-          <h2 class="subtitle">Showcase</h2>
-  
-          <p class="narrow">
-            A collection of completed projects I made during my progression
-            through
-            <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
-            curriculum.
-          </p>
-        </header>
 
+        <div class="featured flex flex-direction-row-reverse">
+          
+          <header class="section-header flex-1">
+          
+            <h2 class="subtitle">Showcase</h2>
+    
+            <p class="narrow">
+              A collection of completed projects I made during my progress through
+              <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
+              curriculum. Projects range from landing page for fictional company using modern HTML and CSS, through games like Etch-a-sketch 
+              using JavaScript to functional applications like calculator or app for organizing todo tasks. 
+            </p>
+          </header>
+
+          <div>
+            <h3>Featured</h3>
+            
+              <article>
+                <div class="card starred">
+                  <div class="flex-1">
+                    <p class="title">Todo List</p>
+                    <a href="https://archloner.github.io/todo-list/">
+                      <img
+                        src="https://github.com/archloner/todo-list/blob/main/dist/assets/demo/demo-todo-list.gif?raw=true"
+                        alt="Project Todo List screenshot"
+                      />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Todo tasks list application, offering CRUD features with
+                      'todo' tasks priority labels, grouping tasks into projects, basic notifications system and dark/light mode switch.
+                    </p>
+                    <p class="text-right">
+                      <a href="https://archloner.github.io/todo-list/"
+                        ><button>Live App</button></a
+                      >
+                      <a href="https://github.com/archloner/todo-list"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+            
+          </div>
+
+        </div>
+        </section>
+        <section>
         <div class="project-list">
 
           <div>
@@ -406,35 +490,7 @@
       <div>
       <h3>JavaScript</h3>
         <div class="cards">
-
-          <article>
-            <div class="card starred">
-              <div class="flex-1">
-                <p class="title">Todo List</p>
-                <a href="https://archloner.github.io/todo-list/">
-                  <img
-                    src="https://github.com/archloner/todo-list/blob/main/dist/assets/demo/demo-todo-list.gif?raw=true"
-                    alt="Project Todo List screenshot"
-                  />
-                </a>
-              </div>
-              <div>
-                <p class="description">
-                  Simple Todo List application, offering CRUD features with
-                  tasks to do and projects containing tasks.
-                </p>
-                <p class="text-right">
-                  <a href="https://archloner.github.io/todo-list/"
-                    ><button>Live App</button></a
-                  >
-                  <a href="https://github.com/archloner/todo-list"
-                    ><button class="muted">Code</button></a
-                  >
-                </p>
-              </div>
-            </div>
-          </article>
-          
+        
           <article>
             <div class="card">
               <div class="flex-1">
@@ -521,9 +577,7 @@
                 </p>
               </div>
             </div>
-          </article>
-
-          
+          </article>          
         </div>
       </div>
     </div>
