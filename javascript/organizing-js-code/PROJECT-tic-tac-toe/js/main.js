@@ -1,3 +1,5 @@
+const jsConfetti = new JSConfetti();
+
 const GameBoard = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
 
@@ -123,6 +125,18 @@ const DisplayController = (() => {
     messageDiv.textContent = text;
   };
 
+  const showEndGameWindowWithMessage = (msg) => {
+    const endGameWindowWrapperElement = document.querySelector('.end-game-message-wrapper');
+    const endGameWindowElement = document.querySelector('.end-game-message');
+
+    endGameWindowElement.textContent = msg;
+    endGameWindowWrapperElement.classList.remove('hidden');
+    endGameWindowWrapperElement.addEventListener('click', (e) => {
+      endGameWindowWrapperElement.classList.add('hidden');
+    });
+  };
+
+
   return {
     toggleDarkMode,
     addToggleDarkModeEventListener,
@@ -130,6 +144,7 @@ const DisplayController = (() => {
     addFieldClickEventListener,
     restartButton,
     setMessage,
+    showEndGameWindowWithMessage,
   };
 })();
 
@@ -161,8 +176,8 @@ const Game = (() => {
   };
 
   const setPlayers = () => {
-    player1 = Player("Player 1", "X");
-    player2 = Player("Player 2", "O");
+    player1 = Player("Player", "X");
+    player2 = Player("Computer", "O");
     changePlayer(player1);
   };
 
@@ -186,6 +201,7 @@ const Game = (() => {
       // Set to disable further marking of fields
       setPlayerTurn(player2);
       DisplayController.setMessage(`${winner.getName()} wins!`);
+      playerWins();
     } else {
       changePlayer(player2);
       AITurn();
@@ -195,7 +211,7 @@ const Game = (() => {
           winner = player2;
           // Set to disable further marking of fields
           setPlayerTurn(player2);
-          DisplayController.setMessage(`${winner.getName()} wins!`);
+          AIwins();
         }
       }, 501);
     }
@@ -231,6 +247,20 @@ const Game = (() => {
     nextTurn,
   };
 })();
+
+const playerWins = () => {
+  const msg = `You win! 💪🥳🎉`;
+  jsConfetti.addConfetti();
+  DisplayController.setMessage('Player wins!');
+  DisplayController.showEndGameWindowWithMessage(msg);
+}
+
+
+const AIwins = () => {
+  const msg = `Computer wins!`;
+  DisplayController.setMessage(msg);
+  DisplayController.showEndGameWindowWithMessage(msg + ' 🤖');
+}
 
 Game.init();
 Game.start();

@@ -254,3 +254,33 @@ a:hover {
     margin-top: 2rem;
   }
 }
+
+.end-game-message-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.end-game-message {
+  font-size: 3.5rem;
+  padding: 2rem 2.5rem;
+  background-color: #ffd2d2;
+  border-radius: 22px; 
+  box-shadow: 3px 3px 10px lightgray;
+}
+
+.dark-mode .end-game-message {
+  background-color: var(--color-gray);
+}
+
+.hidden {
+  display: none;
+}
+
+.show-flex {
+ display: flex;
+}
