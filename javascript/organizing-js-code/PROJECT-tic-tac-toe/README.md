@@ -5,4 +5,4 @@ Tic Tac Toe game written using Factory Function and Module patterns. UI includes
 
 ## Demo
 
-![Demo](img/demo.gif)
+![Demo](img/tick-tack-toe1.gif)
