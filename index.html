@@ -41,9 +41,13 @@
       }
 
       .dash {
-        width: 20px;
-        height: 3px;
-        background-color: black;
+        width: 70px;
+        height: 5px;
+        background: linear-gradient(
+          45deg,
+          coral,
+          rgb(138, 86, 23)
+        );;
       }
 
       .project-list {
@@ -54,6 +58,7 @@
       .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 1rem;
       }
 
       .flex {
@@ -207,6 +212,17 @@
         align-items: center;
       }
 
+      .featured {
+        margin-bottom: 1rem;
+      }
+
+      .handle {
+        background: black;
+        padding: 0 0.8rem;
+        border-radius: 15px;
+        color: whitesmoke;
+      }
+
       @media screen and (max-width: 1000px) {
         .cards {
           display: grid;
@@ -268,7 +284,7 @@
     <div class="container">
       <header>
         <h1 class="title">
-          <span class="color-primary">fbiernat</span> Odin Project portfolio
+          <span class="color-primary handle">fbiernat</span> Odin Project portfolio
           👨🏻‍💻🎸
         </h1>
 
@@ -332,6 +348,7 @@
       <section>
         <div class="project-list">
           <div>
+            <div class="dash"></div>
             <h3>HTML and CSS</h3>
             <div class="cards">
               <article>
@@ -400,6 +417,7 @@
           </div>
 
           <div>
+            <div class="dash"></div>
             <h3>JavaScript Foundations</h3>
             <div class="cards flex-flow-reverse">
               <article>
@@ -499,6 +517,7 @@
           </div>
 
           <div>
+            <div class="dash"></div>
             <h3>JavaScript</h3>
             <div class="cards">
               <article>
