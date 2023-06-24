@@ -2,7 +2,7 @@
 
 Landing page of a fictional company Guitarly - Mobile guitar service.
 
-[Live Site](https://fbiernat.github.io/odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html)
+[Live Site](https://archloner.github.io/odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html)
 
 ## Demo
 
