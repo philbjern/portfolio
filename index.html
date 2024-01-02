@@ -33,7 +33,7 @@
       }
 
       .container {
-        max-width: 1016px;
+        max-width: 1216px;
         margin: 30px auto;
         padding: 0 0 30px 0;
         z-index: 10;
@@ -82,13 +82,13 @@
         display: flex;
         flex-direction: column;
         width: auto;
-        max-width: 280px;
         margin: 8px 8px 8px 0;
         padding: 20px;
         background-color: rgb(250, 249, 234);
         border-radius: 15px;
         border: 5px solid transparent;
         transition: all 0.5s;
+        height: 500px;
       }
 
       .card:hover {
@@ -100,7 +100,7 @@
 
       .card img {
         width: 100%;
-        height: 250px;
+        height: 300px;
         object-fit: cover;
         object-position: 50% 0%;
         border-radius: 15px;
@@ -194,6 +194,14 @@
         background-color: coral;
       }
 
+      .card.starred {
+        height: auto;
+      }
+
+      .card.starred img {
+        height: auto;
+      }
+
       .starred {
         position: relative;
       }
@@ -226,6 +234,10 @@
 
       .hide {
         display: none;
+      }
+
+      .d3 .card {
+        height: 530px;
       }
       
       @media screen and (max-width: 1000px) {
@@ -636,6 +648,191 @@
             </div>
           </div>
         </div>
+
+        <section>
+          <div class="container">
+            <h2 class="subtitle">
+              freecodecamp.org
+            </h2>
+            <p class="narrow">
+              A collection of completed projects I made during my progress
+              through
+              <a
+                href="https://freecodecamp.org"
+                target="_blank"
+                class="text-link"
+                >freecodecamp.org</a
+              >
+              curriculum. Projects range from landing page for fictional company
+              using modern HTML and CSS, through games like Etch-a-sketch using
+              JavaScript to functional applications like calculator or app for
+              organizing todo tasks.
+            </p>
+          </div>
+        </section>
+
+        <div>
+          <div class="dash"></div>
+          <h3>D3.js Data Visualization</h3>
+          <div class="cards d3">
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Treemap</p>
+                  <a
+                    href="https://codepen.io/philip-bjern/pen/WNPLzxX"
+                  >
+                    <img
+                      src="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
+                      alt="Data Visualization - Treemap"
+                    />
+                  </a>
+                </div>
+                <div class="flex-1">
+                  <p class="description">
+                    Treemap for data showing 100 top sales of videogames by gaming platform. Additional tabs show treemaps for two other datasets (Top movie sales and top kickstarter pledges)
+                  </p>
+                </div>
+                <div>
+                  <p class="text-right">
+                    <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"
+                      ><button>Codepen.io</button></a
+                    >
+                    <a
+                      href="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"
+                      ><button class="muted">Code</button></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Choropleth Map</p>
+                  <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
+                    <img
+                      src="https://github.com/major-phillydee/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
+                      alt="Data Visualization - Choropleth Map"
+                    />
+                  </a>
+                </div>
+                <div class="flex-1">
+                  <p class="description">
+                    A map showing percentage of adults age 25 and older with bachelor's degree or higher (2010 - 2014) for each county of each state of United States of America
+                  </p>
+                </div>
+                <div>
+                  <p class="text-right">
+                    <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"
+                      ><button>Codepen.io</button></a
+                    >
+                    <a href="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"
+                      ><button class="muted">Code</button></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Heat map</p>
+                  <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
+                    <img
+                      src="https://github.com/major-phillydee/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
+                      alt="Data Visualization - Heat map"
+                    />
+                  </a>
+                </div>
+                <div class="flex-1">
+                  <p class="description">
+                    Heat map showing historical data (from 1753 up to 2015) of monthy global land-surface temperature variance
+                  </p>
+                </div>
+                <div>
+                  <p class="text-right">
+                    <a
+                      href="https://codepen.io/philip-bjern/pen/rNPZadv"
+                      ><button>Codepen.io</button></a
+                    >
+                    <a
+                      href="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"
+                      ><button class="muted">Code</button></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Scatterplot Graph</p>
+                  <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
+                    <img
+                      src="https://github.com/major-phillydee/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
+                      alt="Data Visualization - Scatterplot Graph"
+                    />
+                  </a>
+                </div>
+                <div class="flex-1">
+                  <p class="description">
+                    Heat map showing historical data (from 1753 up to 2015) of monthy global land-surface temperature variance
+                  </p>
+                </div>
+                <div>
+                  <p class="text-right">
+                    <a
+                      href="https://codepen.io/philip-bjern/pen/KKJBZpa"
+                      ><button>Codepen.io</button></a
+                    >
+                    <a
+                      href="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"
+                      ><button class="muted">Code</button></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Bar Chart</p>
+                  <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
+                    <img
+                      src="https://github.com/major-phillydee/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
+                      alt="Data Visualization - Bar Chart"
+                    />
+                  </a>
+                </div>
+                <div class="flex-1">
+                  <p class="description">
+                    Chart showing GDP of United States of America over the years.
+                  </p>
+                </div>
+                <div>
+                  <p class="text-right">
+                    <a
+                      href="https://codepen.io/philip-bjern/pen/YzBjxpo"
+                      ><button>Codepen.io</button></a
+                    >
+                    <a
+                      href="https://github.com/major-phillydee/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"
+                      ><button class="muted">Code</button></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+        
       </section>
     </div>
 
