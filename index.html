@@ -224,6 +224,10 @@
         color: whitesmoke;
       }
 
+      .hide {
+        display: none;
+      }
+      
       @media screen and (max-width: 1000px) {
         .cards {
           display: grid;
@@ -234,6 +238,7 @@
           width: 80%;
         }
       }
+
       @media screen and (max-width: 650px) {
         .cards {
           display: flex;
@@ -292,25 +297,44 @@
 
         <div class="dash"></div>
       </header>
+      <header>
+          <h2 class="subtitle">Odin Project</h2>
+          <p class="narrow">
+            A collection of completed projects I made during my progress
+            through
+            <a
+              href="https://theodinproject.com"
+              target="_blank"
+              class="text-link"
+              >Odin Project</a
+            >
+            curriculum. Projects range from landing page for fictional company
+            using modern HTML and CSS, through games like Etch-a-sketch using
+            JavaScript to functional applications like calculator or app for
+            organizing todo tasks.
+          </p>
+      </header>
       <section>
         <div class="featured flex flex-direction-row-reverse">
           <header class="section-header flex-1">
-            <h2 class="subtitle">Odin Project</h2>
-
-            <p class="narrow">
-              A collection of completed projects I made during my progress
-              through
-              <a
-                href="https://theodinproject.com"
-                target="_blank"
-                class="text-link"
-                >Odin Project</a
-              >
-              curriculum. Projects range from landing page for fictional company
-              using modern HTML and CSS, through games like Etch-a-sketch using
-              JavaScript to functional applications like calculator or app for
-              organizing todo tasks.
-            </p>
+            <div class="hide">
+              <h2 class="subtitle">About</h2>
+  
+              <p class="narrow">
+                A collection of completed projects I made during my progress
+                through
+                <a
+                  href="https://theodinproject.com"
+                  target="_blank"
+                  class="text-link"
+                  >Odin Project</a
+                >
+                curriculum. Projects range from landing page for fictional company
+                using modern HTML and CSS, through games like Etch-a-sketch using
+                JavaScript to functional applications like calculator or app for
+                organizing todo tasks.
+              </p>
+            </div>
           </header>
 
           <div>
@@ -419,8 +443,6 @@
           </div>
 
           <div>
-            <div class="dash"></div>
-            <h3>JavaScript Foundations</h3>
             <div class="cards flex-flow-reverse">
               <article>
                 <div class="card">
