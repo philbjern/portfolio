@@ -46,9 +46,10 @@
         background: linear-gradient(
           45deg,
           coral,
-          rgb(138, 86, 23)
-        );;
+          rgb(135, 32, 9)
+        );
         transform: translateX(-10px);
+        margin: 2rem 0;
       }
 
       .project-list {
@@ -157,7 +158,8 @@
       .title {
         font-size: 3.2rem;
         font-size: 700;
-        margin: 0.5rem 0 2rem 0;
+        margin: 0;
+        display: inline-block;
       }
 
       .subtitle {
@@ -226,9 +228,14 @@
       }
 
       .handle {
-        background: rgba(0,0,0,0.7);
-        padding: 0.5rem 0.8rem;
-        border-radius: 15px;
+        background: linear-gradient(
+          -85deg,
+          coral,
+          rgb(135, 32, 9)
+        );
+        padding: 0.7rem 1.2rem;
+        margin-right: 0.5rem;
+        border-radius: 19px;
         color: whitesmoke;
       }
 
@@ -297,18 +304,76 @@
         );
         z-index: 1;
       }
+
+      .ul-list li {
+        padding: 0.3rem;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2em;
+      }
+
+      .header nav {
+        margin-left: 2rem;
+        display: flex;
+      }
+
+      .nav-link {
+        font-size: 2.2rem;
+        font-weight: 100;
+        padding: 0 1.3rem;
+        position: relative;
+        color: rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+
+      .nav-link:hover {
+        color: coral;
+      }
+
+      .nav-link.active:hover {
+        color: coral;
+      }
+
+      .nav-link.active {
+        color: black;
+      }
+
+      .nav-link.active::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: coral;
+        position: absolute;
+        bottom: -20px;
+        left: calc(50% - 5px);
+      }
+
+      .container footer {
+        text-align: center;
+        font-size: 0.7rem;
+        color: rgba(0,0,0,0.55);
+        padding-top: 2.5rem;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="header">
         <h1 class="title">
-          <span class="color-primary handle">philip://</span> portfolio
-          👨🏻‍💻🎸
+          <span class="color-primary handle">philbjern://👨🏻‍💻🎸</span>
         </h1>
-
-        <div class="dash"></div>
+        <nav>
+          <div class="nav-link active">portfolio</div>
+          <div class="nav-link">about</div>
+          <div class="nav-link">contact</div>
+        </nav>
       </header>
+      
       <header>
           <h2 class="subtitle">Odin Project</h2>
           <p class="narrow">
@@ -326,6 +391,7 @@
             organizing todo tasks.
           </p>
       </header>
+      
       <section>
         <div class="featured flex flex-direction-row-reverse">
           <header class="section-header flex-1">
@@ -350,6 +416,7 @@
           </header>
 
           <div>
+            <div class="dash"></div>
             <h3>Featured</h3>
 
             <article>
@@ -672,6 +739,8 @@
         <div>
           <div class="dash"></div>
           <h3>D3.js Data Visualization</h3>
+          <p>Projects I have completed to receive freecodecamp data visualisation certificate 
+            <a href="https://www.freecodecamp.org/certification/fil-bie/data-visualization" class="text-link">https://www.freecodecamp.org/certification/fil-bie/data-visualization</a></p>
           <div class="cards d3">
             <article>
               <div class="card">
@@ -796,7 +865,7 @@
               </div>
             </article>
 
-            
+             
             <article>
               <div class="card">
                 <div class="flex-1">
@@ -827,11 +896,24 @@
                 </div>
               </div>
             </article>
+          </div>
 
+          <div>
+            <div class="dash"></div>
+            <h3>Certificates</h3>
+            <p>Other certificates I have earned</p>
+            <ul class="ul-list">
+              <li>Responsive Web Design <a href="https://www.freecodecamp.org/certification/fil-bie/responsive-web-design" class="text-link">https://www.freecodecamp.org/certification/fil-bie/responsive-web-design</a></li>
+              <li>JavaScript Algorithms and Data Structures <a href="https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures" class="text-link">https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures</a></li>
+              <li>Front End Development Libraries <a href="https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries" class="text-link">https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries</a></li>
+            </ul>
           </div>
         </div>
         
       </section>
+      <footer>
+        &copy; philbjern 2024
+      </footer>
     </div>
 
     <div class="page-background"></div>
