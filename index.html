@@ -20,6 +20,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
@@ -43,11 +50,7 @@
       .dash {
         width: 150px;
         height: 5px;
-        background: linear-gradient(
-          45deg,
-          coral,
-          rgb(135, 32, 9)
-        );
+        background: linear-gradient(45deg, coral, rgb(135, 32, 9));
         transform: translateX(-10px);
         margin: 2rem 0;
       }
@@ -93,7 +96,7 @@
       }
 
       .card:hover {
-        transform: translate(-2px, -5px) scale(1.04);
+        transform: translate(-2px, -5px) scale(1.02);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
         border: 5px solid coral;
         z-index: 20;
@@ -228,11 +231,7 @@
       }
 
       .handle {
-        background: linear-gradient(
-          -85deg,
-          coral,
-          rgb(135, 32, 9)
-        );
+        background: linear-gradient(-85deg, coral, rgb(135, 32, 9));
         padding: 0.7rem 1.2rem;
         margin-right: 0.5rem;
         border-radius: 19px;
@@ -246,7 +245,7 @@
       .d3 .card {
         height: 530px;
       }
-      
+
       @media screen and (max-width: 1000px) {
         .cards {
           display: grid;
@@ -316,7 +315,7 @@
       }
 
       .header nav {
-        margin-left: 2rem;
+        margin-left: auto;
         display: flex;
       }
 
@@ -325,25 +324,25 @@
         font-weight: 100;
         padding: 0 1.3rem;
         position: relative;
-        color: rgba(0,0,0,0.5);
+        color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
         transition: all 0.25s;
       }
 
       .nav-link:hover {
-        color: coral;
-      }
-
-      .nav-link.active:hover {
-        color: coral;
-      }
-
-      .nav-link.active {
         color: black;
       }
 
+      .nav-link.active:hover {
+        opacity: 0.8;
+      }
+
+      .nav-link.active {
+        color: coral;
+      }
+
       .nav-link.active::after {
-        content: '';
+        content: "";
         width: 10px;
         height: 10px;
         border-radius: 100%;
@@ -356,8 +355,17 @@
       .container footer {
         text-align: center;
         font-size: 0.7rem;
-        color: rgba(0,0,0,0.55);
+        color: rgba(0, 0, 0, 0.55);
         padding-top: 2.5rem;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page-section {
+        min-height: calc(100vh - 250px);
       }
     </style>
   </head>
@@ -368,17 +376,22 @@
           <span class="color-primary handle">philbjern://👨🏻‍💻🎸</span>
         </h1>
         <nav>
-          <div class="nav-link active">portfolio</div>
-          <div class="nav-link">about</div>
-          <div class="nav-link">contact</div>
+          <div class="nav-link active" id="nav-portfolio">portfolio</div>
+          <div class="nav-link" id="nav-about">about</div>
+          <div class="nav-link" id="nav-contact">contact</div>
+          <div class="nav-link">
+            <a href="https://github.com/philbjern"
+              ><i class="fa-brands fa-github"></i> github</a
+            >
+          </div>
         </nav>
       </header>
-      
-      <header>
+
+      <section id="portfolio">
+        <header>
           <h2 class="subtitle">Odin Project</h2>
           <p class="narrow">
-            A collection of completed projects I made during my progress
-            through
+            A collection of completed projects I made during my progress through
             <a
               href="https://theodinproject.com"
               target="_blank"
@@ -390,532 +403,639 @@
             JavaScript to functional applications like calculator or app for
             organizing todo tasks.
           </p>
-      </header>
-      
-      <section>
-        <div class="featured flex flex-direction-row-reverse">
-          <header class="section-header flex-1">
-            <div class="hide">
-              <h2 class="subtitle">About</h2>
-  
+        </header>
+
+        <section>
+          <div class="featured flex flex-direction-row-reverse">
+            <header class="section-header flex-1">
+              <div class="hide">
+                <h2 class="subtitle">About</h2>
+
+                <p class="narrow">
+                  A collection of completed projects I made during my progress
+                  through
+                  <a
+                    href="https://theodinproject.com"
+                    target="_blank"
+                    class="text-link"
+                    >Odin Project</a
+                  >
+                  curriculum. Projects range from landing page for fictional
+                  company using modern HTML and CSS, through games like
+                  Etch-a-sketch using JavaScript to functional applications like
+                  calculator or app for organizing todo tasks.
+                </p>
+              </div>
+            </header>
+
+            <div>
+              <div class="dash"></div>
+              <h3>Featured</h3>
+
+              <article>
+                <div class="card starred">
+                  <div class="flex-1">
+                    <p class="title">Todo List</p>
+                    <a href="https://philbjern.github.io/todo-list/">
+                      <img
+                        src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
+                        alt="Project Todo List screenshot"
+                      />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Todo tasks list application, offering CRUD features with
+                      'todo' tasks priority labels, grouping tasks into
+                      projects, basic notifications system and dark/light mode
+                      switch.
+                    </p>
+                    <p class="text-right">
+                      <a href="https://philbjern.github.io/todo-list/"
+                        ><button>Live App</button></a
+                      >
+                      <a href="https://github.com/philbjern/todo-list"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="project-list">
+            <div>
+              <div class="dash"></div>
+              <h3>HTML and CSS</h3>
+              <div class="cards">
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Recipes</p>
+                      <a
+                        href="foundations/03-html-foundations/PROJECT-recipes/index.html"
+                      >
+                        <img
+                          src="foundations/03-html-foundations/PROJECT-recipes/assets/demo.gif"
+                          alt="Project recipes screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        Odin recipes project, using semantic HTML5 elements
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="foundations/03-html-foundations/PROJECT-recipes/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card">
+                    <div class="flex-">
+                      <p class="title">Landing page</p>
+                      <a
+                        href="foundations/05-flex/00-PROJECT-landing-page/index.html"
+                      >
+                        <img
+                          src="foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
+                          alt="Project Landing Page screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        HTML5 + CSS3 with Flexbox project, landing page for
+                        fictional company Guitarly - Mobile guitar service
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="foundations/05-flex/00-PROJECT-landing-page/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/foundations/05-flex/00-PROJECT-landing-page"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div>
+              <div class="cards flex-flow-reverse">
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Rock Paper Scissors</p>
+                      <a
+                        href="foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"
+                      >
+                        <img
+                          src="foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
+                          alt="Project Rock Paper Scissors screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        JavaScript game of Rock Paper Scissors in form of a chat
+                        bot.
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Etch-a-Sketch</p>
+                      <a
+                        href="foundations/06-javascript/00-PROJECT-etch-a-sketch/"
+                      >
+                        <img
+                          src="foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
+                          alt="Etch-a-Sketch project screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        Etch-a-Sketch application with variable grid size and
+                        different stroke colors
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch/"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Calculator</p>
+                      <a href="foundations/06-javascript/00-PROJECT-calculator">
+                        <img
+                          src="foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
+                          alt="Etch-a-Sketch project screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        JavaScript calculator application with support for
+                        floating point numbers operations and keyboard input.
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="foundations/06-javascript/00-PROJECT-calculator/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-calculator/"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div>
+              <div class="dash"></div>
+              <h3>JavaScript</h3>
+              <div class="cards">
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Tic Tac Toe</p>
+                      <a
+                        href="javascript/organizing-js-code/PROJECT-tic-tac-toe/"
+                      >
+                        <img
+                          src="javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
+                          alt="Project Library screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        Tic Tac Toe game written using Factory Functions and
+                        Module Pattern.
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe/"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Restaurant Page</p>
+                      <a href="https://philbjern.github.io/restaurant-page/">
+                        <img
+                          src="https://github.com/philbjern/restaurant-page/blob/main/dist/assets/demo-restaurant-page.gif?raw=true"
+                          alt="Project Restaurant Page screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        Restaurant Page providing info about its offer on three
+                        pages. Written entirely in JavaScript using modules.
+                      </p>
+                      <p class="text-right">
+                        <a href="https://philbjern.github.io/restaurant-page/"
+                          ><button>Live App</button></a
+                        >
+                        <a href="https://github.com/philbjern/restaurant-page"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card">
+                    <div class="flex-1">
+                      <p class="title">Library</p>
+                      <a href="javascript/organizing-js-code/PROJECT-library">
+                        <img
+                          src="javascript/organizing-js-code/PROJECT-library/img/demo.gif"
+                          alt="Project Library screenshot"
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <p class="description">
+                        Library project with adding new books, deleting books,
+                        toggling read status and saving to Local Storage.
+                      </p>
+                      <p class="text-right">
+                        <a
+                          href="javascript/organizing-js-code/PROJECT-library/index.html"
+                          ><button>Live App</button></a
+                        >
+                        <a
+                          href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library/"
+                          ><button class="muted">Code</button></a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <section>
+            <div class="container">
+              <h2 class="subtitle">freecodecamp.org</h2>
               <p class="narrow">
                 A collection of completed projects I made during my progress
                 through
                 <a
-                  href="https://theodinproject.com"
+                  href="https://freecodecamp.org"
                   target="_blank"
                   class="text-link"
-                  >Odin Project</a
+                  >freecodecamp.org</a
                 >
-                curriculum. Projects range from landing page for fictional company
-                using modern HTML and CSS, through games like Etch-a-sketch using
-                JavaScript to functional applications like calculator or app for
-                organizing todo tasks.
+                curriculum. Below you can check few projects completed during my
+                data visualization certification. I used HTML, CSS and
+                JavaScript with D3.js library to create and manipulate SVG
+                charts.
               </p>
             </div>
-          </header>
+          </section>
 
           <div>
             <div class="dash"></div>
-            <h3>Featured</h3>
-
-            <article>
-              <div class="card starred">
-                <div class="flex-1">
-                  <p class="title">Todo List</p>
-                  <a href="https://philbjern.github.io/todo-list/">
-                    <img
-                      src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
-                      alt="Project Todo List screenshot"
-                    />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    Todo tasks list application, offering CRUD features with
-                    'todo' tasks priority labels, grouping tasks into projects,
-                    basic notifications system and dark/light mode switch.
-                  </p>
-                  <p class="text-right">
-                    <a href="https://philbjern.github.io/todo-list/"
-                      ><button>Live App</button></a
-                    >
-                    <a href="https://github.com/philbjern/todo-list"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="project-list">
-          <div>
-            <div class="dash"></div>
-            <h3>HTML and CSS</h3>
-            <div class="cards">
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Recipes</p>
-                    <a
-                      href="foundations/03-html-foundations/PROJECT-recipes/index.html"
-                    >
-                      <img
-                        src="foundations/03-html-foundations/PROJECT-recipes/assets/demo.gif"
-                        alt="Project recipes screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Odin recipes project, using semantic HTML5 elements
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="foundations/03-html-foundations/PROJECT-recipes/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article>
-                <div class="card">
-                  <div class="flex-">
-                    <p class="title">Landing page</p>
-                    <a
-                      href="foundations/05-flex/00-PROJECT-landing-page/index.html"
-                    >
-                      <img
-                        src="foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
-                        alt="Project Landing Page screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      HTML5 + CSS3 with Flexbox project, landing page for
-                      fictional company Guitarly - Mobile guitar service
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="foundations/05-flex/00-PROJECT-landing-page/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/foundations/05-flex/00-PROJECT-landing-page"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div>
-            <div class="cards flex-flow-reverse">
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Rock Paper Scissors</p>
-                    <a
-                      href="foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"
-                    >
-                      <img
-                        src="foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
-                        alt="Project Rock Paper Scissors screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      JavaScript game of Rock Paper Scissors in form of a chat
-                      bot.
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Etch-a-Sketch</p>
-                    <a
-                      href="foundations/06-javascript/00-PROJECT-etch-a-sketch/"
-                    >
-                      <img
-                        src="foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
-                        alt="Etch-a-Sketch project screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Etch-a-Sketch application with variable grid size and
-                      different stroke colors
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch/"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Calculator</p>
-                    <a href="foundations/06-javascript/00-PROJECT-calculator">
-                      <img
-                        src="foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
-                        alt="Etch-a-Sketch project screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      JavaScript calculator application with support for
-                      floating point numbers operations and keyboard input.
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="foundations/06-javascript/00-PROJECT-calculator/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-calculator/"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div>
-            <div class="dash"></div>
-            <h3>JavaScript</h3>
-            <div class="cards">
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Tic Tac Toe</p>
-                    <a
-                      href="javascript/organizing-js-code/PROJECT-tic-tac-toe/"
-                    >
-                      <img
-                        src="javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
-                        alt="Project Library screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Tic Tac Toe game written using Factory Functions and
-                      Module Pattern.
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe/"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Restaurant Page</p>
-                    <a href="https://philbjern.github.io/restaurant-page/">
-                      <img
-                        src="https://github.com/philbjern/restaurant-page/blob/main/dist/assets/demo-restaurant-page.gif?raw=true"
-                        alt="Project Restaurant Page screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Restaurant Page providing info about its offer on three
-                      pages. Written entirely in JavaScript using modules.
-                    </p>
-                    <p class="text-right">
-                      <a href="https://philbjern.github.io/restaurant-page/"
-                        ><button>Live App</button></a
-                      >
-                      <a href="https://github.com/philbjern/restaurant-page"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Library</p>
-                    <a href="javascript/organizing-js-code/PROJECT-library">
-                      <img
-                        src="javascript/organizing-js-code/PROJECT-library/img/demo.gif"
-                        alt="Project Library screenshot"
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Library project with adding new books, deleting books,
-                      toggling read status and saving to Local Storage.
-                    </p>
-                    <p class="text-right">
-                      <a
-                        href="javascript/organizing-js-code/PROJECT-library/index.html"
-                        ><button>Live App</button></a
-                      >
-                      <a
-                        href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library/"
-                        ><button class="muted">Code</button></a
-                      >
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-
-        <section>
-          <div class="container">
-            <h2 class="subtitle">
-              freecodecamp.org
-            </h2>
-            <p class="narrow">
-              A collection of completed projects I made during my progress
-              through
+            <h3>D3.js Data Visualization</h3>
+            <p>
+              Projects I have completed to receive freecodecamp data
+              visualisation certificate
               <a
-                href="https://freecodecamp.org"
-                target="_blank"
+                href="https://www.freecodecamp.org/certification/fil-bie/data-visualization"
                 class="text-link"
-                >freecodecamp.org</a
+                >https://www.freecodecamp.org/certification/fil-bie/data-visualization</a
               >
-              curriculum. Below you can check few projects completed during my data visualization certification. I used 
-              HTML, CSS and JavaScript with D3.js library to create and manipulate SVG charts.
             </p>
+            <div class="cards d3">
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Treemap</p>
+                    <a href="https://codepen.io/philip-bjern/pen/WNPLzxX">
+                      <img
+                        src="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
+                        alt="Data Visualization - Treemap"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex-1">
+                    <p class="description">
+                      Treemap for data showing 100 top sales of videogames by
+                      gaming platform. Additional tabs show treemaps for two
+                      other datasets (Top movie sales and top kickstarter
+                      pledges)
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-right">
+                      <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"
+                        ><button>Codepen.io</button></a
+                      >
+                      <a
+                        href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Choropleth Map</p>
+                    <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
+                      <img
+                        src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
+                        alt="Data Visualization - Choropleth Map"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex-1">
+                    <p class="description">
+                      A map showing percentage of adults age 25 and older with
+                      bachelor's degree or higher (2010 - 2014) for each county
+                      of each state of United States of America
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-right">
+                      <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"
+                        ><button>Codepen.io</button></a
+                      >
+                      <a
+                        href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Heat map</p>
+                    <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
+                      <img
+                        src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
+                        alt="Data Visualization - Heat map"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex-1">
+                    <p class="description">
+                      Heat map showing historical data (from 1753 up to 2015) of
+                      monthy global land-surface temperature variance
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-right">
+                      <a href="https://codepen.io/philip-bjern/pen/rNPZadv"
+                        ><button>Codepen.io</button></a
+                      >
+                      <a
+                        href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Scatterplot Graph</p>
+                    <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
+                      <img
+                        src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
+                        alt="Data Visualization - Scatterplot Graph"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex-1">
+                    <p class="description">
+                      Heat map showing historical data (from 1753 up to 2015) of
+                      monthy global land-surface temperature variance
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-right">
+                      <a href="https://codepen.io/philip-bjern/pen/KKJBZpa"
+                        ><button>Codepen.io</button></a
+                      >
+                      <a
+                        href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Bar Chart</p>
+                    <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
+                      <img
+                        src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
+                        alt="Data Visualization - Bar Chart"
+                      />
+                    </a>
+                  </div>
+                  <div class="flex-1">
+                    <p class="description">
+                      Chart showing GDP of United States of America over the
+                      years.
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-right">
+                      <a href="https://codepen.io/philip-bjern/pen/YzBjxpo"
+                        ><button>Codepen.io</button></a
+                      >
+                      <a
+                        href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"
+                        ><button class="muted">Code</button></a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div>
+              <div class="dash"></div>
+              <h3>Certificates</h3>
+              <p>Other certificates I have earned</p>
+              <ul class="ul-list">
+                <li>
+                  Responsive Web Design
+                  <a
+                    href="https://www.freecodecamp.org/certification/fil-bie/responsive-web-design"
+                    class="text-link"
+                    >https://www.freecodecamp.org/certification/fil-bie/responsive-web-design</a
+                  >
+                </li>
+                <li>
+                  JavaScript Algorithms and Data Structures
+                  <a
+                    href="https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures"
+                    class="text-link"
+                    >https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures</a
+                  >
+                </li>
+                <li>
+                  Front End Development Libraries
+                  <a
+                    href="https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries"
+                    class="text-link"
+                    >https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
-
-        <div>
-          <div class="dash"></div>
-          <h3>D3.js Data Visualization</h3>
-          <p>Projects I have completed to receive freecodecamp data visualisation certificate 
-            <a href="https://www.freecodecamp.org/certification/fil-bie/data-visualization" class="text-link">https://www.freecodecamp.org/certification/fil-bie/data-visualization</a></p>
-          <div class="cards d3">
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Treemap</p>
-                  <a
-                    href="https://codepen.io/philip-bjern/pen/WNPLzxX"
-                  >
-                    <img
-                      src="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
-                      alt="Data Visualization - Treemap"
-                    />
-                  </a>
-                </div>
-                <div class="flex-1">
-                  <p class="description">
-                    Treemap for data showing 100 top sales of videogames by gaming platform. Additional tabs show treemaps for two other datasets (Top movie sales and top kickstarter pledges)
-                  </p>
-                </div>
-                <div>
-                  <p class="text-right">
-                    <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"
-                      ><button>Codepen.io</button></a
-                    >
-                    <a
-                      href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Choropleth Map</p>
-                  <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
-                    <img
-                      src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
-                      alt="Data Visualization - Choropleth Map"
-                    />
-                  </a>
-                </div>
-                <div class="flex-1">
-                  <p class="description">
-                    A map showing percentage of adults age 25 and older with bachelor's degree or higher (2010 - 2014) for each county of each state of United States of America
-                  </p>
-                </div>
-                <div>
-                  <p class="text-right">
-                    <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"
-                      ><button>Codepen.io</button></a
-                    >
-                    <a href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Heat map</p>
-                  <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
-                    <img
-                      src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
-                      alt="Data Visualization - Heat map"
-                    />
-                  </a>
-                </div>
-                <div class="flex-1">
-                  <p class="description">
-                    Heat map showing historical data (from 1753 up to 2015) of monthy global land-surface temperature variance
-                  </p>
-                </div>
-                <div>
-                  <p class="text-right">
-                    <a
-                      href="https://codepen.io/philip-bjern/pen/rNPZadv"
-                      ><button>Codepen.io</button></a
-                    >
-                    <a
-                      href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Scatterplot Graph</p>
-                  <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
-                    <img
-                      src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
-                      alt="Data Visualization - Scatterplot Graph"
-                    />
-                  </a>
-                </div>
-                <div class="flex-1">
-                  <p class="description">
-                    Heat map showing historical data (from 1753 up to 2015) of monthy global land-surface temperature variance
-                  </p>
-                </div>
-                <div>
-                  <p class="text-right">
-                    <a
-                      href="https://codepen.io/philip-bjern/pen/KKJBZpa"
-                      ><button>Codepen.io</button></a
-                    >
-                    <a
-                      href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-
-             
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Bar Chart</p>
-                  <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
-                    <img
-                      src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
-                      alt="Data Visualization - Bar Chart"
-                    />
-                  </a>
-                </div>
-                <div class="flex-1">
-                  <p class="description">
-                    Chart showing GDP of United States of America over the years.
-                  </p>
-                </div>
-                <div>
-                  <p class="text-right">
-                    <a
-                      href="https://codepen.io/philip-bjern/pen/YzBjxpo"
-                      ><button>Codepen.io</button></a
-                    >
-                    <a
-                      href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"
-                      ><button class="muted">Code</button></a
-                    >
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div>
-            <div class="dash"></div>
-            <h3>Certificates</h3>
-            <p>Other certificates I have earned</p>
-            <ul class="ul-list">
-              <li>Responsive Web Design <a href="https://www.freecodecamp.org/certification/fil-bie/responsive-web-design" class="text-link">https://www.freecodecamp.org/certification/fil-bie/responsive-web-design</a></li>
-              <li>JavaScript Algorithms and Data Structures <a href="https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures" class="text-link">https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures</a></li>
-              <li>Front End Development Libraries <a href="https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries" class="text-link">https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries</a></li>
-            </ul>
-          </div>
-        </div>
-        
       </section>
-      <footer>
-        &copy; philbjern 2024
-      </footer>
+
+      <section id="about" class="page-section">
+        <h2 class="subtitle">About</h2>
+        <div class="dash"></div>
+        <p>About section</p>
+      </section>
+
+      <section id="contact" class="page-section">
+        <h2 class="subtitle">Contact</h2>
+        <div class="dash"></div>
+        <p>Contact section</p>
+      </section>
+      <footer>&copy; philbjern 2024</footer>
     </div>
 
     <div class="page-background"></div>
   </body>
+  <script>
+    let pages = {
+      portfolio: {
+        sectionEl: document.getElementById('portfolio'),
+        navEl: document.getElementById('nav-portfolio')
+      },
+      about: {
+        sectionEl: document.getElementById('about'),
+        navEl: document.getElementById('nav-about')
+      },
+      contact: {
+        sectionEl: document.getElementById('contact'),
+        navEl: document.getElementById('nav-contact')
+      }
+    }
+
+    function showPage(pageName) {
+      for (item in pages) {
+        let section = pages[item].sectionEl;
+        if (!section.classList.contains('hide')) {
+          section.classList.add('hide')
+        }
+        if (item === pageName) {
+          section.classList.remove('hide')
+        }
+      }
+    }
+
+    function setActive(pageName) {
+      for (item in pages) {
+        let navItem = pages[item].navEl;
+        if (navItem.classList.contains('active')) {
+          navItem.classList.remove('active');
+        }
+        if (item === pageName) {
+          navItem.classList.add('active')
+        }
+      }
+    }
+
+    const PageName = {
+      PORTFOLIO: 'portfolio',
+      ABOUT: 'about',
+      CONTACT: 'contact',
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      showPage(PageName.PORTFOLIO)
+
+      pages.portfolio.navEl.addEventListener('click', function() {
+        showPage(PageName.PORTFOLIO)
+        setActive(PageName.PORTFOLIO)
+      })
+
+      pages.about.navEl.addEventListener('click', function() {
+        showPage(PageName.ABOUT)
+        setActive(PageName.ABOUT)
+      })
+
+      pages.contact.navEl.addEventListener('click', function() {
+        showPage(PageName.CONTACT)
+        setActive(PageName.CONTACT)
+      })
+    });
+  </script>
 </html>
