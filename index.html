@@ -2,20 +2,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-N2Y7KJXY1P"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-N2Y7KJXY1P");
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -369,6 +355,20 @@
       }
     </style>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-N2Y7KJXY1P"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-N2Y7KJXY1P");
+  </script>
   <body>
     <div class="container">
       <header class="header">
@@ -976,27 +976,27 @@
   <script>
     let pages = {
       portfolio: {
-        sectionEl: document.getElementById('portfolio'),
-        navEl: document.getElementById('nav-portfolio')
+        sectionEl: document.getElementById("portfolio"),
+        navEl: document.getElementById("nav-portfolio"),
       },
       about: {
-        sectionEl: document.getElementById('about'),
-        navEl: document.getElementById('nav-about')
+        sectionEl: document.getElementById("about"),
+        navEl: document.getElementById("nav-about"),
       },
       contact: {
-        sectionEl: document.getElementById('contact'),
-        navEl: document.getElementById('nav-contact')
-      }
-    }
+        sectionEl: document.getElementById("contact"),
+        navEl: document.getElementById("nav-contact"),
+      },
+    };
 
     function showPage(pageName) {
       for (item in pages) {
         let section = pages[item].sectionEl;
-        if (!section.classList.contains('hide')) {
-          section.classList.add('hide')
+        if (!section.classList.contains("hide")) {
+          section.classList.add("hide");
         }
         if (item === pageName) {
-          section.classList.remove('hide')
+          section.classList.remove("hide");
         }
       }
     }
@@ -1004,38 +1004,38 @@
     function setActive(pageName) {
       for (item in pages) {
         let navItem = pages[item].navEl;
-        if (navItem.classList.contains('active')) {
-          navItem.classList.remove('active');
+        if (navItem.classList.contains("active")) {
+          navItem.classList.remove("active");
         }
         if (item === pageName) {
-          navItem.classList.add('active')
+          navItem.classList.add("active");
         }
       }
     }
 
     const PageName = {
-      PORTFOLIO: 'portfolio',
-      ABOUT: 'about',
-      CONTACT: 'contact',
-    }
+      PORTFOLIO: "portfolio",
+      ABOUT: "about",
+      CONTACT: "contact",
+    };
 
-    document.addEventListener('DOMContentLoaded', function() {
-      showPage(PageName.PORTFOLIO)
+    document.addEventListener("DOMContentLoaded", function () {
+      showPage(PageName.PORTFOLIO);
 
-      pages.portfolio.navEl.addEventListener('click', function() {
-        showPage(PageName.PORTFOLIO)
-        setActive(PageName.PORTFOLIO)
-      })
+      pages.portfolio.navEl.addEventListener("click", function () {
+        showPage(PageName.PORTFOLIO);
+        setActive(PageName.PORTFOLIO);
+      });
 
-      pages.about.navEl.addEventListener('click', function() {
-        showPage(PageName.ABOUT)
-        setActive(PageName.ABOUT)
-      })
+      pages.about.navEl.addEventListener("click", function () {
+        showPage(PageName.ABOUT);
+        setActive(PageName.ABOUT);
+      });
 
-      pages.contact.navEl.addEventListener('click', function() {
-        showPage(PageName.CONTACT)
-        setActive(PageName.CONTACT)
-      })
+      pages.contact.navEl.addEventListener("click", function () {
+        showPage(PageName.CONTACT);
+        setActive(PageName.CONTACT);
+      });
     });
   </script>
 </html>
