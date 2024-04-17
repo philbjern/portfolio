@@ -336,6 +336,7 @@
         position: absolute;
         bottom: -20px;
         left: calc(50% - 5px);
+        animation: appear 400ms ease-in-out;
       }
 
       .container footer {
@@ -352,6 +353,31 @@
 
       .page-section {
         min-height: calc(100vh - 250px);
+        animation: fade-in 400ms ease-in-out;
+      }
+
+      @keyframes fade-in {
+        from {
+          transform: translateX(-30px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+      }
+
+      @keyframes appear {
+        from {
+          transform: scale(0.001);
+          opacity: 0;
+        }
+
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
     </style>
   </head>
@@ -387,7 +413,7 @@
         </nav>
       </header>
 
-      <section id="portfolio">
+      <section class="page-section" id="portfolio">
         <header>
           <h2 class="subtitle">Odin Project</h2>
           <p class="narrow">
