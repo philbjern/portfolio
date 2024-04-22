@@ -74,7 +74,9 @@
             font-size:  var(--controls-size);
             color: white;
             opacity: 0.6;
-            padding: 1rem;
+            background-color: lightgray;
+            border-radius: 12px;
+            padding: 1rem 1rem 0.6rem 1.1rem;
             cursor: pointer;
             transition: all 250ms ease-in-out;
         }
@@ -105,6 +107,10 @@
             color: rgba(0,0,0,0.65)
         }
 
+        .hide {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -115,9 +121,9 @@
 
         <div class="carusel-wrapper">
 
-            <div class="controls previous-btn"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="controls previous-btn hide"><i class="fa-solid fa-arrow-left"></i></div>
 
-            <div class="controls next-btn"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="controls next-btn hide"><i class="fa-solid fa-arrow-right"></i></div>
 
             <div class="images">
 
@@ -180,6 +186,25 @@
             setInterval(() => {
                 nextImage();
             }, CAROUSEL_TICK_MILLIS)
+
+
+            const carusel = document.querySelector(".carusel-wrapper")
+
+            carusel.addEventListener('mouseover', (e) => {
+                const controls = document.querySelectorAll('.controls')
+                controls.forEach(item => {
+                    console.log(item)
+                    item.classList.toggle('hide');
+                })
+            })
+
+            carusel.addEventListener('mouseout', (e) => {
+                const controls = document.querySelectorAll('.controls')
+                controls.forEach(item => {
+                    console.log(item)
+                    item.classList.toggle('hide');
+                })
+            })
 
         })
     </script>
