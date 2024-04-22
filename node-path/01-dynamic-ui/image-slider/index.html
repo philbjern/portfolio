@@ -156,11 +156,15 @@
             let currentImage = 0;
             let imagesLength = images.children.length;
 
-            function nextImage() {
-                currentImage += 1;
+            function changeImage(amount) {
+                currentImage += amount;
                 
                 if (currentImage >= imagesLength) {
                     currentImage = 0;
+                }
+
+                if (currentImage < 0) {
+                    currentImage = imagesLength - 1;
                 }
 
                 images.style.transform = `translateX(-${currentImage * imageWidth}px)`;
@@ -168,23 +172,16 @@
 
             nextBtn.addEventListener('click', (e) => {
                 console.log('next button clicked!')
-                nextImage();
+                changeImage(1);
             })
 
             prevBtn.addEventListener('click', (e) => {
                 console.log('prev button clicked!')
-                currentImage -= 1;
-                
-                if (currentImage < 0) {
-                    currentImage = imagesLength - 1;
-                }
-                console.log(currentImage)
-
-                images.style.transform = `translateX(-${(currentImage * imageWidth)}px)`;
+                changeImage(-1);
             })
 
             setInterval(() => {
-                nextImage();
+                changeImage(1);
             }, CAROUSEL_TICK_MILLIS)
 
 
@@ -193,7 +190,6 @@
             carusel.addEventListener('mouseover', (e) => {
                 const controls = document.querySelectorAll('.controls')
                 controls.forEach(item => {
-                    console.log(item)
                     item.classList.toggle('hide');
                 })
             })
@@ -201,7 +197,6 @@
             carusel.addEventListener('mouseout', (e) => {
                 const controls = document.querySelectorAll('.controls')
                 controls.forEach(item => {
-                    console.log(item)
                     item.classList.toggle('hide');
                 })
             })
