@@ -21,5 +21,8 @@ All my projects portfolio [page](https://philbjern.github.io/odin-project)
 * ES6 Classes and Modules **(Project: [Restaurant Page](https://github.com/philbjern/restaurant-page))**
 * OOP principles **(Project: [Todo List](https://github.com/philbjern/todo-list))**
 
+### Node Path 
+* Dynamic User Interface: (Drop Down Menus, and Image Slider)
+
 ## Odin project
 About [Odin Project](https://theodinproject.com)
