@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider - Dynamic UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        :root {
+            --slider-width: 1200px;
+            --slider-height: 900px;
+            --controls-size: 2.5rem;
+            --controls-padding: 20px;
+        }
+
+        .container {
+            margin: auto;
+        }
+
+        .carusel-wrapper {
+            width: var(--slider-width);
+            height: var(--slider-height);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .images {
+            height: var(--slider-height);
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 300ms ease-in-out;
+        }
+
+        .image {
+            min-width: var(--slider-width);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        .blue {
+            background-color: lightblue;   
+        }
+
+        .red {
+            background-color: lightcoral;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background: lightgoldenrodyellow;
+        }
+
+        .green {
+            background-color: lightgreen;
+        }
+
+        .controls {
+            font-size:  var(--controls-size);
+            color: white;
+            opacity: 0.6;
+            background-color: lightgray;
+            border-radius: 12px;
+            padding: 1rem 1rem 0.6rem 1.1rem;
+            cursor: pointer;
+            transition: all 250ms ease-in-out;
+        }
+
+        .controls:hover {
+            opacity: 1;
+        }
+
+        .next-btn {
+            position: absolute;
+            right: var(--controls-padding);
+            top: calc(50% - var(--controls-size) / 2 - 0.5rem);
+            z-index: 10;
+        }
+
+        .previous-btn {
+            position: absolute;
+            left: var(--controls-padding);
+            top: calc(50% - var(--controls-size) / 2 - 0.5rem);
+            z-index: 10;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .muted {
+            color: rgba(0,0,0,0.65)
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Image Slider</h1>
+
+        <div class="carusel-wrapper">
+
+            <div class="controls previous-btn hide"><i class="fa-solid fa-arrow-left"></i></div>
+
+            <div class="controls next-btn hide"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="images">
+
+                <div class="image blue">1</div>
+                <div class="image red">2</div>
+                <div class="image orange">3</div>
+                <div class="image yellow">4</div>
+                <div class="image green">5</div>
+
+            </div>
+        </div>
+
+        <p class="text-center">Image slider carousel created in plain HTML, CSS and JavaScript by <span class="muted">philbjern</span></p>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(e) {
+            console.log('DOMContentLoaded')
+
+            const CAROUSEL_TICK_MILLIS = 2500;
+
+            const prevBtn = document.querySelector(".previous-btn");
+            const nextBtn = document.querySelector(".next-btn")
+
+            const images = document.querySelector(".images")
+
+            const imageWidth = images.children[0].clientWidth;
+
+            let currentImage = 0;
+            let imagesLength = images.children.length;
+
+            function changeImage(amount) {
+                currentImage += amount;
+                
+                if (currentImage >= imagesLength) {
+                    currentImage = 0;
+                }
+
+                if (currentImage < 0) {
+                    currentImage = imagesLength - 1;
+                }
+
+                images.style.transform = `translateX(-${currentImage * imageWidth}px)`;
+            }
+
+            nextBtn.addEventListener('click', (e) => {
+                console.log('next button clicked!')
+                changeImage(1);
+            })
+
+            prevBtn.addEventListener('click', (e) => {
+                console.log('prev button clicked!')
+                changeImage(-1);
+            })
+
+            setInterval(() => {
+                changeImage(1);
+            }, CAROUSEL_TICK_MILLIS)
+
+
+            const carusel = document.querySelector(".carusel-wrapper")
+
+            carusel.addEventListener('mouseover', (e) => {
+                const controls = document.querySelectorAll('.controls')
+                controls.forEach(item => {
+                    item.classList.toggle('hide');
+                })
+            })
+
+            carusel.addEventListener('mouseout', (e) => {
+                const controls = document.querySelectorAll('.controls')
+                controls.forEach(item => {
+                    item.classList.toggle('hide');
+                })
+            })
+
+        })
+    </script>
+
+</body>
+</html>
