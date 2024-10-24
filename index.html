@@ -419,7 +419,7 @@
             </div>
             <div class="flex-1">
               <p class="description">
-                TODO: descr
+                Probability Calculato, final project of the course. Completing this one was tricky due to specific tests and the course being in beta.
               </p>
             </div>
             <div>
@@ -444,7 +444,7 @@
             </div>
             <div class="flex-1">
               <p class="description">
-                TODO: descr
+                Arithmetic formatter project for the Scientific Python course.
               </p>
             </div>
             <div>
@@ -469,7 +469,7 @@
             </div>
             <div class="flex-1">
               <p class="description">
-                TODO: descr
+                More completed tasks and projects in the course ...
               </p>
             </div>
             <div>
@@ -903,6 +903,10 @@
       });
     });
 
+    document.querySelector(".header .title").addEventListener('click', function(e) {
+      smoothScroll(0);
+    })
+
   });
 
   let position = window.scrollY
@@ -948,13 +952,18 @@
       }
     }
 
-    console.log(totalHeight);
     let viewportHeight = window.innerHeight;
-    console.log((position + viewportHeight) / totalHeight)
     if ((position + viewportHeight) / totalHeight > 0.8) {
       if (isGoTopHidden) {
         showGoTopBtn();
         isGoTopHidden = false;
+      }
+    }
+
+    if ((position + viewportHeight) / totalHeight < 0.2) {
+      if (!isGoTopHidden) {
+        hideGoTopBtn();
+        isGoTopHidden = true;
       }
     }
 
@@ -1004,6 +1013,13 @@
       duration: 500,
       easing: 'easeInOutQuad'
     });
+
+    anime({
+      targets: 'header.header',
+      backgroundColor: 'rgb(255, 242, 241)',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    })
   }
 
   showNav();
@@ -1017,7 +1033,7 @@
       fontSize: '0.9rem',
       duration: 500,
       easing: 'easeInOutQuad'
-    });
+    })
 
     anime({
       targets: '.header nav',
@@ -1026,6 +1042,13 @@
       duration: 500,
       easing: 'easeInOutQuad'
     });
+
+    anime({
+      targets: 'header.header',
+      backgroundColor: 'transparent',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    })
   }
 
   function setActive(navItemId) {
@@ -1053,8 +1076,8 @@
     function animateCounter() {
         anime({
           targets: element,
-          duration: 2000, 
-          easing: 'linear',
+          duration: 3500, 
+          easing: 'easeOutExpo',
           innerHTML: [1, targetValue],
           round: 1,
           complete: function(anim) {
@@ -1064,13 +1087,7 @@
           }
         });
     }
-
-    // Initial check
     animateCounter();
-
-    // // Add event listener to handle window resizing and scrolling
-    // window.addEventListener('scroll', animateCounter);
-    // window.addEventListener('resize', animateCounter);
   }
 </script>
 
