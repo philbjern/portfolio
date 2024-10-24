@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phil Bjern Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+    integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2Y7KJXY1P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-N2Y7KJXY1P");
+</script>
+
+<body>
+  <header class="header">
+    <h1 class="title font-mono">
+      <span class="color-primary handle">#!/bin/<b>philbjern</b><i id="coursor">_</i></span>
+    </h1>
+    <nav>
+      <div class="nav-link" id="nav-about"><a href="#about">about</a></div>
+      <div class="nav-link active" id="nav-projects"><a href="#projects">projects</a></div>
+      <div class="nav-link" id="nav-certificates"><a href="#certificates">certificates</a></div>
+      <div class="nav-link" id="nav-contact"><a href="#contact">contact</a></div>
+      <div class="nav-link strike-through" id="nav-blog">blog</div>
+      <div class="nav-link">
+        <a href="https://github.com/philbjern">
+          github <i class="fa-brands fa-github icon-sm"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="about" class="fullpage">
+    <div id="particles-container"></div>
+    <div class="container about-box box-shadow">
+      <div class="m-2 left-section">
+        <img src="assets/IMG_20230601_182418.jpg" class="my-photo" />
+        <img src="assets/curly-line.png" class="curly-line-my-photo" />
+        <span class="emoji" id="joystick-emoji">🕹️</span>
+        <span class="emoji" id="guitar-emoji">🎸</span>
+        <span class="emoji" id="laptop-emoji">💻</span>
+      </div>
+      <div class="about-text">
+        <h1>Hello!</h1>
+        <p class="font-mono"><i class="about-highlight">Filip Biernat</i> is a skilled Software Developer with a strong
+          foundation in Java backend development and a growing
+          expertise in front-end technologies. <br /> John has <i class="about-highlight">1+ years</i> of commercial
+          experience building robust and scalable
+          applications using Spring Boot, Hibernate, Oracle Database. He is proficient
+          in HTML, CSS and JavaScript.</p>
+
+        <p class="font-mono">Filip is passionate about creating efficient and user-friendly software solutions. He is a
+          problem-solver who
+          enjoys collaborating with cross-functional teams to deliver high-quality products. His projects have included
+          <i>todo-list</i> application and numerous freecodecamp projects.
+        </p>
+
+        <button class="btn mt-1" id="lets-talk-btn">📞 Let's talk</button>
+
+
+        <div class="counters-container">
+          <div class="counter">
+            <h1 id="born-counter">1991</h1>
+            <i class="font-mono">born in</i>
+          </div>
+
+          <div class="counter">
+            <h1 id="experience-counter">5+</h1>
+            <i class="font-mono">years learning software development</i>
+          </div>
+
+          <div class="counter">
+            <h1 id="cert-counter">6</h1>
+            <i class="font-mono">completed certificates</i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="title-container" id="projects-1">
+    <h1>Projects</h1>
+  </div>
+
+  <div class="container" id="projects">
+    <section class="page-section">
+      <header>
+        <h2 class="subtitle">Odin Project curriculum</h2>
+        <p class="narrow">
+          A collection of completed projects I made during my progress through
+          <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
+          curriculum. Projects range from landing page for fictional company
+          using modern HTML and CSS, through games like Etch-a-sketch using
+          JavaScript to functional applications like calculator or app for
+          organizing todo tasks.
+        </p>
+      </header>
+
+      <section>
+        <div class="featured flex flex-direction-row-reverse">
+          <header class="section-header flex-1">
+            <div class="hide">
+              <h2 class="subtitle">About</h2>
+
+              <p class="narrow">
+                A collection of completed projects I made during my progress
+                through
+                <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
+                curriculum. Projects range from landing page for fictional
+                company using modern HTML and CSS, through games like
+                Etch-a-sketch using JavaScript to functional applications like
+                calculator or app for organizing todo tasks.
+              </p>
+            </div>
+          </header>
+
+          <div>
+            <div class="dash"></div>
+            <h3>Featured</h3>
+
+            <article>
+              <div class="card starred">
+                <div class="flex-1">
+                  <p class="title">Todo List</p>
+                  <a href="https://philbjern.github.io/todo-list/">
+                    <img src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
+                      alt="Project Todo List screenshot" />
+                  </a>
+                </div>
+                <div>
+                  <p class="description">
+                    Todo tasks list application, offering CRUD features with
+                    'todo' tasks priority labels, grouping tasks into
+                    projects, basic notifications system and dark/light mode
+                    switch.
+                  </p>
+                  <p class="text-right">
+                    <a href="https://philbjern.github.io/todo-list/"><button>Live App</button></a>
+                    <a href="https://github.com/philbjern/todo-list"><button class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="project-list">
+          <div>
+            <div class="dash"></div>
+            <h3>HTML and CSS</h3>
+            <div class="cards">
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Recipes</p>
+                    <a href="../foundations/03-html-foundations/PROJECT-recipes/index.html">
+                      <img src="../foundations/03-html-foundations/PROJECT-recipes/assets/demo.gif"
+                        alt="Project recipes screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Odin recipes project, using semantic HTML5 elements
+                    </p>
+                    <p class="text-right">
+                      <a href="../foundations/03-html-foundations/PROJECT-recipes/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/foundations/03-html-foundations/PROJECT-recipes"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-">
+                    <p class="title">Landing page</p>
+                    <a href="../foundations/05-flex/00-PROJECT-landing-page/index.html">
+                      <img src="../foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
+                        alt="Project Landing Page screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      HTML5 + CSS3 with Flexbox project, landing page for
+                      fictional company Guitarly - Mobile guitar service
+                    </p>
+                    <p class="text-right">
+                      <a href="../foundations/05-flex/00-PROJECT-landing-page/index.html"><button>Live App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/foundations/05-flex/00-PROJECT-landing-page"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+
+            </div>
+          </div>
+
+          <div>
+            <div class="dash"></div>
+            <h3>JavaScript</h3>
+            <div class="cards">
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Tic Tac Toe</p>
+                    <a href="../javascript/organizing-js-code/PROJECT-tic-tac-toe/">
+                      <img src="../javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
+                        alt="Project Library screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Tic Tac Toe game written using Factory Functions and
+                      Module Pattern.
+                    </p>
+                    <p class="text-right">
+                      <a href="../javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-tic-tac-toe/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Rock Paper Scissors</p>
+                    <a href="../foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html">
+                      <img src="../foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
+                        alt="Project Rock Paper Scissors screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      JavaScript game of Rock Paper Scissors in form of a chat
+                      bot.
+                    </p>
+                    <p class="text-right">
+                      <a href="../foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Etch-a-Sketch</p>
+                    <a href="../foundations/06-javascript/00-PROJECT-etch-a-sketch/">
+                      <img src="../foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
+                        alt="Etch-a-Sketch project screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Etch-a-Sketch application with variable grid size and
+                      different stroke colors
+                    </p>
+                    <p class="text-right">
+                      <a href="../foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-etch-a-sketch/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Calculator</p>
+                    <a href="../foundations/06-javascript/00-PROJECT-calculator">
+                      <img src="../foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
+                        alt="Etch-a-Sketch project screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      JavaScript calculator application with support for
+                      floating point numbers operations and keyboard input.
+                    </p>
+                    <p class="text-right">
+                      <a href="../foundations/06-javascript/00-PROJECT-calculator/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/foundations/06-javascript/00-PROJECT-calculator/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Restaurant Page</p>
+                    <a href="https://philbjern.github.io/restaurant-page/">
+                      <img
+                        src="https://github.com/philbjern/restaurant-page/blob/main/dist/assets/demo-restaurant-page.gif?raw=true"
+                        alt="Project Restaurant Page screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Restaurant Page providing info about its offer on three
+                      pages. Written entirely in JavaScript using modules.
+                    </p>
+                    <p class="text-right">
+                      <a href="https://philbjern.github.io/restaurant-page/"><button>Live App</button></a>
+                      <a href="https://github.com/philbjern/restaurant-page"><button class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Library</p>
+                    <a href="../javascript/organizing-js-code/PROJECT-library">
+                      <img src="../javascript/organizing-js-code/PROJECT-library/img/demo.gif"
+                        alt="Project Library screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Library project with adding new books, deleting books,
+                      toggling read status and saving to Local Storage.
+                    </p>
+                    <p class="text-right">
+                      <a href="../javascript/organizing-js-code/PROJECT-library/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/odin-project/tree/main/javascript/organizing-js-code/PROJECT-library/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+
+  <div class="container">
+
+    <section>
+      <h2 class="subtitle">freecodecamp.org</h2>
+      <p class="narrow">
+        A collection of completed projects I made during my progress
+        through
+        <a href="https://freecodecamp.org" target="_blank" class="text-link">freecodecamp.org</a>
+        curriculum. Below you can check few projects completed during my
+        data visualization certification. I used HTML, CSS and
+        JavaScript with D3.js library to create and manipulate SVG
+        charts.
+      </p>
+    </section>
+
+    <div>
+      <div class="dash"></div>
+      <h3>D3.js Data Visualization</h3>
+      <p>
+        Projects I have completed to receive freecodecamp data
+        visualisation certificate
+        <a href="https://www.freecodecamp.org/certification/fil-bie/data-visualization"
+          class="text-link">https://www.freecodecamp.org/certification/fil-bie/data-visualization</a>
+      </p>
+      <div class="cards d3">
+        <article>
+          <div class="card">
+            <div class="flex-1">
+              <p class="title">Treemap</p>
+              <a href="https://codepen.io/philip-bjern/pen/WNPLzxX">
+                <img
+                  src="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
+                  alt="Data Visualization - Treemap" />
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="description">
+                Treemap for data showing 100 top sales of videogames by
+                gaming platform. Additional tabs show treemaps for two
+                other datasets (Top movie sales and top kickstarter
+                pledges)
+              </p>
+            </div>
+            <div>
+              <p class="text-right">
+                <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"><button>Codepen.io</button></a>
+                <a
+                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"><button
+                    class="muted">Code</button></a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="card">
+            <div class="flex-1">
+              <p class="title">Choropleth Map</p>
+              <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
+                <img
+                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
+                  alt="Data Visualization - Choropleth Map" />
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="description">
+                A map showing percentage of adults age 25 and older with
+                bachelor's degree or higher (2010 - 2014) for each county
+                of each state of United States of America
+              </p>
+            </div>
+            <div>
+              <p class="text-right">
+                <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"><button>Codepen.io</button></a>
+                <a
+                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"><button
+                    class="muted">Code</button></a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="card">
+            <div class="flex-1">
+              <p class="title">Heat map</p>
+              <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
+                <img
+                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
+                  alt="Data Visualization - Heat map" />
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="description">
+                Heat map showing historical data (from 1753 up to 2015) of
+                monthy global land-surface temperature variance
+              </p>
+            </div>
+            <div>
+              <p class="text-right">
+                <a href="https://codepen.io/philip-bjern/pen/rNPZadv"><button>Codepen.io</button></a>
+                <a
+                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"><button
+                    class="muted">Code</button></a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="card">
+            <div class="flex-1">
+              <p class="title">Scatterplot Graph</p>
+              <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
+                <img
+                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
+                  alt="Data Visualization - Scatterplot Graph" />
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="description">
+                Heat map showing historical data (from 1753 up to 2015) of
+                monthy global land-surface temperature variance
+              </p>
+            </div>
+            <div>
+              <p class="text-right">
+                <a href="https://codepen.io/philip-bjern/pen/KKJBZpa"><button>Codepen.io</button></a>
+                <a
+                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"><button
+                    class="muted">Code</button></a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article>
+          <div class="card">
+            <div class="flex-1">
+              <p class="title">Bar Chart</p>
+              <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
+                <img
+                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
+                  alt="Data Visualization - Bar Chart" />
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="description">
+                Chart showing GDP of United States of America over the
+                years.
+              </p>
+            </div>
+            <div>
+              <p class="text-right">
+                <a href="https://codepen.io/philip-bjern/pen/YzBjxpo"><button>Codepen.io</button></a>
+                <a
+                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"><button
+                    class="muted">Code</button></a>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullpage flex-column" id="last-fullpage">
+    <div class="contact-content-wrapper title-container flex-1">
+      <div class="container box-shadow" id="certificates">
+        <h2 class="subtitle">Certificates</h2>
+        <div class="dash"></div>
+        <p>Certificates I have earned so far</p>
+        <ul class="ul-list">
+
+          <li>
+            <p>
+              <span class="cert-title">Scientific Computing with Python</span> August 13, 2024
+            </p>
+
+            <a href="https://freecodecamp.org/certification/fil-bie/scientific-computing-with-python-v7"
+              class="text-link">
+              freecodecamp.org/certification/fil-bie/scientific-computing-with-python-v7
+            </a>
+
+          </li>
+
+          <li>
+            <p>
+              <span class="cert-title">Backend Development and APIs</span> June 29, 2024
+            </p>
+
+            <a href="https://freecodecamp.org/certification/fil-bie/back-end-development-and-apis" class="text-link">
+              freecodecamp.org/certification/fil-bie/back-end-development-and-apis
+            </a>
+
+          </li>
+
+          <li>
+            <p>
+              <span class="cert-title">Data Visualization Developer Certification</span> December 5, 2023
+            </p>
+
+            <a href="https://freecodecamp.org/certification/fil-bie/data-visualization" class="text-link">
+              freecodecamp.org/certification/fil-bie/data-visualization
+            </a>
+
+          </li>
+
+          <li>
+            <p><span class="cert-title">Responsive Web Design</span> claimed December 5, 2023 (completed earlier)</p>
+            <a href="https://www.freecodecamp.org/certification/fil-bie/responsive-web-design"
+              class="text-link">freecodecamp.org/certification/fil-bie/responsive-web-design</a>
+
+          </li>
+          <li>
+            <p><span class="cert-title">JavaScript Algorithms and Data Structures</span> claimed December 5, 2023
+              (completed
+              earlier)</p>
+            <a href="https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures"
+              class="text-link">freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures</a>
+          </li>
+          <li>
+            <p><span class="cert-title">Front End Development Libraries</span> claimed December 5, 2023 (completed
+              earlier)
+            </p>
+            <a href="https://www.freecodecamp.org/certification/fil-bie/front-end-development-libraries"
+              class="text-link">freecodecamp.org/certification/fil-bie/front-end-development-libraries</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div id="contact" class="container box-shadow">
+        <h2 class="subtitle">Contact</h2>
+        <div class="dash"></div>
+        <p>Contact section</p>
+        <b>Phone: </b>
+      </div>
+
+    </div>
+    <footer class="playfair-display">&copy; philbjern <span class="footer-year-span">2024</span></footer>
+  </div>
+
+
+  <div class="page-background"></div>
+</body>
+<script>
+  let pages = {
+    portfolio: {
+      sectionEl: document.getElementById("portfolio"),
+      navEl: document.getElementById("nav-portfolio"),
+    },
+    about: {
+      sectionEl: document.getElementById("about"),
+      navEl: document.getElementById("nav-about"),
+    },
+    contact: {
+      sectionEl: document.getElementById("contact"),
+      navEl: document.getElementById("nav-contact"),
+    },
+  };
+
+  function showPage(pageName) {
+    for (item in pages) {
+      let section = pages[item].sectionEl;
+      if (!section.classList.contains("hide")) {
+        section.classList.add("hide");
+      }
+      if (item === pageName) {
+        section.classList.remove("hide");
+      }
+    }
+  }
+
+  function setActive(pageName) {
+    for (item in pages) {
+      let navItem = pages[item].navEl;
+      if (navItem.classList.contains("active")) {
+        navItem.classList.remove("active");
+      }
+      if (item === pageName) {
+        navItem.classList.add("active");
+      }
+    }
+  }
+
+  const PageName = {
+    PORTFOLIO: "portfolio",
+    ABOUT: "about",
+    CONTACT: "contact",
+  };
+
+  const NAV_OFFSET = 110;
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelector("#nav-certificates").addEventListener("click", function (e) {
+      const certificatesEl = document.getElementById('last-fullpage');
+      const offsetTop = certificatesEl.offsetTop - 80;
+      smoothScroll(offsetTop);
+      setActive('nav-certificates');
+    })
+
+    document.querySelector("#nav-projects").addEventListener("click", function (e) {
+      const element = document.getElementById('projects-1');
+      console.log(element);
+      const offsetTop = element.offsetTop - NAV_OFFSET;
+      smoothScroll(offsetTop);
+      setActive('nav-projects');
+    })
+
+    document.querySelector("#nav-about").addEventListener("click", function (e) {
+      const element = document.getElementById('about');
+      const offsetTop = element.offsetTop - NAV_OFFSET;
+      smoothScroll(offsetTop);
+      setActive('nav-about');
+    })
+
+    document.querySelector("#nav-contact").addEventListener("click", function (e) {
+      const element = document.getElementById('last-fullpage');
+      const offsetTop = element.offsetTop - 80;
+      smoothScroll(offsetTop);
+      setActive('nav-contact');
+    })
+
+    document.querySelector("#lets-talk-btn").addEventListener("click", function (e) {
+      const element = document.getElementById('last-fullpage');
+      const offsetTop = element.offsetTop - NAV_OFFSET;
+      smoothScroll(offsetTop);
+      setActive('nav-contact');
+    })
+
+
+    document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
+
+    particlesJS("particles-container", {
+      "particles": {
+        "number": {
+          "value": 180,
+          // set 150 or greater when done
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          //"value": "#4aedf2"
+          "value": "#d6ff79"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#ffffff"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.95,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 8,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    createAnimatedCounter('born-counter', 1991);
+    createAnimatedCounter('experience-counter', 5);
+    createAnimatedCounter('cert-counter', 6);
+
+  });
+
+  let position = window.scrollY
+  let lastScrollPostition = position;
+  let changeDirectionPosition = lastScrollPostition;
+  let direction = 0
+  let changesCount = 0;
+  let isHidden = false;
+
+  window.addEventListener("scroll", function (e) {
+    position = window.scrollY;
+
+    if (position - lastScrollPostition < 0) {
+      if (direction == 1) {
+        changeDirectionPosition = position;
+      }
+      direction = -1; // scrolling up
+    } else if (position - lastScrollPostition > 0) {
+      if (direction == -1) {
+        changeDirectionPosition = position;
+      }
+      direction = 1; // scrolling down
+    }
+
+    if (direction != 0 && Math.abs(position - changeDirectionPosition) > 220) {
+      if (direction == 1) {
+        // hide the nav
+        if (!isHidden) {
+          console.log('hide nav')
+          hideNav();
+          isHidden = true;
+        }
+      } else {
+        // show the nav
+        if (isHidden) {
+          console.log('show nav')
+          showNav();
+          isHidden = false;
+        }
+      }
+    }
+
+    lastScrollPostition = position;
+  })
+
+  function showNav() {
+    const navEl = document.querySelector('.header');
+
+    anime({
+      targets: '.header .title',
+      fontSize: '2.1rem',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    });
+
+    anime({
+      targets: '.header nav',
+      opacity: 1,
+      transform: 'scale(1)',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    });
+  }
+
+  showNav();
+
+  function hideNav() {
+    const navEl = document.querySelector('.header');
+    // navEl.classList.add('hidden');
+
+    anime({
+      targets: '.header .title',
+      fontSize: '0.9rem',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    });
+
+    anime({
+      targets: '.header nav',
+      opacity: 0,
+      transform: 'scale(0.4)',
+      duration: 500,
+      easing: 'easeInOutQuad'
+    });
+  }
+
+  function setActive(navItemId) {
+    document.querySelector(".nav-link.active").classList.remove("active");
+    document.getElementById(navItemId).classList.add('active')
+  }
+
+  function smoothScroll(offsetTop) {
+    anime({
+      targets: 'html',
+      scrollTop: offsetTop,
+      duration: 1000,
+      easing: 'easeInOutQuad',
+    });
+  }
+
+  function createAnimatedCounter(elementId, targetValue) {
+    const element = document.getElementById(elementId);
+
+    function animateCounter() {
+        anime({
+          targets: element,
+          duration: 2000, 
+          easing: 'linear',
+          innerHTML: [1, targetValue],
+          round: 1,
+          complete: function(anim) {
+            if (elementId == 'experience-counter') {
+              element.textContent = '5+';
+            }
+          }
+        });
+    }
+
+    // Initial check
+    animateCounter();
+
+    // // Add event listener to handle window resizing and scrolling
+    // window.addEventListener('scroll', animateCounter);
+    // window.addEventListener('resize', animateCounter);
+  }
+</script>
+
+</html>
