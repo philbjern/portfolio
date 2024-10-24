@@ -918,6 +918,8 @@
 
   let isGoTopHidden = true;
 
+  let recentNavActiveChange = false;
+
   window.addEventListener("scroll", function (e) {
     position = window.scrollY;
     totalHeight = document.body.scrollHeight;
@@ -966,6 +968,37 @@
         isGoTopHidden = true;
       }
     }
+
+    const projectsTitle = document.getElementById("projects")
+    const projectsHeight = projectsTitle.offsetTop;
+    if (position > projectsHeight) {
+      if (!recentNavActiveChange) {
+        setActive('nav-projects')
+        recentNavActiveChange = true;
+      }
+    }
+
+    const aboutTitle = document.getElementById("about")
+    const aboutHeight = aboutTitle.offsetTop;
+    if (position > aboutHeight) {
+      if (!recentNavActiveChange) {
+        setActive('nav-about')
+        recentNavActiveChange = true;
+      }
+    }
+
+    const certTitle = document.getElementById("certificates")
+    const certHeight = certTitle.offsetTop;
+    if (position > certHeight) {
+      if (!recentNavActiveChange) {
+        setActive('nav-certificates')
+        recentNavActiveChange = true;
+      }
+    }
+
+    setInterval(function() {
+      recentNavActiveChange = false;
+    }, 200);
 
     lastScrollPostition = position;
   })
