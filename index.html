@@ -54,20 +54,20 @@
     <div id="particles-container"></div>
     <div class="container about-box box-shadow">
       <div class="m-2 left-section">
-        <img src="assets/IMG_20230601_182418.jpg" class="my-photo" />
+        <img src="assets/0fe0a9e0-b79f-43da-ac1f-2269144ea9da.jpeg" class="my-photo" />
         <img src="assets/curly-line.png" class="curly-line-my-photo" />
-        <span class="emoji" id="joystick-emoji">🕹️</span>
-        <span class="emoji" id="guitar-emoji">🎸</span>
-        <span class="emoji" id="laptop-emoji">💻</span>
+        <div class="emoji" id="joystick-emoji">🕹️</div>
+        <div class="emoji" id="guitar-emoji">🎸</div>
+        <div class="emoji" id="laptop-emoji">💻</div>
       </div>
       <div class="about-text">
-        <h1>Hello!</h1>
+        <h1>Cześć! 👋</h1>
         <p class="font-mono"><i class="about-highlight">Filip Biernat</i> is a skilled Software Developer with a strong
           foundation in Java backend development and a growing
-          expertise in front-end technologies. <br /> John has <i class="about-highlight">1+ years</i> of commercial
+          expertise in front-end technologies. <br /> Filip has <i class="about-highlight">1+ years</i> of commercial
           experience building robust and scalable
           applications using Spring Boot, Hibernate, Oracle Database. He is proficient
-          in HTML, CSS and JavaScript.</p>
+          in HTML, CSS, JavaScript and Python</p>
 
         <p class="font-mono">Filip is passionate about creating efficient and user-friendly software solutions. He is a
           problem-solver who
@@ -617,8 +617,9 @@
       <div id="contact" class="container box-shadow">
         <h2 class="subtitle">Contact</h2>
         <div class="dash"></div>
-        <p>Contact section</p>
-        <b>Phone: </b>
+        <p>If you are interested in contacting me, you can send me a mail message at 
+          <a href="mailto:archloner@pm.me" class="text-link"><i>archloner@pm.me</i></a>
+        </p>
       </div>
 
     </div>
@@ -635,33 +636,6 @@
   <div class="page-background"></div>
 </body>
 <script>
-  let pages = {
-    portfolio: {
-      sectionEl: document.getElementById("portfolio"),
-      navEl: document.getElementById("nav-portfolio"),
-    },
-    about: {
-      sectionEl: document.getElementById("about"),
-      navEl: document.getElementById("nav-about"),
-    },
-    contact: {
-      sectionEl: document.getElementById("contact"),
-      navEl: document.getElementById("nav-contact"),
-    },
-  };
-
-  function showPage(pageName) {
-    for (item in pages) {
-      let section = pages[item].sectionEl;
-      if (!section.classList.contains("hide")) {
-        section.classList.add("hide");
-      }
-      if (item === pageName) {
-        section.classList.remove("hide");
-      }
-    }
-  }
-
   function setActive(pageName) {
     for (item in pages) {
       let navItem = pages[item].navEl;
@@ -674,26 +648,19 @@
     }
   }
 
-  const PageName = {
-    PORTFOLIO: "portfolio",
-    ABOUT: "about",
-    CONTACT: "contact",
-  };
-
   const NAV_OFFSET = 110;
 
   document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector("#nav-certificates").addEventListener("click", function (e) {
       const certificatesEl = document.getElementById('last-fullpage');
-      const offsetTop = certificatesEl.offsetTop - 80;
+      const offsetTop = certificatesEl.offsetTop;
       smoothScroll(offsetTop);
       setActive('nav-certificates');
     })
 
     document.querySelector("#nav-projects").addEventListener("click", function (e) {
       const element = document.getElementById('projects-1');
-      console.log(element);
       const offsetTop = element.offsetTop - NAV_OFFSET;
       smoothScroll(offsetTop);
       setActive('nav-projects');
@@ -708,20 +675,17 @@
 
     document.querySelector("#nav-contact").addEventListener("click", function (e) {
       const element = document.getElementById('last-fullpage');
-      const offsetTop = element.offsetTop - 80;
+      const offsetTop = element.offsetTop;
       smoothScroll(offsetTop);
       setActive('nav-contact');
     })
 
     document.querySelector("#lets-talk-btn").addEventListener("click", function (e) {
       const element = document.getElementById('last-fullpage');
-      const offsetTop = element.offsetTop - NAV_OFFSET;
+      const offsetTop = element.offsetTop;
       smoothScroll(offsetTop);
       setActive('nav-contact');
     })
-
-
-    document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
 
     particlesJS("particles-container", {
       "particles": {
@@ -836,9 +800,14 @@
       "retina_detect": true
     });
 
+    // page initialisation
     createAnimatedCounter('born-counter', 1991);
     createAnimatedCounter('experience-counter', 5);
     createAnimatedCounter('cert-counter', 6);
+
+    setActive('nav-about');
+    hideGoTopBtn();
+    document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
 
     document.querySelector(".gotop-btn").addEventListener('click', function(e) {
       smoothScroll(0).then(() => {
