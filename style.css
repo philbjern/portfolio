@@ -91,7 +91,7 @@ h6 {
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .flex {
@@ -190,6 +190,10 @@ h6 {
 
 .text-right {
   text-align: right;
+}
+
+.sci-py-others-img {
+    filter: brightness(40%);
 }
 
 p {
