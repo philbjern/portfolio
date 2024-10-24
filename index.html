@@ -11,6 +11,7 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_upward" />
   <style>
 
   </style>
@@ -548,7 +549,7 @@
   </div>
 
   <div class="fullpage flex-column" id="last-fullpage">
-    <div class="contact-content-wrapper title-container flex-1">
+    <div class="contact-content-wrapper flex-1">
       <div class="container box-shadow" id="certificates">
         <h2 class="subtitle">Certificates</h2>
         <div class="dash"></div>
@@ -622,6 +623,12 @@
 
     </div>
     <footer class="playfair-display">&copy; philbjern <span class="footer-year-span">2024</span></footer>
+  </div>
+
+  <div class="gotop-btn">
+    <span class="material-symbols-outlined">
+      arrow_upward
+      </span>
   </div>
 
 
@@ -833,6 +840,12 @@
     createAnimatedCounter('experience-counter', 5);
     createAnimatedCounter('cert-counter', 6);
 
+    document.querySelector(".gotop-btn").addEventListener('click', function(e) {
+      smoothScroll(0).then(() => {
+        hideGoTopBtn();
+      });
+    });
+
   });
 
   let position = window.scrollY
@@ -842,8 +855,11 @@
   let changesCount = 0;
   let isHidden = false;
 
+  let isGoTopHidden = true;
+
   window.addEventListener("scroll", function (e) {
     position = window.scrollY;
+    totalHeight = document.body.scrollHeight;
 
     if (position - lastScrollPostition < 0) {
       if (direction == 1) {
@@ -875,8 +891,44 @@
       }
     }
 
+    console.log(totalHeight);
+    let viewportHeight = window.innerHeight;
+    console.log((position + viewportHeight) / totalHeight)
+    if ((position + viewportHeight) / totalHeight > 0.8) {
+      if (isGoTopHidden) {
+        showGoTopBtn();
+        isGoTopHidden = false;
+      }
+    }
+
     lastScrollPostition = position;
   })
+
+  function hideGoTopBtn() {
+    const btn = document.querySelector(".gotop-btn");
+    anime({
+      targets: btn,
+      opacity: 0,
+      duration: 200,
+      easing: 'easeInOutQuad',
+      complete: function(anim) {
+        isGoTopHidden = true;
+      }
+    })
+  }
+
+  function showGoTopBtn() {
+    const btn = document.querySelector(".gotop-btn");
+    anime({
+      targets: btn,
+      opacity: 1,
+      duration: 200,
+      easing: 'easeInOutQuad',
+      complete: function(anim) {
+        isGoTopHidden = false;
+      }
+    })
+  }
 
   function showNav() {
     const navEl = document.querySelector('.header');
@@ -925,11 +977,16 @@
   }
 
   function smoothScroll(offsetTop) {
-    anime({
-      targets: 'html',
-      scrollTop: offsetTop,
-      duration: 1000,
-      easing: 'easeInOutQuad',
+    return new Promise((resolve, reject) => {
+      anime({
+        targets: 'html',
+        scrollTop: offsetTop,
+        duration: 1000,
+        easing: 'easeInOutQuad',
+        complete: function(anim) {
+          resolve();
+        }
+      });
     });
   }
 
