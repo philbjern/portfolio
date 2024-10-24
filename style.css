@@ -20,6 +20,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  width: 100%;
   font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.8);
@@ -52,7 +53,7 @@ h6 {
 
 .container {
   max-width: 1216px;
-  width: 100%;
+  width: auto;
   margin: 30px auto;
   padding: 30px 45px;
   border-radius: 14px;
@@ -295,6 +296,8 @@ a.text-link:hover {
   .about-box {
     margin-top: 6rem;
   }
+
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -304,13 +307,12 @@ a.text-link:hover {
   }
 
   .container {
-    width: 80%;
+    width: auto;
   }
 
   .header nav {
     margin-left: auto;
     display: flex;
-    margin-right: 1rem;
   }
 
   .header .nav-link {
@@ -322,6 +324,10 @@ a.text-link:hover {
     cursor: pointer;
     transition: all 0.25s;
   }
+
+ .contact-content-wrapper {
+    display: block !important;
+  } 
 }
 
 @media screen and (max-width: 806px) {
@@ -329,6 +335,15 @@ a.text-link:hover {
     margin-left: auto;
     display: block !important;
     margin-right: 1rem;
+  }
+
+  .counters-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-content-wrapper {
+    display: block !important;
   }
 }
 
@@ -341,7 +356,7 @@ a.text-link:hover {
 
   .container {
     margin: auto;
-    width: 90%;
+    width: auto;
   }
   .header .nav-link {
     font-size: 0.8rem;
@@ -349,6 +364,14 @@ a.text-link:hover {
 
   .title {
     font-size: 1.2rem;
+  }
+
+  .contact-content-wrapper {
+    display: block !important;
+  }
+
+  .about-box {
+    display: block !important;
   }
 }
 
@@ -367,11 +390,29 @@ a.text-link:hover {
   }
 
   :root {
-    font-size: 11px;
+    font-size: 9px;
   }
 
   .featured.flex.flex-direction-row-reverse {
     display: block;
+  }
+
+  .contact-content-wrapper {
+    display: block !important;
+  }
+
+  .about-box {
+    display: block !important;
+  }
+
+  #certificates {
+    margin: 1rem;
+    margin-right: 1rem !important;
+  }
+
+  #contact {
+    width: auto !important;
+    margin: 1rem;
   }
 }
 
@@ -421,6 +462,7 @@ a.text-link:hover {
 .header nav {
   margin-left: auto;
   display: flex;
+  margin-right: 1rem;
 }
 
 .nav-link {
@@ -711,7 +753,6 @@ a {
 }
 
 #certificates {
-  width: auto;
   flex: 1 0 auto;
   margin-right: 2rem;
 }
