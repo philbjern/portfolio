@@ -7,6 +7,7 @@
 :root {
     --mindaro: #d6ff79;
     --light-green: rgb(176, 255, 146);
+    --dark-green: rgb(92, 192, 52);
     --lavender-blush: rgb(255, 242, 241);
     --tropical-indigo: rgb(160, 155, 231);
     --chrysler-blue: rgb(95, 0, 186);
@@ -191,7 +192,7 @@ h6 {
 }
 
 p {
-    line-height: 1.5rem;
+    line-height: 1.8rem;
 }
 
 .description {
@@ -284,6 +285,16 @@ a.text-link:hover {
 
 .d3 .card {
     height: 530px;
+}
+
+@media screen and (max-width: 1700px) {
+    :root {
+        font-size: 14px;
+    }
+
+    .about-box {
+        margin-top: 6rem;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -431,7 +442,7 @@ a.text-link:hover {
 }
 
 .nav-link.active {
-    color: var(--color-primary);
+    color: var(--dark-green);
 }
 
 .nav-link.active::after {
@@ -439,7 +450,7 @@ a.text-link:hover {
     width: 5px;
     height: 5px;
     border-radius: 100%;
-    background-color: var(--color-primary);
+    background-color: var(--dark-green);
     position: absolute;
     bottom: -10px;
     left: calc(50% - 5px);
@@ -501,7 +512,7 @@ a {
 
 .fullpage {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -549,6 +560,7 @@ a {
 
 .emoji {
     font-size: 5rem;
+    width: 5rem;
     background-color: var(--color-secondary);
     border-radius: 50%;
     padding: 0.6rem;
@@ -681,7 +693,8 @@ a {
 #last-fullpage::after {
     content: '';
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background: rgba(255, 255, 255, 0.25);
     position: absolute;
     top: 0;
@@ -690,14 +703,22 @@ a {
 }
 
 #certificates {
-    width: 100%;
+    width: auto;
+    flex: 1 0 auto;
+    margin-right: 2rem;
 }
 
 .contact-content-wrapper {
+    max-width: 1216px;
     margin-top: 150px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+}
+
+#contact {
+    flex: 0 1 auto;
+    width: 30%;
 }
 
 #particles-container {
@@ -758,4 +779,23 @@ a {
 
 .mt-1 {
     margin-top: 1.3rem;
+}
+
+.gotop-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--mindaro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.gotop-btn span {
+    font-size: 3rem;
 }
