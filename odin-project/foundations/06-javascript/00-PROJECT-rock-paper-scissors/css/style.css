@@ -45,7 +45,6 @@ p {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  
 }
 
 .chat-box {
@@ -119,7 +118,7 @@ p {
   padding: 10px 16px;
   background-color: darkslateblue;
   color: white;
-  border: 0;
+  border: 2px solid darkslateblue;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
