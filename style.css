@@ -80,9 +80,10 @@ h6 {
 
 .dash {
   width: 150px;
-  height: 5px;
+  height: 6px;
+  border-radius: 3px;;
   background: linear-gradient(45deg, rgb(95, 0, 186), rgb(176, 255, 146));
-  transform: translateX(-10px);
+  transform: translateX(0px);
   margin: 2rem 0;
 }
 
@@ -615,16 +616,16 @@ a {
 }
 
 #certificates {
-  flex: 1 0 auto;
   margin-right: 2rem;
 }
 
 .contact-content-wrapper {
   max-width: 1216px;
-  margin-top: 150px;
   display: flex;
   flex-direction: column;
   width: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 #contact {
