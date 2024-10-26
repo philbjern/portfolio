@@ -384,11 +384,14 @@ a.text-link:hover {
 footer {
   text-align: center;
   font-size: 0.85rem;
-  color: white;
-  padding-top: 2.5rem;
-  margin-bottom: 1.3rem;
-
+  color: var(--lavender-blush);
+  padding: 2.5rem 0;
+  /* min-height: 150px; */
+  background-color: black;
   width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 a {
@@ -598,7 +601,9 @@ a {
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  background: rgba(255, 255, 255, 0.25);
+  /* background: rgba(255, 255, 255, 0.25); */
+  opacity: 0.4;
+  background: linear-gradient(346deg, rgba(23,23,23,1) 0%, rgba(210,210,227,1) 75%, rgba(243,251,252,1) 100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -712,6 +717,18 @@ a {
 .text-lg {
   font-size: 1.4rem;
   line-height: 2.3rem;
+}
+
+#mail-icon {
+  font-size: 5rem; 
+  margin: 2.4rem; 
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#mail-icon:hover {
+  transform: translateY(-8px) scale(1.1) rotate(-3deg);
 }
 
 /* KEYFRAMES */
