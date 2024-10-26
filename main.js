@@ -169,6 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
         smoothScroll(0);
     })
 
+    console.log(window.outerWidth)
+
 });
 
 let position = window.scrollY
