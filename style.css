@@ -6,10 +6,13 @@
 
 :root {
   --mindaro: #d6ff79;
+  --mindaro-bg: #f3ffd6;
   --light-green: rgb(176, 255, 146);
   --dark-green: rgb(92, 192, 52);
   --lavender-blush: rgb(255, 242, 241);
+  --lavender-blush-darker: rgb(255, 229, 227);
   --tropical-indigo: rgb(160, 155, 231);
+  --tropical-indigo-bg: rgb(236, 235, 255);
   --chrysler-blue: rgb(95, 0, 186);
 
   --color-primary: #5f00baff;
@@ -116,7 +119,8 @@ h6 {
   width: auto;
   margin: 8px 8px 8px 0;
   padding: 20px;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background: var(--tropical-indigo-bg);
   border-radius: 15px;
   border: 5px solid transparent;
   transition: all 0.5s;
@@ -731,7 +735,22 @@ a {
   transform: translateY(-8px) scale(1.1) rotate(-3deg);
 }
 
+.fly-out-right-anim {
+  animation: fly-out-right 0.4s ease-in;
+}
+
 /* KEYFRAMES */
+
+@keyframes fly-out-right {
+  from {
+
+  }
+
+  to {
+    transform: translate(500px, -20px);
+    opacity: 0;
+  }
+}
 
 @keyframes coursor-blink {
   0% {

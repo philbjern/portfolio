@@ -169,7 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
         smoothScroll(0);
     })
 
-    console.log(window.outerWidth)
+    const mailIcon = document.querySelector("#mail-icon");
+    mailIcon.addEventListener("click", function(e) {
+        e.preventDefault();
+        mailIcon.classList.add("fly-out-right-anim");
+        setTimeout(() => {
+            mailIcon.classList.remove("fly-out-right-anim")
+        }, 400);
+    })
 
 });
 
