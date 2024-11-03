@@ -18,7 +18,8 @@
   
   --tropical-indigo: rgb(160, 155, 231);
   --tropical-indigo-bg: rgb(236, 235, 255);
-  --card-bg: rgb(243, 238, 254);
+  
+  --card-bg: rgb(234, 230, 230);
 
   --color-primary: #5f00baff;
   --color-secondary: var(--mindaro);
