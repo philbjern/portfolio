@@ -132,6 +132,7 @@ h6 {
   border: 5px solid transparent;
   transition: all 0.5s;
   height: 500px;
+  position: relative;
 }
 
 .card:hover {
@@ -147,7 +148,19 @@ h6 {
   object-fit: cover;
   object-position: 50% 0%;
   border-radius: 15px;
+  position: relative;
 }
+
+/* .sci-py-others-img::after {
+  content: "...";
+  
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 2.5rem;
+  z-index: 10;
+
+} */
 
 .card p {
   margin: 0.5rem 0;
