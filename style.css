@@ -568,6 +568,11 @@ a {
   text-align: justify;
 }
 
+.about-text .font-mono a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 .cert-title {
   font-size: 1.5rem;
   font-family: "Playfair Display", serif;
