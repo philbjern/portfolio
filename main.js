@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // page initialisation
-    createAnimatedCounter('born-counter', 1991);
+    createAnimatedCounter('born-counter', 90);
     createAnimatedCounter('experience-counter', 5);
     createAnimatedCounter('cert-counter', 6);
 
