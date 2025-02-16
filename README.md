@@ -1,7 +1,15 @@
-# My Odin Project progress
-All my projects portfolio [page](https://philbjern.github.io/odin-project) 
+# Phil Bjern Portfolio repository
+Here are my many small-scale projects completed on Odin Project and freeCodeCamp.
 
-## Content
+My projects showcase [page](https://philbjern.github.io/portfolio) 
+
+## freeCodeCamp projects
+TODO: fill this section with freecodecamp projects links
+### JavaScript Data Structures and Algorithms
+### Scientific Python
+### Relationl Databases and Bash Scripting
+
+## Odin Project progress
 
 ### Foundations
 * Command line basics
@@ -23,6 +31,3 @@ All my projects portfolio [page](https://philbjern.github.io/odin-project)
 
 ### Node Path 
 * Dynamic User Interface: (Drop Down Menus, and Image Slider)
-
-## Odin project
-About [Odin Project](https://theodinproject.com)
