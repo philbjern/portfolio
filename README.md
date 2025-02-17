@@ -4,10 +4,21 @@ Here are my many small-scale projects completed on Odin Project and freeCodeCamp
 My projects showcase [page](https://philbjern.github.io/portfolio) 
 
 ## freeCodeCamp projects
-TODO: fill this section with freecodecamp projects links
-### JavaScript Data Structures and Algorithms
-### Scientific Python
+
+### JavaScript Data Structures and Algorithms (New)
+* Certificate: [in progress]
+* Repo: [freecodecamp/js-dsa](https://github.com/philbjern/portfolio/tree/main/freecodecamp/js-dsa)
+
+### Scientific Computing with Python
+Extensive course on Python for use in scientific computing. 
+* Certificate: [freecodecamp.org/certification/fil-bie/scientific-computing-with-python-v7](https://freecodecamp.org/certification/fil-bie/scientific-computing-with-python-v7)
+* Repo: [fcc-scientific-computing-python](https://github.com/philbjern/fcc-scientific-computing-python)
+
 ### Relationl Databases and Bash Scripting
+Interactive course on PostgreSQL databases and bash scripting, includes few individual projects which were required to pass for this certification.
+* Certificate: [freecodecamp.org/certification/fil-bie/relational-database-v8](https://freecodecamp.org/certification/fil-bie/relational-database-v8)
+* Repo: [relational-databases](https://github.com/philbjern/relational-databases)
+
 
 ## Odin Project progress
 
