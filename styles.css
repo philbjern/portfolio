@@ -7,18 +7,18 @@
 :root {
   --mindaro: #d6ff79;
   --mindaro-bg: #f3ffd6;
-  
+
   --light-green: rgb(176, 255, 146);
   --dark-green: rgb(92, 192, 52);
-  
+
   --lavender-blush: rgb(255, 242, 241);
   --lavender-blush-darker: rgb(255, 229, 227);
 
   --chrysler-blue: rgb(95, 0, 186);
-  
+
   --tropical-indigo: rgb(160, 155, 231);
   --tropical-indigo-bg: rgb(236, 235, 255);
-  
+
   --card-bg: rgb(234, 230, 230);
 
   --color-primary: #5f00baff;
@@ -87,7 +87,8 @@ h6 {
 .dash {
   width: 150px;
   height: 6px;
-  border-radius: 3px;;
+  border-radius: 3px;
+  ;
   background: linear-gradient(45deg, rgb(95, 0, 186), rgb(176, 255, 146));
   transform: translateX(0px);
   margin: 2rem 0;
@@ -499,7 +500,7 @@ a {
 
 #guitar-emoji {
   background-color: var(--light-green);
-  top: 40px;
+  bottom: 70px;
   left: -20px;
   transform: rotate(30deg);
 }
@@ -511,7 +512,7 @@ a {
 }
 
 #laptop-emoji {
-  bottom: 70px;
+  top: 40px;
   left: -20px;
   transform: rotate(-25deg);
   background-color: var(--color-primary);
@@ -633,7 +634,7 @@ a {
   height: 100%;
   /* background: rgba(255, 255, 255, 0.25); */
   opacity: 0.4;
-  background: linear-gradient(346deg, rgba(23,23,23,1) 0%, rgba(210,210,227,1) 75%, rgba(243,251,252,1) 100%);
+  background: linear-gradient(346deg, rgba(23, 23, 23, 1) 0%, rgba(210, 210, 227, 1) 75%, rgba(243, 251, 252, 1) 100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -750,8 +751,8 @@ a {
 }
 
 #mail-icon {
-  font-size: 5rem; 
-  margin: 2.4rem; 
+  font-size: 5rem;
+  margin: 2.4rem;
   text-align: center;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -768,9 +769,7 @@ a {
 /* KEYFRAMES */
 
 @keyframes fly-out-right {
-  from {
-
-  }
+  from {}
 
   to {
     transform: translate(500px, -20px);
