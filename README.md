@@ -15,7 +15,7 @@ Extensive course on Python for use in scientific computing.
 * Repo: [fcc-scientific-computing-python](https://github.com/philbjern/fcc-scientific-computing-python)
 
 ### Relationl Databases and Bash Scripting
-Interactive course on PostgreSQL databases and bash scripting, includes few individual projects which were required to pass for this certification.
+Interactive course on PostgreSQL databases and bash scripting and Git version management system. This repo includes few individual projects which were required to pass for this certification.
 * Certificate: [freecodecamp.org/certification/fil-bie/relational-database-v8](https://freecodecamp.org/certification/fil-bie/relational-database-v8)
 * Repo: [relational-databases](https://github.com/philbjern/relational-databases)
 
