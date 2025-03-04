@@ -1,0 +1,24 @@
+body {
+  background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#user-input, 
+#check-btn,
+#clear-btn {
+  font-size: 1.3rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 7px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#check-btn,
+#clear-btn {
+  background-color: darkolivegreen;
+  color: #eee;
+}
+
+#container h1 {
+  font-size: 2.3rem;
+  font-family: 'Playfair Display', sans;
+}
