@@ -13,11 +13,11 @@ My name is Filip, I am a software developer based in Kraków area with commercia
 [![GitHub Streak](https://streak-stats.demolab.com?user=philbjern&theme=radical)](https://git.io/streak-stats)
 
 ## 🔤 Programming Languages
-![Python](https://img.shields.io/badge/Python-blue?style=flat&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-blue?style=flat&logo=openjdk&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-blue?style=flat&logo=javascript&logoColor=white)
-![Java](https://img.shields.io/badge/Java-blue?style=flat&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/Python-blue?style=flat&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-blue?style=flat&logo=react&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-blue?style=flat&logo=csharp&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-blue?style=flat&logo=dotnet&logoColor=white)
 
 ## 🔭 Certificates
 
