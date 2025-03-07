@@ -1,10 +1,27 @@
-# Phil Bjern Portfolio repository
-Here are my many small-scale projects completed on Odin Project and freeCodeCamp.
-
-My projects showcase [page](https://philbjern.github.io/portfolio) 
+# Hello, I'm Filip 👋
 
 ## 🖼️ Random Dev Quote
 ![Random Dev Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
+## 📈 GitHub Stats
+[![philbjern's GitHub stats](https://github-readme-stats.vercel.app/api?username=philbjern&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=philbjern&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=philbjern&theme=radical)](https://git.io/streak-stats)
+
+## 🔤 Programming Languages
+![Python](https://img.shields.io/badge/Python-blue?style=flat&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-blue?style=flat&logo=javascript&logoColor=white)
+![Java](https://img.shields.io/badge/Java-blue?style=flat&logo=java&logoColor=white)
+![React](https://img.shields.io/badge/React-blue?style=flat&logo=react&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-blue?style=flat&logo=csharp&logoColor=white)
+
+## 🚀 Projects
+
+Here are my many small-scale projects completed on Odin Project and freeCodeCamp.
+
+My projects showcase [page](https://philbjern.github.io/portfolio) 
 
 ## freeCodeCamp projects
 
@@ -21,7 +38,6 @@ Extensive course on Python for use in scientific computing.
 Interactive course on PostgreSQL databases and bash scripting and Git version management system. This repo includes few individual projects which were required to pass for this certification.
 * Certificate: [freecodecamp.org/certification/fil-bie/relational-database-v8](https://freecodecamp.org/certification/fil-bie/relational-database-v8)
 * Repo: [relational-databases](https://github.com/philbjern/relational-databases)
-
 
 ## Odin Project progress
 
@@ -45,3 +61,10 @@ Interactive course on PostgreSQL databases and bash scripting and Git version ma
 
 ### Node Path 
 * Dynamic User Interface: (Drop Down Menus, and Image Slider)
+
+## 💼 Contact Me
+- [Email](mailto:archloner@pm.me)
+- [LinkedIn](https://www.linkedin.com/in/phil-bjern-xff)
+- [Discord: archloner](https://discord.com)
+
+Thanks for visiting my profile! Feel free to reach out if you want to connect or collaborate on a project.
