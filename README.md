@@ -3,6 +3,9 @@ Here are my many small-scale projects completed on Odin Project and freeCodeCamp
 
 My projects showcase [page](https://philbjern.github.io/portfolio) 
 
+## 🖼️ Random Dev Quote
+![Random Dev Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
 ## freeCodeCamp projects
 
 ### JavaScript Data Structures and Algorithms (New)
