@@ -52,7 +52,7 @@ December 5, 2023 (claimed, completed earlier), approximately 300 hours of work\
 
 ## 🚀 Projects
 
-- [`todo-list`](https://github.com/philbjern/todolist) fullstack task management demo app, backend written in Java with Spring and MongoDB, front was created using Svelte
+- [`todo-list`](https://github.com/philbjern/todo-list) fullstack task management demo app, backend written in Java with Spring and MongoDB, front was created using Svelte
 
 - [`github-service`](https://github.com/philbjern/githubservice) Spring Boot application for retreiving GitHub user's repository data using GitHub API (Recruitment task for Backend Java Developer role in Warsaw)
 
