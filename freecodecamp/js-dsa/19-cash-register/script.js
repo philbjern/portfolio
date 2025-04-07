@@ -1,15 +1,54 @@
-let price = 1.87;
+let price = 19.5;
 let cid = [
-  ['PENNY', 1.01, 0.01],
-  ['NICKEL', 2.05, 0.05],
-  ['DIME', 3.1, 0.1],
-  ['QUARTER', 4.25, 0.25],
-  ['ONE', 90, 1],
-  ['FIVE', 55, 5],
-  ['TEN', 20, 10],
-  ['TWENTY', 60, 20],
-  ['ONE HUNDRED', 100, 100]
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
 ];
+
+const TENDER = [
+  {
+    name: 'Pennies',
+    value: 0.01
+  },
+  {
+    name: 'Nickels',
+    value: 0.05
+  },
+  {
+    name: 'Dimes',
+    value: 0.1
+  },
+  {
+    name: 'Quarters',
+    value: 0.25
+  },
+  {
+    name: 'Ones',
+    value: 1
+  },
+  {
+    name: 'Fives',
+    value: 5
+  },
+  {
+    name: 'Tens',
+    value: 10
+  },
+  {
+    name: 'Twenties',
+    value: 20
+  },
+  {
+    name: 'Hundreds',
+    value: 100
+  } 
+]
 
 const purchaseBtn = document.getElementById('purchase-btn');
 const input = document.getElementById('cash');
@@ -17,10 +56,23 @@ const changeDueElement = document.getElementById('change-due')
 const priceScreen = document.getElementById('price-screen')
 const cashDrawerDisplay = document.getElementById('cash-drawer-display')
 
-priceScreen.textContent = `$${price}`
+
+const displayCid = () => {
+  cashDrawerDisplay.innerHTML = `
+  <b>Change in drawer:</b>`
+  cid.forEach((item, index) => {
+    cashDrawerDisplay.innerHTML += `<p>${TENDER[index].name}: $${item[1]}</p>`
+  })
+}
+
+priceScreen.textContent = `Total: $${price}`
+displayCid();
 
 purchaseBtn.addEventListener('click', () => {
-  const cash = input.valueAsNumber;
+  let cash = input.valueAsNumber;
+  if (isNaN(cash)) {
+    cash = 0;
+  }
   if (price > cash) {
     alert('Customer does not have enough money to purchase the item');
   } else if (price === cash) {
@@ -31,28 +83,47 @@ purchaseBtn.addEventListener('click', () => {
 })
 
 const checkout = (cash) => {
-  const changeDue = cash - price;
-  const cashInDrawer = cid.reduce((acc, item) => acc + item[1], 0);
-  if (cashInDrawer < changeDue) {
+  let changeDue = cash - price;
+  const cashInDrawer = cid.reduce((acc, item) => acc + item[1], 0)
+
+  if (changeDue.toFixed(2) > cashInDrawer) {
     changeDueElement.textContent = `Status: INSUFFICIENT_FUNDS`;
-  } else if (cashInDrawer === changeDue) {
-    changeDueElement.textContent = `Status: CLOSED ` + calculateChangeDue(changeDue);
+  } else if (cashInDrawer.toFixed(2) === changeDue.toFixed(2)) {
+    changeDueElement.innerHTML = `Status: CLOSED${calculateChangeDue(changeDue)}`;
   } else {
-    changeDueElement.textContent = `Status: OPEN ` + calculateChangeDue(changeDue);
+    try {
+      changeDueElement.innerHTML = `Status: OPEN${calculateChangeDue(changeDue)}`;
+    } catch (err) {
+      changeDueElement.innerHTML = `Status: INSUFFICIENT_FUNDS`;
+    }
   }
 }
 
+const tenderReversed = Object.assign(TENDER).reverse();
+
 const calculateChangeDue = (changeDue) => {
-  console.log(changeDue);
-  let res = ``;
-  let remainder = changeDue;
-  cid.reverse().forEach((item) => {
-    console.log(item[0], item[1], remainder / item[1]);
-    if ((item[1] >= item[2]) && (remainder / item[2]) > 1) {
-      res += ` ${item[0]}: \$${item[2] * Math.floor(remainder / item[2])} `;
-      remainder -= Math.floor(remainder / item[2]) * item[2];
-      console.log(remainder);
+  let res = '';
+  let remainder = changeDue.toFixed(2);
+  
+  cid.reverse().forEach((item, index) => {
+    let tenderValue = tenderReversed[index].value;
+    if (item[1] !== 0 && (remainder / tenderValue) >= 1) {
+      
+      let amount = tenderValue * Math.floor(remainder / tenderValue);
+      if (amount > item[1]) {
+        amount = item[1];
+      }
+      res += ' ' + item[0] + ': $' + amount + '';
+      remainder -= amount;
+      remainder = remainder.toFixed(2);
+      cid[index][1] -= amount.toFixed(2);
     }
   })
+  
+  if (remainder != 0) {
+    throw "Insufficient funds";
+  }
+  cid.reverse();
+  displayCid();
   return res;
 }
