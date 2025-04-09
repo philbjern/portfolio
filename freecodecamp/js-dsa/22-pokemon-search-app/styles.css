@@ -40,6 +40,10 @@ main {
   margin: 25px 0;
 }
 
+.spacer {
+  height: 3rem;
+}
+
 h1 {
   color: #f5f6f7;
   font-size: 1.7em;
