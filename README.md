@@ -7,7 +7,7 @@ My projects showcase [page](https://philbjern.github.io/portfolio)
 ## freeCodeCamp projects
 
 ### JavaScript Data Structures and Algorithms (New)
-* Certificate: [in progress]
+* Certificate: [freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures-v8](https://www.freecodecamp.org/certification/fil-bie/javascript-algorithms-and-data-structures-v8)
 * Repo: [freecodecamp/js-dsa](https://github.com/philbjern/portfolio/tree/main/freecodecamp/js-dsa)
 
 ### Scientific Computing with Python
