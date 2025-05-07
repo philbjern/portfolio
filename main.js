@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // page initialisation
-    createAnimatedCounter('born-counter', 90);
+    createAnimatedCounterReverse('born-counter', new Date().getFullYear(), 1991);
     createAnimatedCounter('experience-counter', 5);
     createAnimatedCounter('cert-counter', 6);
 
@@ -374,15 +374,38 @@ function smoothScroll(offsetTop) {
     });
 }
 
+const ANIMATED_COUNTER_DURATION = 2500;
+
 function createAnimatedCounter(elementId, targetValue) {
     const element = document.getElementById(elementId);
 
     function animateCounter() {
         anime({
             targets: element,
-            duration: 3500,
+            duration: ANIMATED_COUNTER_DURATION,
             easing: 'easeOutExpo',
             innerHTML: [1, targetValue],
+            round: 1,
+            complete: function (anim) {
+                if (elementId == 'experience-counter') {
+                    element.textContent = '5+';
+                }
+            }
+        });
+    }
+    animateCounter();
+}
+
+
+function createAnimatedCounterReverse(elementId, startValue, targetValue) {
+    const element = document.getElementById(elementId);
+
+    function animateCounter() {
+        anime({
+            targets: element,
+            duration: ANIMATED_COUNTER_DURATION,
+            easing: 'easeOutExpo',
+            innerHTML: [startValue, targetValue],
             round: 1,
             complete: function (anim) {
                 if (elementId == 'experience-counter') {
