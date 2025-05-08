@@ -1,5 +1,6 @@
 
 import './App.css'
+import { useState } from 'react';
 
 function Button({text="Click me!", color="blue", fontSize=12, handleClick}) {
   const buttonStyle = {
@@ -14,16 +15,31 @@ function Button({text="Click me!", color="blue", fontSize=12, handleClick}) {
   )
 }
 
+const COLORS = ['pink', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
 function App() {
+  const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+
   const handleButtonClick = (url) => {
     window.location.href = url;
   }
 
+  const onButtonClick = (color) => () => {
+    setBackgroundColor(color);
+  }
+
   return (
-    <div>
-      <Button />
-      <Button text="Don't click me!" color="red"/>
-      <Button handleClick={() => handleButtonClick("https://www.google.com")} fontSize={20}/>
+    <div className="App" style={{backgroundColor}}>
+      {COLORS.map((color) => (
+        <button
+          type="button"
+          key={color}
+          onClick={onButtonClick(color)}
+          className={backgroundColor === color ? 'selected' : ''}
+          >
+            {color}
+        </button>
+      ))}
     </div>
   )
 }
