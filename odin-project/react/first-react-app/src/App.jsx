@@ -1,7 +1,7 @@
 
 import './App.css'
 
-function Button({text, color, fontSize}) {
+function Button({text="Click me!", color="blue", fontSize=12}) {
   const buttonStyle = {
     color: color,
     fontSize: fontSize + 'px',
@@ -17,9 +17,9 @@ function Button({text, color, fontSize}) {
 function App() {
   return (
     <div>
-      <Button text="Click me!" color="blue" fontSize={12}/>
-      <Button text="Don't click me!" color="red" fontSize={12}/>
-      <Button text="Click me!" color="blue" fontSize={20}/>
+      <Button />
+      <Button text="Don't click me!" color="red"/>
+      <Button fontSize={20}/>
     </div>
   )
 }
