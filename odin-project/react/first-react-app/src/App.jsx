@@ -19,13 +19,23 @@ const COLORS = ['pink', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  const [numberOfBackgroundChanges, setNumberOfBackgroundChanges] = useState(0);
 
   const handleButtonClick = (url) => {
     window.location.href = url;
   }
 
+  const updateNumberOfBackgroundChanges = () => {
+    setNumberOfBackgroundChanges(numberOfBackgroundChanges + 1);
+  }
+
+  const resetNumberOfBgChanges = () => {
+    setNumberOfBackgroundChanges(0);
+  }
+
   const onButtonClick = (color) => () => {
     setBackgroundColor(color);
+    updateNumberOfBackgroundChanges();
   }
 
   return (
@@ -40,6 +50,11 @@ function App() {
             {color}
         </button>
       ))}
+      <div>
+          Number of background changes: {numberOfBackgroundChanges}
+          
+      </div>
+      <button onClick={resetNumberOfBgChanges}>Reset</button>
     </div>
   )
 }
