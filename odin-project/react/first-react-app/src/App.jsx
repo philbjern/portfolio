@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 function ListItem(props) {
@@ -21,9 +20,7 @@ function App() {
     <>
       <h1>Animals:</h1>
       <ul>
-        {animals.map(animal => {
-          return <li key={animal}>{animal.toUpperCase()}</li>
-        })}
+        <List animals={animals} />
       </ul>
     </>
   )
