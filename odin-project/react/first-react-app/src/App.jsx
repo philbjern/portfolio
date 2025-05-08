@@ -1,7 +1,7 @@
 
 import './App.css'
 
-function Button({text="Click me!", color="blue", fontSize=12}) {
+function Button({text="Click me!", color="blue", fontSize=12, handleClick}) {
   const buttonStyle = {
     color: color,
     fontSize: fontSize + 'px',
@@ -10,16 +10,20 @@ function Button({text="Click me!", color="blue", fontSize=12}) {
   }
 
   return (
-    <button style={buttonStyle}>{text}</button>
+    <button style={buttonStyle} onClick={handleClick}>{text}</button>
   )
 }
 
 function App() {
+  const handleButtonClick = (url) => {
+    window.location.href = url;
+  }
+
   return (
     <div>
       <Button />
       <Button text="Don't click me!" color="red"/>
-      <Button fontSize={20}/>
+      <Button handleClick={() => handleButtonClick("https://www.google.com")} fontSize={20}/>
     </div>
   )
 }
