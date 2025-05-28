@@ -19,7 +19,7 @@ function Person() {
   return (
     <>
       <h1>{person.firstName} {person.lastName}</h1>
-      <h2>{person.age}</h2>
+      <h2>Age {person.age} years old</h2>
       <div>
         <CustomInput placeholder="first name" item={person.firstName} updateItem={(value) => setPerson({...person, firstName: value})}/>
         <CustomInput placeholder="last name" item={person.lastName} updateItem={(value) => setPerson({...person, lastName: value})}/>
