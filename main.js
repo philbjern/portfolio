@@ -320,7 +320,6 @@ function showNav() {
 
     anime({
         targets: 'header.header',
-        backgroundColor: 'rgb(255, 242, 241)',
         duration: 500,
         easing: 'easeInOutQuad'
     })
