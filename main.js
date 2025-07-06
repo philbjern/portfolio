@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // page initialisation
-    createAnimatedCounterReverse('born-counter', new Date().getFullYear(), 1991);
+    createAnimatedCounter('born-counter', 1991);
     createAnimatedCounter('experience-counter', 5);
     createAnimatedCounter('cert-counter', 6);
 
@@ -194,6 +194,11 @@ let recentNavActiveChange = false;
 window.addEventListener("scroll", function (e) {
     position = window.scrollY;
     totalHeight = document.body.scrollHeight;
+
+    if (position <= totalHeight * 0.03) {
+        showNav();
+        isHidden = false;
+    }
 
     if (position - lastScrollPostition < 0) {
         if (direction == 1) {
@@ -305,7 +310,7 @@ function showNav() {
 
     anime({
         targets: '.header .title',
-        fontSize: '2.1rem',
+        fontSize: '1.8rem',
         duration: 500,
         easing: 'easeInOutQuad'
     });
@@ -338,6 +343,8 @@ function hideNav() {
         easing: 'easeInOutQuad'
     })
 
+
+
     anime({
         targets: '.header nav',
         opacity: 0,
@@ -353,6 +360,14 @@ function hideNav() {
         easing: 'easeInOutQuad'
     })
 }
+
+document.querySelector(".header").addEventListener('mouseover', function (e) {
+    showNav();
+});
+
+document.querySelector(".header").addEventListener('mouseout', function (e) {
+    hideNav();
+});
 
 function setActive(navItemId) {
     document.querySelector(".nav-link.active").classList.remove("active");
