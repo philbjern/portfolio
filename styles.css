@@ -538,7 +538,7 @@ a {
 .about-box {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-self: center;
   /* background: var(--lavender-blush); */
   background: rgb(180, 180, 180);
@@ -689,13 +689,14 @@ a {
 }
 
 .counter {
-  margin: 0.3rem 1.5rem;
-  max-width: 140px;
+  margin: 0.1rem 1.4rem;
+  min-width: 120px;
   width: 100%;
 }
 
 .counter h1 {
-  font-size: 4.2rem;
+  font-size: 2.2rem;
+  margin: 0.2rem;
 }
 
 .strike-through {
