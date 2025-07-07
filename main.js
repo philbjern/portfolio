@@ -37,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
         setActive('nav-contact');
     })
 
+    document.querySelector(".my-photo").addEventListener('mouseover', function (e) {
+        e.target.classList.remove('blur')
+        e.target.classList.remove('magnifying-glass')
+    });
+
+    document.querySelector(".my-photo").addEventListener('mouseout', function (e) {
+        e.target.classList.add('blur');
+        e.target.classList.add('magnifying-glass');
+    });
+
     particlesJS("particles-container", {
         "particles": {
             "number": {
