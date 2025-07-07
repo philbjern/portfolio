@@ -63,7 +63,7 @@
 
   <script>
 
-    const content = {
+    const context = {
 
       mainText: "W <b>Fildekode</b> ",
       textToWrite: [
@@ -103,7 +103,7 @@
 
       async function addLine(line) {
         // This function should handle typing out a single line
-        let charIndex = 0; // Local charIndex for this line
+        let charIndex = 0;
         const charArray = line.split("");
 
         await new Promise(resolve => {
@@ -114,9 +114,9 @@
               charIndex++;
             } else {
               clearInterval(interval);
-              resolve(); // Resolve when the line is fully typed
+              resolve();
             }
-          }, TYPING_INTERVAL_MS); // Use the dedicated typing interval
+          }, TYPING_INTERVAL_MS);
         });
       }
 
@@ -124,15 +124,14 @@
         // This function removes characters until the output matches the initial length
         await new Promise(resolve => {
           const interval = setInterval(() => {
-            // Keep removing until we reach the length of the initial mainText + 1 (for space)
             if (output.length > initialOutputLength) {
               output = output.slice(0, -1);
               renderText(output);
             } else {
               clearInterval(interval);
-              resolve(); // Resolve when the line is fully removed
+              resolve();
             }
-          }, TYPING_INTERVAL_MS / 2); // Faster removal speed, for example
+          }, TYPING_INTERVAL_MS / 2);
         });
       }
 
@@ -163,19 +162,13 @@
           console.log("Line fully removed.");
         }
 
-        // After the loop, you might want to restart it or leave the last line.
-        // For now, let's just log that it's done.
-        console.log("All lines processed.");
-
-        // If you want to loop infinitely, you could call main() again here
-        main(); // Be careful with infinite loops in your application logic
+        main(); 
       }
 
-      // Start the animation
       main();
     }
 
-    typingLoop("targetElement", content);
+    typingLoop("targetElement", context);
 
   </script>
 
