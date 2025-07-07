@@ -308,9 +308,14 @@ function showGoTopBtn() {
 function showNav() {
     const navEl = document.querySelector('.header');
 
+    let titleTargetFontSize = '1.2rem';
+    if (document.width <= 650) {
+        titleTargetFontSize = '1rem';
+    }
+
     anime({
         targets: '.header .title',
-        fontSize: '1.8rem',
+        fontSize: titleTargetFontSize,
         duration: 500,
         easing: 'easeInOutQuad'
     });

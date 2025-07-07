@@ -905,12 +905,6 @@ a {
 }
 
 @media screen and (max-width: 806px) {
-  .header {
-    margin-left: auto;
-    display: block !important;
-    margin-right: 1rem;
-  }
-
   .counters-container {
     display: flex;
     flex-direction: row;
@@ -960,6 +954,15 @@ a {
   .container {
     margin: auto;
     width: auto;
+  }
+
+  .header nav {
+    margin: 1rem 0;
+  }
+
+  #guitar-emoji,
+  #laptop-emoji {
+    transform: scale(0.6);
   }
 
   .header .nav-link {
@@ -1012,15 +1015,24 @@ a {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .cards {
     flex-direction: column;
     align-items: center;
   }
 
+  .header nav {
+    display: none;
+  }
+
   .container {
     padding: 20px;
     margin: 0.5rem;
+  }
+
+  .card.starred::after {
+    transform: scale(0.8);
+    left: -25px;
   }
 
   .counter {
@@ -1031,8 +1043,17 @@ a {
     margin: 0 0.5rem;
   }
 
+  .about-box {
+    margin-top: 10rem;
+  }
+
   .card {
     height: auto;
+  }
+
+  .sci-py .card,
+  .d3 .card {
+    min-height: 400px;
   }
 
   .card .description {
