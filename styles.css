@@ -448,6 +448,35 @@ a {
   width: 100%;
 }
 
+.typing-automation-page {
+  background: linear-gradient(13deg, var(--clr-surface-a0) 43%, var(--clr-surface-a30));
+  justify-content: flex-start;
+}
+
+#typing-automation {
+  font-size: 3.2rem;
+  font-weight:  200;
+  margin-left: 5vw;
+}
+
+#typing-automation::after {
+  content: '_';
+  animation: blink 800ms infinite;
+}
+
+@keyframes blink {
+  0% {
+    opaticity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+}
+
 .box {
   max-width: var(--max-width);
   width: 100%;
@@ -942,6 +971,9 @@ a {
      width: auto !important;
   }
 
+  #typing-automation {
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 650px) {

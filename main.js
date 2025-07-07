@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     const mailIcon = document.querySelector("#mail-icon");
-    mailIcon.addEventListener("click", function(e) {
+    mailIcon.addEventListener("click", function (e) {
         e.preventDefault();
         mailIcon.classList.add("fly-out-right-anim");
         setTimeout(() => {
@@ -188,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 400);
     })
 
+    typingLoop("typing-automation", context);
 });
 
 let position = window.scrollY
@@ -333,16 +334,14 @@ function showNav() {
     anime({
         targets: '.header nav',
         opacity: 1,
-        transform: 'scale(1)',
-        duration: 500,
-        easing: 'easeInOutQuad'
-    });
 
-    anime({
-        targets: 'header.header',
-        duration: 500,
-        easing: 'easeInOutQuad'
-    })
+        keyframes: [
+            { translateY: '-20px', opacity: 0, ease: 'out', duration: 100 },
+            { translateY: '0px', opacity: 1, ease: 'out', duration: 700 }
+        ],
+        duration: 800,
+        ease: 'inOut'
+    });
 }
 
 showNav();
@@ -407,7 +406,6 @@ const ANIMATED_COUNTER_DURATION = 2500;
 
 function createAnimatedCounter(elementId, targetValue) {
     const element = document.getElementById(elementId);
-
     function animateCounter() {
         anime({
             targets: element,
@@ -428,7 +426,6 @@ function createAnimatedCounter(elementId, targetValue) {
 
 function createAnimatedCounterReverse(elementId, startValue, targetValue) {
     const element = document.getElementById(elementId);
-
     function animateCounter() {
         anime({
             targets: element,
@@ -445,3 +442,106 @@ function createAnimatedCounterReverse(elementId, startValue, targetValue) {
     }
     animateCounter();
 }
+
+const context = {
+    mainText: "W <b>phildekode</b> ",
+    textToWrite: [
+        "tworzymy aplikacje webowe",
+        "naprawiamy komputery i laptopy",
+        "tworzymy sklepy intenertowe",
+        "składamy komputery od zera",
+        "wykonujemy solidne sieci LAN"
+    ]
+}
+
+function typingLoop(targetElementId, textContent) {
+
+    const TYPING_INTERVAL_MS = 60;
+    const PAUSE_AFTER_ADD_MS = 200;
+    const INITIAL_ADD_LINE_DELAY_MS = 1500;
+
+    const elem = document.getElementById(targetElementId);
+    if (!elem) {
+        console.error('Target element id is not valid')
+        return;
+    }
+
+    let output = textContent.mainText + " ";
+
+    function renderText(text) {
+        elem.innerHTML = text;
+    }
+
+    async function delay(timeInMilliseconds) {
+        return new Promise((resolve, reject) => {
+            console.log('Starting delay for ' + timeInMilliseconds + ' milliseconds')
+            setTimeout(() => { resolve(); }, timeInMilliseconds);
+        });
+    }
+
+    async function addLine(line) {
+        // This function should handle typing out a single line
+        let charIndex = 0; 
+        const charArray = line.split("");
+
+        await new Promise(resolve => {
+            const interval = setInterval(() => {
+                if (charIndex < charArray.length) {
+                    output += charArray[charIndex];
+                    renderText(output);
+                    charIndex++;
+                } else {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, TYPING_INTERVAL_MS);
+        });
+    }
+
+    async function removeLine(initialOutputLength) {
+        // This function removes characters until the output matches the initial length
+        await new Promise(resolve => {
+            const interval = setInterval(() => {
+                if (output.length > initialOutputLength) {
+                    output = output.slice(0, -1);
+                    renderText(output);
+                } else {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, TYPING_INTERVAL_MS / 2);
+        });
+    }
+
+
+    async function main() {
+        // Store the initial length of the main text + space for easy removal later
+        const initialOutputLength = output.length;
+        renderText(output);
+
+        for (let i = 0; i < textContent.textToWrite.length; i++) {
+            const line = textContent.textToWrite[i];
+
+            console.log(`Processing line: "${line}"`);
+
+            // 1. Wait before typing a new line
+            await delay(INITIAL_ADD_LINE_DELAY_MS);
+
+            // 2. Add the line character by character
+            await addLine(line);
+            console.log("Line fully added:", line);
+
+            // 3. Pause after the line is fully typed
+            await delay(PAUSE_AFTER_ADD_MS);
+
+            // 4. Remove the line character by character (back to initial main text length)
+            await removeLine(initialOutputLength);
+            console.log("Line fully removed.");
+        }
+
+        main();
+    }
+
+    main();
+}
+
