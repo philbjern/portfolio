@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ccc;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container div {
+      font-size: 2.3rem;
+    }
+
+    .font-mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    #targetElement::after {
+      content: '_';
+      animation: blink 800ms infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opaticity: 0;
+      }
+      33% {
+        opacity: 1;
+      }
+
+      66% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="targetElement" class="font-mono">test</div>
+
+  </div>
+
+  <script>
+
+    const content = {
+
+      mainText: "W <b>Fildekode</b> ",
+      textToWrite: [
+        "tworzymy aplikacje webowe",
+        "naprawiamy komputery i laptopy",
+        "tworzymy sklepy intenertowe",
+        "składamy komputery od zera",
+        "wykonujemy solidne sieci LAN"
+      ]
+
+    }
+
+    function typingLoop(targetElementId, textContent) {
+
+      const TYPING_INTERVAL_MS = 60;
+      const PAUSE_AFTER_ADD_MS = 200;
+      const INITIAL_ADD_LINE_DELAY_MS = 1500;
+
+      const elem = document.getElementById(targetElementId);
+      if (!elem) {
+        console.error('Target element id is not valid')
+        return;
+      }
+
+      let output = textContent.mainText + " ";
+
+      function renderText(text) {
+        elem.innerHTML = text;
+      }
+
+      async function delay(timeInMilliseconds) {
+        return new Promise((resolve, reject) => {
+          console.log('Starting delay for ' + timeInMilliseconds + ' milliseconds')
+          setTimeout(() => { resolve(); }, timeInMilliseconds);
+        });
+      }
+
+      async function addLine(line) {
+        // This function should handle typing out a single line
+        let charIndex = 0; // Local charIndex for this line
+        const charArray = line.split("");
+
+        await new Promise(resolve => {
+          const interval = setInterval(() => {
+            if (charIndex < charArray.length) {
+              output += charArray[charIndex];
+              renderText(output);
+              charIndex++;
+            } else {
+              clearInterval(interval);
+              resolve(); // Resolve when the line is fully typed
+            }
+          }, TYPING_INTERVAL_MS); // Use the dedicated typing interval
+        });
+      }
+
+      async function removeLine(initialOutputLength) {
+        // This function removes characters until the output matches the initial length
+        await new Promise(resolve => {
+          const interval = setInterval(() => {
+            // Keep removing until we reach the length of the initial mainText + 1 (for space)
+            if (output.length > initialOutputLength) {
+              output = output.slice(0, -1);
+              renderText(output);
+            } else {
+              clearInterval(interval);
+              resolve(); // Resolve when the line is fully removed
+            }
+          }, TYPING_INTERVAL_MS / 2); // Faster removal speed, for example
+        });
+      }
+
+
+      async function main() {
+        // Store the initial length of the main text + space for easy removal later
+        const initialOutputLength = output.length;
+        renderText(output);
+
+        for (let i = 0; i < textContent.textToWrite.length; i++) {
+          const line = textContent.textToWrite[i];
+
+          console.log(`Processing line: "${line}"`);
+
+          // 1. Wait before typing a new line
+          await delay(INITIAL_ADD_LINE_DELAY_MS);
+
+
+          // 2. Add the line character by character
+          await addLine(line);
+          console.log("Line fully added:", line);
+
+          // 3. Pause after the line is fully typed
+          await delay(PAUSE_AFTER_ADD_MS);
+
+          // 4. Remove the line character by character (back to initial main text length)
+          await removeLine(initialOutputLength);
+          console.log("Line fully removed.");
+        }
+
+        // After the loop, you might want to restart it or leave the last line.
+        // For now, let's just log that it's done.
+        console.log("All lines processed.");
+
+        // If you want to loop infinitely, you could call main() again here
+        main(); // Be careful with infinite loops in your application logic
+      }
+
+      // Start the animation
+      main();
+    }
+
+    typingLoop("targetElement", content);
+
+  </script>
+
+</body>
+
+</html>
