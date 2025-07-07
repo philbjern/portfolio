@@ -263,7 +263,7 @@ window.addEventListener("scroll", function (e) {
         }
     }
 
-    const certTitle = document.getElementById("certificates")
+    const certTitle = document.querySelector(".certificates")
     const certHeight = certTitle.offsetTop;
     if (position > certHeight) {
         if (!recentNavActiveChange) {

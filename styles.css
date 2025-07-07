@@ -949,18 +949,13 @@ a {
     align-items: center;
   }
 
-  .curly-line-my-photo {
-    max-width: 330px;
-  }
-
   .counter {
     transform: scale(0.8);
   }
 
   .counters-container {
-    flex-direction: row;
+    flex-direction: column;
   }
-
 
   .container {
     margin: auto;
@@ -985,7 +980,24 @@ a {
     margin-top: 8rem;
   }
 
+  .photo-and-counters {
+    display: flex;
+  }
+
+  .left-section {
+    max-width: 50%;
+  }
+
+  .curly-line-my-photo {
+    display: none;
+  }
+
   .about-text {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .my-photo {
     max-width: 100%;
   }
 
@@ -1011,25 +1023,8 @@ a {
     margin: 0.5rem;
   }
 
-  .curly-line-my-photo {
-    max-width: 250px;
-  }
-
-  .about-text {
-    max-width: 100%;
-  }
-
-  .about-box {
-    margin-top: 7rem;
-    padding: 0.4rem;
-  }
-
   .counter {
     transform: scale(0.8);
-  }
-
-  .counters-container {
-    flex-direction: row;
   }
 
   .title-container {
