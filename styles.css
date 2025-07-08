@@ -368,6 +368,7 @@ a.text-link:hover {
   margin-left: auto;
   display: flex;
   margin-right: 1rem;
+  gap: 1rem;
 }
 
 .nav-link {
@@ -901,6 +902,7 @@ a {
   .header nav {
     margin-left: auto;
     display: flex;
+    gap: 1rem;
   }
 
   .header .nav-link {

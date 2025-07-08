@@ -334,12 +334,7 @@ function showNav() {
     anime({
         targets: '.header nav',
         opacity: 1,
-
-        keyframes: [
-            { translateY: '-20px', opacity: 0, ease: 'out', duration: 100 },
-            { translateY: '0px', opacity: 1, ease: 'out', duration: 700 }
-        ],
-        duration: 800,
+        duration: 500,
         ease: 'inOut'
     });
 }
@@ -356,8 +351,6 @@ function hideNav() {
         duration: 500,
         easing: 'easeInOutQuad'
     })
-
-
 
     anime({
         targets: '.header nav',
@@ -474,7 +467,6 @@ function typingLoop(targetElementId, textContent) {
 
     async function delay(timeInMilliseconds) {
         return new Promise((resolve, reject) => {
-            console.log('Starting delay for ' + timeInMilliseconds + ' milliseconds')
             setTimeout(() => { resolve(); }, timeInMilliseconds);
         });
     }
@@ -522,21 +514,17 @@ function typingLoop(targetElementId, textContent) {
         for (let i = 0; i < textContent.textToWrite.length; i++) {
             const line = textContent.textToWrite[i];
 
-            console.log(`Processing line: "${line}"`);
-
             // 1. Wait before typing a new line
             await delay(INITIAL_ADD_LINE_DELAY_MS);
 
             // 2. Add the line character by character
             await addLine(line);
-            console.log("Line fully added:", line);
 
             // 3. Pause after the line is fully typed
             await delay(PAUSE_AFTER_ADD_MS);
 
             // 4. Remove the line character by character (back to initial main text length)
             await removeLine(initialOutputLength);
-            console.log("Line fully removed.");
         }
 
         main();
