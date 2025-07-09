@@ -504,7 +504,12 @@ document.querySelector(".header").addEventListener('mouseover', function (e) {
 });
 
 document.querySelector(".header").addEventListener('mouseout', function (e) {
-    hideNav();
+    let position = window.scrollY;
+    let totalHeight = document.body.scrollHeight;
+
+    if (position >= totalHeight * 0.03) {
+        hideNav();
+    }
 });
 
 function setActive(navItemId) {
