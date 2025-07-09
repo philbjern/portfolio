@@ -310,7 +310,7 @@ mailIcon.addEventListener("click", function (e) {
 })
 
 const context = {
-    mainText: "W <b>phildekode</b> ",
+    mainText: "W <b class='color-primary'>phildekode</b> ",
     textToWrite: [
         "tworzymy aplikacje webowe",
         "naprawiamy komputery i laptopy",
@@ -468,6 +468,8 @@ function showNav() {
         duration: 500,
         ease: 'inOut'
     });
+
+    isHidden = false;
 }
 
 showNav();
@@ -497,6 +499,8 @@ function hideNav() {
         duration: 500,
         easing: 'easeInOutQuad'
     })
+
+    isHidden = true;
 }
 
 document.querySelector(".header").addEventListener('mouseover', function (e) {
