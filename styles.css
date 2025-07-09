@@ -375,14 +375,14 @@ a.text-link:hover {
 .header nav {
   margin-left: auto;
   display: flex;
-  margin-right: 1rem;
-  gap: 1rem;
+  margin-right: 3rem;
+  gap: 1.3rem;
+  position: relative;
 }
 
 .nav-link {
   font-size: 1.2rem;
   font-weight: 100;
-  padding: 0 1.3rem;
   position: relative;
   color: var(--clr-primary-a40);
   cursor: pointer;
@@ -401,17 +401,28 @@ a.text-link:hover {
   color: var(--clr-primary-a0);
 }
 
-.nav-link.active::after {
+#nav-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--clr-primary-a20);
+  position: absolute;
+  z-index: 100;
+  top: 22px;
+  
+}
+
+/* .nav-link.active::after {
   content: "";
   width: 5px;
   height: 5px;
   border-radius: 100%;
   background-color: var(--clr-primary-a0);
   position: absolute;
-  bottom: -10px;
+  bottom: -5px;
   left: calc(50% - 5px);
   animation: appear 400ms ease-in-out;
-}
+} */
 
 .flex-column {
   flex-direction: column;

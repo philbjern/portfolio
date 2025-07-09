@@ -1,7 +1,7 @@
 const NAV_OFFSET = 110;
 
-document.addEventListener("DOMContentLoaded", function () {
-
+window.addEventListener("DOMContentLoaded", function () {
+    console.log('DOMContentLoaded')
     document.querySelector("#nav-certificates").addEventListener("click", function (e) {
         const certificatesEl = document.getElementById('last-fullpage');
         const offsetTop = certificatesEl.offsetTop;
@@ -47,149 +47,280 @@ document.addEventListener("DOMContentLoaded", function () {
         e.target.classList.add('magnifying-glass');
     });
 
-    particlesJS("particles-container", {
-        "particles": {
-            "number": {
-                "value": 180,
-                // set 150 or greater when done
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                //"value": "#4aedf2"
-                "value": "#d6ff79"
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#ffffff"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                },
-                "image": {
-                    "src": "img/github.svg",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "opacity": {
-                "value": 0.95,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 8,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": false,
-                "distance": 150,
-                "color": "#ffffff",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 3,
-                "direction": "none",
-                "random": false,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": false,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
+
+    const navDot = document.getElementById("nav-dot");
+    const activeLink = document.querySelector('.nav-link.active')
+    if (activeLink) {
+        const center = activeLink.offsetLeft + activeLink.offsetWidth / 2;
+        navDot.style.left = `${center}px`;
+    }
+
+    const initialNavDotOffsetLeft = navDot.offsetLeft;
+    let lastMouseOverTarget = activeLink;
+
+    const rootStyles = getComputedStyle(document.documentElement);
+    const primaryColor = rootStyles.getPropertyValue('--clr-primary-a0').trim();
+
+    document.querySelectorAll(".nav-link").forEach(item => {
+        item.addEventListener('mouseover', function (e) {
+            const navItem = e.currentTarget;
+            if (navItem !== lastMouseOverTarget) {
+                const navItemOffsetLeft = navItem.offsetLeft;
+                const navItemWidth = navItem.offsetWidth;
+
+                const newDotOffsetLeft = navItemOffsetLeft + navItemWidth / 2;
+                anime.timeline()
+                    .add({
+                        targets: navDot,
+                        width: 20,
+                        height: 2,
+                        borderRadius: "8px",
+                        left: newDotOffsetLeft,
+                        duration: 300,
+                        backgroundColor: '#eee',
+                        easing: "easeInOutQuad"
+                    })
+                    .add({
+                        targets: navDot,
+                        width: 5,
+                        height: 5,
+                        borderRadius: "50%",
+                        duration: 150,
+                        easing: "easeInOutQuad"
+                    });
             }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
-                    }
-                },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                },
-                "push": {
-                    "particles_nb": 4
-                },
-                "remove": {
-                    "particles_nb": 2
-                }
-            }
-        },
-        "retina_detect": true
-    });
-
-    // page initialisation
-    createAnimatedCounter('born-counter', 1991);
-    createAnimatedCounter('experience-counter', 5);
-    createAnimatedCounter('cert-counter', 6);
-
-    setActive('nav-about');
-    hideGoTopBtn();
-    document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
-
-    document.querySelector(".gotop-btn").addEventListener('click', function (e) {
-        smoothScroll(0).then(() => {
-            hideGoTopBtn();
+            lastMouseOverTarget = navItem;
         });
-    });
 
-    document.querySelector(".header .title").addEventListener('click', function (e) {
-        smoothScroll(0);
+        item.addEventListener('mouseout', function (e) {
+            const navItem = e.currentTarget;
+
+            anime({
+                targets: navDot,
+                backgroundColor: primaryColor,
+            })
+
+            if (navItem !== lastMouseOverTarget) {
+                const activeLink = document.querySelector(".nav-link.active");
+                const offsetLeft = activeLink.offsetLeft + activeLink.offsetWidth / 2;
+
+                anime.timeline()
+                    .add({
+                        targets: navDot,
+                        width: 40,
+                        borderRadius: "8px",
+                        left: offsetLeft,
+                        duration: 300,
+                        easing: "easeInOutQuad"
+                    })
+                    .add({
+                        targets: navDot,
+                        width: 5,
+                        borderRadius: "50%",
+                        duration: 150,
+                        easing: "easeInOutQuad"
+                    });
+                lastMouseOverTarget = navItem;
+            }
+        });
     })
+})
 
-    const mailIcon = document.querySelector("#mail-icon");
-    mailIcon.addEventListener("click", function (e) {
-        e.preventDefault();
-        mailIcon.classList.add("fly-out-right-anim");
-        setTimeout(() => {
-            mailIcon.classList.remove("fly-out-right-anim")
-        }, 400);
-    })
 
-    typingLoop("typing-automation", context);
+particlesJS("particles-container", {
+    "particles": {
+        "number": {
+            "value": 180,
+            // set 150 or greater when done
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            //"value": "#4aedf2"
+            "value": "#d6ff79"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#ffffff"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.95,
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 8,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "grab"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 140,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+        }
+    },
+    "retina_detect": true
 });
+
+const ANIMATED_COUNTER_DURATION = 2500;
+
+function createAnimatedCounter(elementId, targetValue) {
+    const element = document.getElementById(elementId);
+    function animateCounter() {
+        anime({
+            targets: element,
+            duration: ANIMATED_COUNTER_DURATION,
+            easing: 'easeOutExpo',
+            innerHTML: [1, targetValue],
+            round: 1,
+            complete: function (anim) {
+                if (elementId == 'experience-counter') {
+                    element.textContent = '5+';
+                }
+            }
+        });
+    }
+    animateCounter();
+}
+
+
+function createAnimatedCounterReverse(elementId, startValue, targetValue) {
+    const element = document.getElementById(elementId);
+    function animateCounter() {
+        anime({
+            targets: element,
+            duration: ANIMATED_COUNTER_DURATION,
+            easing: 'easeOutExpo',
+            innerHTML: [startValue, targetValue],
+            round: 1,
+            complete: function (anim) {
+                if (elementId == 'experience-counter') {
+                    element.textContent = '5+';
+                }
+            }
+        });
+    }
+    animateCounter();
+}
+
+// page initialisation
+createAnimatedCounter('born-counter', 1991);
+createAnimatedCounter('experience-counter', 5);
+createAnimatedCounter('cert-counter', 6);
+
+setActive('nav-about');
+hideGoTopBtn();
+document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
+
+document.querySelector(".gotop-btn").addEventListener('click', function (e) {
+    smoothScroll(0).then(() => {
+        hideGoTopBtn();
+    });
+});
+
+document.querySelector(".header .title").addEventListener('click', function (e) {
+    smoothScroll(0);
+})
+
+const mailIcon = document.querySelector("#mail-icon");
+mailIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    mailIcon.classList.add("fly-out-right-anim");
+    setTimeout(() => {
+        mailIcon.classList.remove("fly-out-right-anim")
+    }, 400);
+})
+
+const context = {
+    mainText: "W <b>phildekode</b> ",
+    textToWrite: [
+        "tworzymy aplikacje webowe",
+        "naprawiamy komputery i laptopy",
+        "tworzymy sklepy intenertowe",
+        "składamy komputery od zera",
+        "wykonujemy solidne sieci LAN"
+    ]
+}
+
+typingLoop("typing-automation", context);
 
 let position = window.scrollY
 let lastScrollPostition = position;
@@ -395,58 +526,6 @@ function smoothScroll(offsetTop) {
     });
 }
 
-const ANIMATED_COUNTER_DURATION = 2500;
-
-function createAnimatedCounter(elementId, targetValue) {
-    const element = document.getElementById(elementId);
-    function animateCounter() {
-        anime({
-            targets: element,
-            duration: ANIMATED_COUNTER_DURATION,
-            easing: 'easeOutExpo',
-            innerHTML: [1, targetValue],
-            round: 1,
-            complete: function (anim) {
-                if (elementId == 'experience-counter') {
-                    element.textContent = '5+';
-                }
-            }
-        });
-    }
-    animateCounter();
-}
-
-
-function createAnimatedCounterReverse(elementId, startValue, targetValue) {
-    const element = document.getElementById(elementId);
-    function animateCounter() {
-        anime({
-            targets: element,
-            duration: ANIMATED_COUNTER_DURATION,
-            easing: 'easeOutExpo',
-            innerHTML: [startValue, targetValue],
-            round: 1,
-            complete: function (anim) {
-                if (elementId == 'experience-counter') {
-                    element.textContent = '5+';
-                }
-            }
-        });
-    }
-    animateCounter();
-}
-
-const context = {
-    mainText: "W <b>phildekode</b> ",
-    textToWrite: [
-        "tworzymy aplikacje webowe",
-        "naprawiamy komputery i laptopy",
-        "tworzymy sklepy intenertowe",
-        "składamy komputery od zera",
-        "wykonujemy solidne sieci LAN"
-    ]
-}
-
 function typingLoop(targetElementId, textContent) {
 
     const TYPING_INTERVAL_MS = 60;
@@ -473,7 +552,7 @@ function typingLoop(targetElementId, textContent) {
 
     async function addLine(line) {
         // This function should handle typing out a single line
-        let charIndex = 0; 
+        let charIndex = 0;
         const charArray = line.split("");
 
         await new Promise(resolve => {
