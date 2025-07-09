@@ -408,7 +408,7 @@ a.text-link:hover {
   background-color: var(--clr-primary-a20);
   position: absolute;
   z-index: 100;
-  top: 22px;
+  top: -5px;
   
 }
 
