@@ -124,6 +124,30 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     })
+
+    const polishLanguageButton = document.getElementById('polish-button');
+    const englishLanguageButton = document.getElementById('english-button');
+
+    const polishAboutMe = this.document.getElementById('about-me-polish');
+    const englishAboutMe = this.document.getElementById('about-me-english');
+
+    polishAboutMe.classList.remove('hidden');
+    englishAboutMe.classList.add('hidden');
+
+    polishLanguageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        polishAboutMe.classList.remove('hidden');
+        englishAboutMe.classList.add('hidden');
+    })
+
+    englishLanguageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        polishAboutMe.classList.add('hidden');
+        englishAboutMe.classList.remove('hidden');
+    })
+
+
+
 })
 
 
@@ -448,8 +472,6 @@ function showGoTopBtn() {
 }
 
 function showNav() {
-    const navEl = document.querySelector('.header');
-
     let titleTargetFontSize = '1.2rem';
     if (document.width <= 650) {
         titleTargetFontSize = '1rem';
@@ -465,7 +487,7 @@ function showNav() {
     anime({
         targets: '.header nav',
         opacity: 1,
-        duration: 500,
+        duration: 800,
         ease: 'inOut'
     });
 
@@ -488,8 +510,7 @@ function hideNav() {
     anime({
         targets: '.header nav',
         opacity: 0,
-        transform: 'scale(0.4)',
-        duration: 500,
+        duration: 200,
         easing: 'easeInOutQuad'
     });
 
@@ -511,7 +532,7 @@ document.querySelector(".header").addEventListener('mouseout', function (e) {
     let position = window.scrollY;
     let totalHeight = document.body.scrollHeight;
 
-    if (position >= totalHeight * 0.03) {
+    if (position > totalHeight * 0.03) {
         hideNav();
     }
 });

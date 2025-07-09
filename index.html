@@ -98,37 +98,87 @@
 
       </div>
       <div class="about-text">
-        <h1>Cześć! 👋</h1>
+        <div class="flex">
+          <h1 class="flex-1">Cześć! 👋</h1>
+           <div class="language-chooser">
+            <button class="btn" id="polish-button">🇵🇱</button> 
+            <button class="btn" id="english-button">🇺🇸</button>
+          </div>
+        </div>
 
         <div class="dash"></div>
 
-        <p class="font-mono">
-          Jestem programistą z około 2-letnim doświadczeniem zawodowym, zdobytym przy tworzeniu oprogramowania typu
-          Point of Sale dla włoskiego klienta. Pracowałem głównie w języku Java, wykorzystując technologie backendowe,
-          takie jak Spring i Hibernate. Mam doświadczenie zarówno w pracy zespołowej, jak i w samodzielnym rozwijaniu
-          komponentów systemu. Dobrze rozumiem cykl życia aplikacji oraz realia współpracy z klientem zagranicznym.
-        </p>
+        <div id="about-me-polish">
+          <p class=" font-mono">
+          Jestem programistą z 2-letnim doświadczeniem zawodowym, zdobytym przy tworzeniu oprogramowania typu Point of
+          Sale dla włoskiego klienta. Pracowałem głównie w języku Java, wykorzystując technologie backendowe, takie jak
+          Spring i Hibernate. Mam doświadczenie zarówno w pracy zespołowej, jak i w samodzielnym rozwijaniu komponentów
+          systemu. Dobrze rozumiem cykl życia aplikacji oraz realia współpracy z klientem zagranicznym.
+          </p>
+          <p class="font-mono">
+            Obecnie rozwijam swoje umiejętności w Pythonie i technologiach frontendowych (HTML, CSS, JavaScript), aby
+            poszerzyć swoje możliwości zawodowe i móc pracować przy pełnych stosach technologicznych (full-stack).
+            Interesuje mnie szczególnie budowanie nowoczesnych aplikacji webowych oraz łączenie technologii z dobrym UX
+            i
+            przemyślaną architekturą.
+          </p>
+          <p class="font-mono">
+            Równolegle rozwijam się w kierunku branży game dev, która od dawna jest moją pasją. Uczę się C# i silnika
+            Unity,
+            a także C++ z myślą o pracy z Unreal Engine. Chciałbym w przyszłości pracować przy tworzeniu gier — zarówno
+            pod
+            kątem kodu silnikowego, jak i tworzenia interakcji oraz systemów rozgrywki.
+          </p>
+          <p class="font-mono">
+            Poza programowaniem jestem aktywnym muzykiem – gram na gitarze solowej w lokalnym zespole. Muzyka to dla
+            mnie
+            nie tylko pasja, ale też sposób rozwijania kreatywności, koncentracji i umiejętności współpracy. Łączę
+            myślenie
+            logiczne z wrażliwością artystyczną, co często przekłada się na niestandardowe podejście do rozwiązywania
+            problemów.
+          </p>
+          <p class="font-mono">
+            Szukam projektów i zespołów, które doceniają solidne rzemiosło programistyczne, ale również otwartość,
+            samodzielność i kreatywne spojrzenie — zarówno w kontekście aplikacji użytkowych, jak i gier komputerowych.
+          </p>
 
-        <p class="font-mono">
-          Obecnie rozwijam swoje umiejętności w Pythonie i technologiach frontendowych (HTML, CSS, JavaScript), aby
-          poszerzyć swoje możliwości zawodowe i móc pracować przy pełnych stosach technologicznych (full-stack).
-          Interesuje mnie szczególnie budowanie nowoczesnych aplikacji webowych oraz łączenie technologii z dobrym UX i
-          przemyślaną architekturą.
-        </p>
+          <button class="btn mt-1" id="lets-talk-btn">📨 Porozmawiajmy</button>
+        </div>
 
-        <p class="font-mono">
-          Poza programowaniem jestem aktywnym muzykiem – gram na gitarze solowej w lokalnym zespole rockowym. Muzyka to
-          dla mnie nie tylko pasja, ale też sposób rozwijania kreatywności, koncentracji i umiejętności współpracy.
-          Łączę myślenie logiczne z wrażliwością artystyczną, co często przekłada się na niestandardowe podejście do
-          rozwiązywania problemów.
-        </p>
+        <div id="about-me-english">
+          <p class="font-mono">
+            I am a programmer with 2 years of professional experience, gained while developing Point of Sale software
+            for an Italian client. I worked mainly in Java, using backend technologies such as Spring and Hibernate. I
+            have experience both in teamwork and independently developing system components. I understand the
+            application lifecycle well and have firsthand knowledge of collaborating with international clients.
+          </p>
 
-        <p class="font-mono">
-          Szukam projektów i zespołów, które doceniają solidne rzemiosło programistyczne, ale również otwartość,
-          samodzielność i kreatywne spojrzenie.
-        </p>
+          <p class="font-mono">
+            Currently, I'm expanding my skills in Python and frontend technologies (HTML, CSS, JavaScript) to broaden my
+            career opportunities and be able to work across full technology stacks. I'm particularly interested in
+            building modern web applications that combine thoughtful architecture with strong UX principles.
+          </p>
 
-        <button class="btn mt-1" id="lets-talk-btn">📞 Porozmawiajmy</button>
+          <p class="font-mono">
+            In parallel, I'm developing toward the game development industry, which has long been a personal passion.
+            I'm learning C# and Unity, as well as C++ with the goal of working in Unreal Engine. I would love to work on
+            game projects — whether focused on engine-level programming or designing gameplay systems and interactions.
+          </p>
+
+          <p class="font-mono">
+            Outside of programming, I'm an active musician — I play lead guitar in a local rock band. Music is not just
+            a passion but also a way to enhance creativity, focus, and collaboration. I combine logical thinking with
+            artistic sensitivity, which often leads to creative problem-solving approaches.
+          </p>
+
+          <p class="font-mono">
+            I'm looking for projects and teams that value solid engineering craft, but also openness, independence, and
+            a creative perspective — whether in application development or game creation.
+          </p>
+
+          <button class="btn mt-1" id="lets-talk-btn">📨 Let's talk</button>
+        </div>
+
       </div>
 
     </div>
@@ -147,550 +197,556 @@
 
   <div class="fullpage flex-column" id="projects">
 
-  <!-- <div class="container bg-transparent" id="projects-1">
+    <!-- <div class="container bg-transparent" id="projects-1">
     <h1>Projects</h1>
   </div> -->
 
-  <div class="container">
-    <section class="page-section">
-      <header>
-        <h2 class="subtitle">React.js Projects</h2>
-        <p class="narrow">
-          Below are some of the projects I built using React.js as part of the Odin Project curriculum. These projects
-          helped me apply concepts like component-based architecture, hooks, props, and state management in real-world
-          scenarios. Each project focuses on interactivity and dynamic rendering, showcasing how React simplifies
-          building responsive and engaging user interfaces.
+    <div class="container">
+      <section class="page-section">
+        <header>
+          <h2 class="subtitle">React.js Projects</h2>
+          <p class="narrow">
+            Below are some of the projects I built using React.js as part of the Odin Project curriculum. These projects
+            helped me apply concepts like component-based architecture, hooks, props, and state management in real-world
+            scenarios. Each project focuses on interactivity and dynamic rendering, showcasing how React simplifies
+            building responsive and engaging user interfaces.
 
-        </p>
-      </header>
+          </p>
+        </header>
 
-      <section>
-        <div>
-          <div class="dash"></div>
-          <h3>React</h3>
-
-          <article>
-            <div class="card starred">
-              <div class="flex-1">
-                <p class="title">Pokémon Memory Card Game</p>
-
-                <div class="label-container">
-                  <p class="label">JavaScript</p>
-                  <p class="label">Fetch API</p>
-                  <p class="label">REST API</p>
-                  <p class="label">async/await</p>
-                  <p class="label">React</p>
-                </div>
-
-                <a href="https://fbreactpokemoncardgame.netlify.app/">
-                  <img src="assets/pokemon-card-game-demo.gif" alt="Pokemon Memory Card Game screenshot" />
-                </a>
-              </div>
-              <div>
-                <p class="description">
-                  This project is a simple Pokémon memory card game built with React. It fetches Pokémon data from the
-                  PokéAPI and displays them as clickable cards. The objective is to click on each card only once — if
-                  the user clicks the same card twice, the score resets. After each successful click, the cards are
-                  shuffled to increase difficulty. The game tracks both the current score and the highest score achieved
-                  during the session. It's a fun way to practice React fundamentals like component state, effects, and
-                  user interaction.
-                </p>
-                <p class="text-right">
-                  <a href="https://fbreactpokemoncardgame.netlify.app/"><button>Live App</button></a>
-                  <a href="https://github.com/philbjern/react-memory-card-game/tree/main"><button class="muted">GitHub
-                      Repository</button></a>
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-  </div>
-
-  <div class="container" id="full-stack-projects">
-    <section class="page-section">
-      <header>
-        <h2 class="subtitle">Full-stack Projects</h2>
-        <p class="narrow">
-          These full-stack projects combine both front-end and back-end technologies to create complete, interactive web
-          applications. They demonstrate my ability to build scalable APIs using Java and Spring Boot, manage data with
-          MongoDB, and deliver responsive user interfaces using modern frameworks like Svelte. Each project reflects
-          practical application of asynchronous logic, RESTful architecture, and thoughtful UI design — highlighting my
-          progress in full-stack development.
-        </p>
-      </header>
-      <section>
-        <div class="featured flex flex-direction-row-reverse">
+        <section>
           <div>
             <div class="dash"></div>
-            <h3>Full-stack projects</h3>
+            <h3>React</h3>
 
             <article>
-              <div class="card featured">
+              <div class="card starred">
                 <div class="flex-1">
-                  <p class="title">Todo List</p>
+                  <p class="title">Pokémon Memory Card Game</p>
 
                   <div class="label-container">
                     <p class="label">JavaScript</p>
-                    <p class="label">Java</p>
-                    <p class="label">Spring Boot</p>
-                    <p class="label">mongoDB</p>
+                    <p class="label">Fetch API</p>
                     <p class="label">REST API</p>
                     <p class="label">async/await</p>
-                    <p class="label">Svelte</p>
+                    <p class="label">React</p>
                   </div>
 
-
-                  <a href="https://philbjern.github.io/todo-list/">
-                    <img src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
-                      alt="Project Todo List screenshot" />
+                  <a href="https://fbreactpokemoncardgame.netlify.app/">
+                    <img src="assets/pokemon-card-game-demo.gif" alt="Pokemon Memory Card Game screenshot" />
                   </a>
                 </div>
                 <div>
                   <p class="description">
-                    Fullstack Spring Boot todo tasks list application, offering CRUD features with
-                    'todo' tasks priority labels, grouping tasks into
-                    projects, basic notifications system and dark/light mode
-                    switch. Java, Spring Boot, MongoDB, Svelte
+                    This project is a simple Pokémon memory card game built with React. It fetches Pokémon data from the
+                    PokéAPI and displays them as clickable cards. The objective is to click on each card only once — if
+                    the user clicks the same card twice, the score resets. After each successful click, the cards are
+                    shuffled to increase difficulty. The game tracks both the current score and the highest score
+                    achieved
+                    during the session. It's a fun way to practice React fundamentals like component state, effects, and
+                    user interaction.
                   </p>
                   <p class="text-right">
-                    <a href="https://philbjern.github.io/todo-list/"><button>Live App</button></a>
-                    <a href="https://github.com/philbjern/todo-list"><button class="muted">GitHub
+                    <a href="https://fbreactpokemoncardgame.netlify.app/"><button>Live App</button></a>
+                    <a href="https://github.com/philbjern/react-memory-card-game/tree/main"><button class="muted">GitHub
                         Repository</button></a>
                   </p>
                 </div>
               </div>
             </article>
           </div>
+        </section>
+    </div>
+
+    <div class="container" id="full-stack-projects">
+      <section class="page-section">
+        <header>
+          <h2 class="subtitle">Full-stack Projects</h2>
+          <p class="narrow">
+            These full-stack projects combine both front-end and back-end technologies to create complete, interactive
+            web
+            applications. They demonstrate my ability to build scalable APIs using Java and Spring Boot, manage data
+            with
+            MongoDB, and deliver responsive user interfaces using modern frameworks like Svelte. Each project reflects
+            practical application of asynchronous logic, RESTful architecture, and thoughtful UI design — highlighting
+            my
+            progress in full-stack development.
+          </p>
+        </header>
+        <section>
+          <div class="featured flex flex-direction-row-reverse">
+            <div>
+              <div class="dash"></div>
+              <h3>Full-stack projects</h3>
+
+              <article>
+                <div class="card featured">
+                  <div class="flex-1">
+                    <p class="title">Todo List</p>
+
+                    <div class="label-container">
+                      <p class="label">JavaScript</p>
+                      <p class="label">Java</p>
+                      <p class="label">Spring Boot</p>
+                      <p class="label">mongoDB</p>
+                      <p class="label">REST API</p>
+                      <p class="label">async/await</p>
+                      <p class="label">Svelte</p>
+                    </div>
+
+
+                    <a href="https://philbjern.github.io/todo-list/">
+                      <img
+                        src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
+                        alt="Project Todo List screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Fullstack Spring Boot todo tasks list application, offering CRUD features with
+                      'todo' tasks priority labels, grouping tasks into
+                      projects, basic notifications system and dark/light mode
+                      switch. Java, Spring Boot, MongoDB, Svelte
+                    </p>
+                    <p class="text-right">
+                      <a href="https://philbjern.github.io/todo-list/"><button>Live App</button></a>
+                      <a href="https://github.com/philbjern/todo-list"><button class="muted">GitHub
+                          Repository</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <div class="container" id="odin-projects">
+
+      <section>
+        <header>
+          <h2 class="subtitle">Odin Project curriculum</h2>
+          <p class="narrow">
+            A collection of completed projects I made during my progress through
+            <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
+            curriculum. Projects range from landing page for fictional company
+            using modern HTML and CSS, to games like Etch-a-sketch, or rock paper scissors chat bot using
+            JavaScript.
+          </p>
+        </header>
+        <div class="project-list">
+
+          <div>
+            <div class="dash"></div>
+            <h3>JavaScript</h3>
+            <div class="cards">
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Tic Tac Toe</p>
+                    <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/">
+                      <img src="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
+                        alt="Project Library screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Tic Tac Toe game written using Factory Functions and
+                      Module Pattern.
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Rock Paper Scissors</p>
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html">
+                      <img src="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
+                        alt="Project Rock Paper Scissors screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      JavaScript game of Rock Paper Scissors in form of a chat
+                      bot.
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Etch-a-Sketch</p>
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/">
+                      <img src="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
+                        alt="Etch-a-Sketch project screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Etch-a-Sketch application with variable grid size and
+                      different stroke colors
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Calculator</p>
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator">
+                      <img src="odin-project/foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
+                        alt="Etch-a-Sketch project screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      JavaScript calculator application with support for
+                      floating point numbers operations and keyboard input.
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-calculator/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-1">
+                    <p class="title">Library</p>
+                    <a href="odin-project/javascript/organizing-js-code/PROJECT-library">
+                      <img src="odin-project/javascript/organizing-js-code/PROJECT-library/img/demo.gif"
+                        alt="Project Library screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      Library project with adding new books, deleting books,
+                      toggling read status and saving to Local Storage.
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/javascript/organizing-js-code/PROJECT-library/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-library/"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article>
+                <div class="card">
+                  <div class="flex-">
+                    <p class="title">Landing page</p>
+                    <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html">
+                      <img src="odin-project/foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
+                        alt="Project Landing Page screenshot" />
+                    </a>
+                  </div>
+                  <div>
+                    <p class="description">
+                      HTML5 + CSS3 with Flexbox project, landing page for
+                      fictional company Guitarly - Mobile guitar service
+                    </p>
+                    <p class="text-right">
+                      <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html"><button>Live
+                          App</button></a>
+                      <a
+                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/05-flex/00-PROJECT-landing-page"><button
+                          class="muted">Code</button></a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
-    </section>
-  </div>
+    </div>
 
-  <div class="container" id="odin-projects">
 
-    <section>
-      <header>
-        <h2 class="subtitle">Odin Project curriculum</h2>
+    <div class="container projects-fcc">
+      <section>
+        <h2 class="subtitle" id="freecodecamp">Code Camp</h2>
         <p class="narrow">
-          A collection of completed projects I made during my progress through
-          <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
-          curriculum. Projects range from landing page for fictional company
-          using modern HTML and CSS, to games like Etch-a-sketch, or rock paper scissors chat bot using
-          JavaScript.
+          A collection of completed projects I made during my progress
+          through code camp tasks. Below you can check few projects completed during my
+          data visualization certification. I used HTML, CSS and
+          JavaScript with D3.js library to create and manipulate SVG
+          charts.
         </p>
-      </header>
-      <div class="project-list">
+      </section>
 
-        <div>
-          <div class="dash"></div>
-          <h3>JavaScript</h3>
-          <div class="cards">
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Tic Tac Toe</p>
-                  <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/">
-                    <img src="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
-                      alt="Project Library screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    Tic Tac Toe game written using Factory Functions and
-                    Module Pattern.
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
+      <div>
+        <div class="dash"></div>
+        <h1>Scientific Computing with Python</h1>
+        <p class="narrow">
+          Python course with many projects involving scientific applications, and final project, a probability
+          calculator.
+          Repository
+          containing all projects is available
+          <a href="https://github.com/philbjern/fcc-scientific-computing-python" class="text-link">here</a>
+        </p>
+        <div class="cards sci-py">
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Probability Calculator</p>
+                <a
+                  href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-probability-calculator.py">
+                  <img src="assets/sci-python-prob-calc.png" alt="Proability Calculator scientific python project" />
+                </a>
               </div>
-            </article>
+              <div class="flex-1">
+                <p class="description">
+                  Probability Calculator, final project of the course. Completing this one was tricky due to specific
+                  tests
+                  and the course being in beta.
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a
+                    href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-probability-calculator.py"><button
+                      class="btn">Code</button></a>
+                </p>
+              </div>
+            </div>
+          </article>
 
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Rock Paper Scissors</p>
-                  <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html">
-                    <img src="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
-                      alt="Project Rock Paper Scissors screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    JavaScript game of Rock Paper Scissors in form of a chat
-                    bot.
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Arithmetic Formatter</p>
+                <a
+                  href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-arithmetic-formatter.py">
+                  <img src="assets/sci-python-artmetic-calc.png" alt="Arithmetic scientific python project" />
+                </a>
               </div>
-            </article>
+              <div class="flex-1">
+                <p class="description">
+                  Arithmetic formatter project for the Scientific Python course.
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a
+                    href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-arithmetic-formatter.py"><button
+                      class="btn">Code</button></a>
+                </p>
+              </div>
+            </div>
+          </article>
 
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Etch-a-Sketch</p>
-                  <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/">
-                    <img src="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
-                      alt="Etch-a-Sketch project screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    Etch-a-Sketch application with variable grid size and
-                    different stroke colors
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
+          <article>
+            <div class="card others">
+              <div class="flex-1">
+                <p class="title">Many others</p>
+                <a href="https://github.com/philbjern/fcc-scientific-computing-python/tree/main">
+                  <img src="assets/sci-python-artmetic-calc.png" alt="Arithmetic scientific python project"
+                    class="sci-py-others-img" />
+                </a>
               </div>
-            </article>
+              <div class="flex-1">
+                <p class="description">
+                  More completed tasks and projects in the course ...
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://github.com/philbjern/fcc-scientific-computing-python/tree/main"><button
+                      class="btn">Code</button></a>
+                </p>
+              </div>
+            </div>
+          </article>
 
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Calculator</p>
-                  <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator">
-                    <img src="odin-project/foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
-                      alt="Etch-a-Sketch project screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    JavaScript calculator application with support for
-                    floating point numbers operations and keyboard input.
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-calculator/"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <div class="card">
-                <div class="flex-1">
-                  <p class="title">Library</p>
-                  <a href="odin-project/javascript/organizing-js-code/PROJECT-library">
-                    <img src="odin-project/javascript/organizing-js-code/PROJECT-library/img/demo.gif"
-                      alt="Project Library screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    Library project with adding new books, deleting books,
-                    toggling read status and saving to Local Storage.
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/javascript/organizing-js-code/PROJECT-library/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-library/"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article>
-              <div class="card">
-                <div class="flex-">
-                  <p class="title">Landing page</p>
-                  <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html">
-                    <img src="odin-project/foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
-                      alt="Project Landing Page screenshot" />
-                  </a>
-                </div>
-                <div>
-                  <p class="description">
-                    HTML5 + CSS3 with Flexbox project, landing page for
-                    fictional company Guitarly - Mobile guitar service
-                  </p>
-                  <p class="text-right">
-                    <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html"><button>Live
-                        App</button></a>
-                    <a
-                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/05-flex/00-PROJECT-landing-page"><button
-                        class="muted">Code</button></a>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
         </div>
       </div>
-    </section>
-  </div>
 
 
-  <div class="container projects-fcc">
-    <section>
-      <h2 class="subtitle" id="freecodecamp">Code Camp</h2>
-      <p class="narrow">
-        A collection of completed projects I made during my progress
-        through code camp tasks. Below you can check few projects completed during my
-        data visualization certification. I used HTML, CSS and
-        JavaScript with D3.js library to create and manipulate SVG
-        charts.
-      </p>
-    </section>
+      <div>
+        <div class="dash"></div>
+        <h1>D3.js Data Visualization</h1>
+        <p class="narrow">
+          Projects I have completed to receive freecodecamp data visualisation certificate
+        </p>
+        <div class="cards d3">
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Treemap</p>
+                <a href="https://codepen.io/philip-bjern/pen/WNPLzxX">
+                  <img
+                    src="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
+                    alt="Data Visualization - Treemap" />
+                </a>
+              </div>
+              <div class="flex-1">
+                <p class="description">
+                  Treemap for data showing 100 top sales of videogames by
+                  gaming platform. Additional tabs show treemaps for two
+                  other datasets (Top movie sales and top kickstarter
+                  pledges)
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"><button>Codepen.io</button></a>
+                  <a
+                    href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"><button
+                      class="muted">Code</button></a>
+                </p>
+              </div>
+            </div>
+          </article>
 
-    <div>
-      <div class="dash"></div>
-      <h1>Scientific Computing with Python</h1>
-      <p class="narrow">
-        Python course with many projects involving scientific applications, and final project, a probability calculator.
-        Repository
-        containing all projects is available
-        <a href="https://github.com/philbjern/fcc-scientific-computing-python" class="text-link">here</a>
-      </p>
-      <div class="cards sci-py">
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Probability Calculator</p>
-              <a
-                href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-probability-calculator.py">
-                <img src="assets/sci-python-prob-calc.png" alt="Proability Calculator scientific python project" />
-              </a>
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Choropleth Map</p>
+                <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
+                  <img
+                    src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
+                    alt="Data Visualization - Choropleth Map" />
+                </a>
+              </div>
+              <div class="flex-1">
+                <p class="description">
+                  A map showing percentage of adults age 25 and older with
+                  bachelor's degree or higher (2010 - 2014) for each county
+                  of each state of United States of America
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"><button>Codepen.io</button></a>
+                  <a
+                    href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"><button
+                      class="muted">Code</button></a>
+                </p>
+              </div>
             </div>
-            <div class="flex-1">
-              <p class="description">
-                Probability Calculator, final project of the course. Completing this one was tricky due to specific
-                tests
-                and the course being in beta.
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a
-                  href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-probability-calculator.py"><button
-                    class="btn">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Arithmetic Formatter</p>
-              <a
-                href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-arithmetic-formatter.py">
-                <img src="assets/sci-python-artmetic-calc.png" alt="Arithmetic scientific python project" />
-              </a>
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Heat map</p>
+                <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
+                  <img
+                    src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
+                    alt="Data Visualization - Heat map" />
+                </a>
+              </div>
+              <div class="flex-1">
+                <p class="description">
+                  Heat map showing historical data (from 1753 up to 2015) of
+                  monthy global land-surface temperature variance
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://codepen.io/philip-bjern/pen/rNPZadv"><button>Codepen.io</button></a>
+                  <a
+                    href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"><button
+                      class="muted">Code</button></a>
+                </p>
+              </div>
             </div>
-            <div class="flex-1">
-              <p class="description">
-                Arithmetic formatter project for the Scientific Python course.
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a
-                  href="https://github.com/philbjern/fcc-scientific-computing-python/blob/main/PROJECT-arithmetic-formatter.py"><button
-                    class="btn">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <article>
-          <div class="card others">
-            <div class="flex-1">
-              <p class="title">Many others</p>
-              <a href="https://github.com/philbjern/fcc-scientific-computing-python/tree/main">
-                <img src="assets/sci-python-artmetic-calc.png" alt="Arithmetic scientific python project"
-                  class="sci-py-others-img" />
-              </a>
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Scatterplot Graph</p>
+                <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
+                  <img
+                    src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
+                    alt="Data Visualization - Scatterplot Graph" />
+                </a>
+              </div>
+              <div class="flex-1">
+                <p class="description">
+                  Heat map showing historical data (from 1753 up to 2015) of
+                  monthy global land-surface temperature variance
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://codepen.io/philip-bjern/pen/KKJBZpa"><button>Codepen.io</button></a>
+                  <a
+                    href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"><button
+                      class="muted">Code</button></a>
+                </p>
+              </div>
             </div>
-            <div class="flex-1">
-              <p class="description">
-                More completed tasks and projects in the course ...
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://github.com/philbjern/fcc-scientific-computing-python/tree/main"><button
-                    class="btn">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
+          </article>
 
+          <article>
+            <div class="card">
+              <div class="flex-1">
+                <p class="title">Bar Chart</p>
+                <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
+                  <img
+                    src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
+                    alt="Data Visualization - Bar Chart" />
+                </a>
+              </div>
+              <div class="flex-1">
+                <p class="description">
+                  Chart showing GDP of United States of America over the
+                  years.
+                </p>
+              </div>
+              <div>
+                <p class="text-right">
+                  <a href="https://codepen.io/philip-bjern/pen/YzBjxpo"><button>Codepen.io</button></a>
+                  <a
+                    href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"><button
+                      class="muted">Code</button></a>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
 
-
-    <div>
-      <div class="dash"></div>
-      <h1>D3.js Data Visualization</h1>
-      <p class="narrow">
-        Projects I have completed to receive freecodecamp data visualisation certificate
-      </p>
-      <div class="cards d3">
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Treemap</p>
-              <a href="https://codepen.io/philip-bjern/pen/WNPLzxX">
-                <img
-                  src="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/assets/05-treemap-graph.png?raw=true"
-                  alt="Data Visualization - Treemap" />
-              </a>
-            </div>
-            <div class="flex-1">
-              <p class="description">
-                Treemap for data showing 100 top sales of videogames by
-                gaming platform. Additional tabs show treemaps for two
-                other datasets (Top movie sales and top kickstarter
-                pledges)
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://codepen.io/philip-bjern/pen/WNPLzxX"><button>Codepen.io</button></a>
-                <a
-                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/05-treemap/index.html"><button
-                    class="muted">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Choropleth Map</p>
-              <a href="https://codepen.io/philip-bjern/pen/WNPaOvg">
-                <img
-                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/04-choropleth-map.png"
-                  alt="Data Visualization - Choropleth Map" />
-              </a>
-            </div>
-            <div class="flex-1">
-              <p class="description">
-                A map showing percentage of adults age 25 and older with
-                bachelor's degree or higher (2010 - 2014) for each county
-                of each state of United States of America
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://codepen.io/philip-bjern/pen/WNPaOvg"><button>Codepen.io</button></a>
-                <a
-                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/04-choropleth-map/index.html"><button
-                    class="muted">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Heat map</p>
-              <a href="https://codepen.io/philip-bjern/pen/rNPZadv">
-                <img
-                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/03-heatmap.png"
-                  alt="Data Visualization - Heat map" />
-              </a>
-            </div>
-            <div class="flex-1">
-              <p class="description">
-                Heat map showing historical data (from 1753 up to 2015) of
-                monthy global land-surface temperature variance
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://codepen.io/philip-bjern/pen/rNPZadv"><button>Codepen.io</button></a>
-                <a
-                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/03-heatmap/index.html"><button
-                    class="muted">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Scatterplot Graph</p>
-              <a href="https://codepen.io/philip-bjern/pen/KKJBZpa">
-                <img
-                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/02-scatterplot.png"
-                  alt="Data Visualization - Scatterplot Graph" />
-              </a>
-            </div>
-            <div class="flex-1">
-              <p class="description">
-                Heat map showing historical data (from 1753 up to 2015) of
-                monthy global land-surface temperature variance
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://codepen.io/philip-bjern/pen/KKJBZpa"><button>Codepen.io</button></a>
-                <a
-                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/02-scatterplot-graph/index.html"><button
-                    class="muted">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article>
-          <div class="card">
-            <div class="flex-1">
-              <p class="title">Bar Chart</p>
-              <a href="https://codepen.io/philip-bjern/pen/YzBjxpo">
-                <img
-                  src="https://github.com/philbjern/freecodecamp-projects/raw/main/data-visualization-d3/assets/01-bar-graph.png"
-                  alt="Data Visualization - Bar Chart" />
-              </a>
-            </div>
-            <div class="flex-1">
-              <p class="description">
-                Chart showing GDP of United States of America over the
-                years.
-              </p>
-            </div>
-            <div>
-              <p class="text-right">
-                <a href="https://codepen.io/philip-bjern/pen/YzBjxpo"><button>Codepen.io</button></a>
-                <a
-                  href="https://github.com/philbjern/freecodecamp-projects/blob/main/data-visualization-d3/01-bar-chart/index.html"><button
-                    class="muted">Code</button></a>
-              </p>
-            </div>
-          </div>
-        </article>
-      </div>
     </div>
 
   </div>
-
-</div>
 
   <div id="last-fullpage" class="fullpage">
 
@@ -776,7 +832,8 @@
       <div id="contact">
         <h2 class="subtitle">Contact</h2>
         <div class="dash"></div>
-        <p class="text-lg playfair-display">If you are interested in working with me, please send me an email to this address: <a href="mailto:philbjern@gmail.com" class="text-link"><i>philbjern@gmail.com</i></a></p>
+        <p class="text-lg playfair-display">If you are interested in working with me, please send me an email to this
+          address: <a href="mailto:philbjern@gmail.com" class="text-link"><i>philbjern@gmail.com</i></a></p>
         <p id="mail-icon"><a href="mailto:philbjern@gmail.com"></a></p>
       </div>
     </div>

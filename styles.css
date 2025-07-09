@@ -55,6 +55,8 @@
   --clr-surface-tonal-a30: #5e665d;
   --clr-surface-tonal-a40: #767e76;
   --clr-surface-tonal-a50: #909690;
+
+  font-size: 14px;
 }
 
 body {
@@ -328,6 +330,10 @@ a.text-link:hover {
 }
 
 .hide {
+  display: none !important;
+}
+
+.hidden {
   display: none !important;
 }
 
@@ -722,7 +728,7 @@ a {
 }
 
 #last-fullpage {
-  background-image: url("assets/galaxy-bg.jpg");
+  background-image: url("assets/about-me-bg.jpg");
   background-size: cover;
   position: relative;
   min-height: 100vh;
@@ -987,6 +993,7 @@ a {
 
   .about-text {
     max-width: 90%;
+    font-size: 0.7rem !important;
   }
 
   #joystick-emoji {
