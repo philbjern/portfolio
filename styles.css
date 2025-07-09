@@ -459,12 +459,21 @@ footer {
   font-size: 0.85rem;
   color: var(--lavender-blush);
   padding: 2.5rem 0;
-  /* min-height: 150px; */
+  min-height: 150px;
   background-color: black;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+}
+
+footer p {
+  opacity: 0.7;
+}
+
+footer a {
+  font-weight: 100;
+  color: var(--clr-primary-a0);
 }
 
 a {
