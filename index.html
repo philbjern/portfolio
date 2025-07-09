@@ -23,7 +23,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
     integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+    integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2Y7KJXY1P"></script>
@@ -39,10 +41,16 @@
 
 <body>
   <header class="header">
+    
     <h1 class="title font-mono">
-      <span class="color-primary handle">#!/bin/<b>philbjern</b></span><span class="color-primary"><i
-          id="coursor">_</i></span>
+      <span class="color-primary handle">
+        #!/bin/<b>philbjern</b>
+      </span>
+      <span class="color-primary">
+        <i id="coursor">_</i>
+      </span>
     </h1>
+
     <nav>
       <div id="nav-dot"> </div>
       <div class="nav-link active" id="nav-about"><a href="#about">about</a></div>
@@ -60,8 +68,9 @@
     </nav>
   </header>
 
+  <div id="particles-container"></div>
+
   <section id="about" class="fullpage">
-    <div id="particles-container"></div>
     <div class="container about-box box-shadow">
       <div class="photo-and-counters">
         <div class="m-2 left-section">
@@ -100,8 +109,8 @@
       <div class="about-text">
         <div class="flex">
           <h1 class="flex-1">Cześć! 👋</h1>
-           <div class="language-chooser">
-            <button class="btn" id="polish-button">🇵🇱</button> 
+          <div class="language-chooser">
+            <button class="btn" id="polish-button">🇵🇱</button>
             <button class="btn" id="english-button">🇺🇸</button>
           </div>
         </div>
@@ -110,10 +119,12 @@
 
         <div id="about-me-polish">
           <p class=" font-mono">
-          Jestem programistą z 2-letnim doświadczeniem zawodowym, zdobytym przy tworzeniu oprogramowania typu Point of
-          Sale dla włoskiego klienta. Pracowałem głównie w języku Java, wykorzystując technologie backendowe, takie jak
-          Spring i Hibernate. Mam doświadczenie zarówno w pracy zespołowej, jak i w samodzielnym rozwijaniu komponentów
-          systemu. Dobrze rozumiem cykl życia aplikacji oraz realia współpracy z klientem zagranicznym.
+            Jestem programistą z 2-letnim doświadczeniem zawodowym, zdobytym przy tworzeniu oprogramowania typu Point of
+            Sale dla włoskiego klienta. Pracowałem głównie w języku Java, wykorzystując technologie backendowe, takie
+            jak
+            Spring i Hibernate. Mam doświadczenie zarówno w pracy zespołowej, jak i w samodzielnym rozwijaniu
+            komponentów
+            systemu. Dobrze rozumiem cykl życia aplikacji oraz realia współpracy z klientem zagranicznym.
           </p>
           <p class="font-mono">
             Obecnie rozwijam swoje umiejętności w Pythonie i technologiach frontendowych (HTML, CSS, JavaScript), aby
@@ -844,7 +855,8 @@
 
   <footer class="playfair-display">
     <p>
-      Made with ❤️ by <b><a href="https://github.com/philbjern">philbjern</a></b> in <span class="footer-year-span">2024</span>
+      Made with ❤️ by <b><a href="https://github.com/philbjern">philbjern</a></b> in <span
+        class="footer-year-span">2024</span>
     </p>
   </footer>
   <div class="gotop-btn">

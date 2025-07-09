@@ -145,9 +145,6 @@ window.addEventListener("DOMContentLoaded", function () {
         polishAboutMe.classList.add('hidden');
         englishAboutMe.classList.remove('hidden');
     })
-
-
-
 })
 
 
@@ -166,7 +163,7 @@ particlesJS("particles-container", {
             "value": "#d6ff79"
         },
         "shape": {
-            "type": "circle",
+            "type": "polygon",
             "stroke": {
                 "width": 0,
                 "color": "#ffffff"
@@ -191,7 +188,7 @@ particlesJS("particles-container", {
             }
         },
         "size": {
-            "value": 8,
+            "value": 6,
             "random": true,
             "anim": {
                 "enable": false,
@@ -201,7 +198,7 @@ particlesJS("particles-container", {
             }
         },
         "line_linked": {
-            "enable": false,
+            "enable": true,
             "distance": 150,
             "color": "#ffffff",
             "opacity": 0.4,
@@ -227,7 +224,7 @@ particlesJS("particles-container", {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "grab"
+                "mode": "repulse"
             },
             "onclick": {
                 "enable": true,
@@ -250,7 +247,7 @@ particlesJS("particles-container", {
                 "speed": 3
             },
             "repulse": {
-                "distance": 200,
+                "distance": 70,
                 "duration": 0.4
             },
             "push": {
