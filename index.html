@@ -137,15 +137,19 @@
 
   <div class="fullpage typing-automation-page">
 
-    <div id="typing-automation" class="font-mono">
-      Hello
+    <div class="container bg-transparent width-100">
+      <div id="typing-automation" class="font-mono">
+        Hello
+      </div>
     </div>
 
   </div>
 
-  <div class="title-container" id="projects-1">
+  <div class="fullpage flex-column" id="projects">
+
+  <!-- <div class="container bg-transparent" id="projects-1">
     <h1>Projects</h1>
-  </div>
+  </div> -->
 
   <div class="container">
     <section class="page-section">
@@ -169,9 +173,17 @@
             <div class="card starred">
               <div class="flex-1">
                 <p class="title">Pokémon Memory Card Game</p>
+
+                <div class="label-container">
+                  <p class="label">JavaScript</p>
+                  <p class="label">Fetch API</p>
+                  <p class="label">REST API</p>
+                  <p class="label">async/await</p>
+                  <p class="label">React</p>
+                </div>
+
                 <a href="https://fbreactpokemoncardgame.netlify.app/">
-                  <img src="assets/pokemon-card-game-demo.gif"
-                    alt="Pokemon Memory Card Game screenshot" />
+                  <img src="assets/pokemon-card-game-demo.gif" alt="Pokemon Memory Card Game screenshot" />
                 </a>
               </div>
               <div>
@@ -185,7 +197,8 @@
                 </p>
                 <p class="text-right">
                   <a href="https://fbreactpokemoncardgame.netlify.app/"><button>Live App</button></a>
-                  <a href="https://github.com/philbjern/react-memory-card-game/tree/main"><button class="muted">GitHub Repository</button></a>
+                  <a href="https://github.com/philbjern/react-memory-card-game/tree/main"><button class="muted">GitHub
+                      Repository</button></a>
                 </p>
               </div>
             </div>
@@ -194,46 +207,40 @@
       </section>
   </div>
 
-  <div class="container" id="projects">
+  <div class="container" id="full-stack-projects">
     <section class="page-section">
       <header>
-        <h2 class="subtitle">Odin Project curriculum</h2>
+        <h2 class="subtitle">Full-stack Projects</h2>
         <p class="narrow">
-          A collection of completed projects I made during my progress through
-          <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
-          curriculum. Projects range from landing page for fictional company
-          using modern HTML and CSS, through games like Etch-a-sketch using
-          JavaScript to functional applications like calculator or app for
-          organizing todo tasks.
+          These full-stack projects combine both front-end and back-end technologies to create complete, interactive web
+          applications. They demonstrate my ability to build scalable APIs using Java and Spring Boot, manage data with
+          MongoDB, and deliver responsive user interfaces using modern frameworks like Svelte. Each project reflects
+          practical application of asynchronous logic, RESTful architecture, and thoughtful UI design — highlighting my
+          progress in full-stack development.
         </p>
       </header>
-
       <section>
         <div class="featured flex flex-direction-row-reverse">
-          <header class="section-header flex-1">
-            <div class="hide">
-              <h2 class="subtitle">About</h2>
-
-              <p class="narrow">
-                A collection of completed projects I made during my progress
-                through
-                <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
-                curriculum. Projects range from landing page for fictional
-                company using modern HTML and CSS, through games like
-                Etch-a-sketch using JavaScript to functional applications like
-                calculator or app for organizing todo tasks.
-              </p>
-            </div>
-          </header>
-
           <div>
             <div class="dash"></div>
-            <h3>Featured</h3>
+            <h3>Full-stack projects</h3>
 
             <article>
               <div class="card featured">
                 <div class="flex-1">
                   <p class="title">Todo List</p>
+
+                  <div class="label-container">
+                    <p class="label">JavaScript</p>
+                    <p class="label">Java</p>
+                    <p class="label">Spring Boot</p>
+                    <p class="label">mongoDB</p>
+                    <p class="label">REST API</p>
+                    <p class="label">async/await</p>
+                    <p class="label">Svelte</p>
+                  </div>
+
+
                   <a href="https://philbjern.github.io/todo-list/">
                     <img src="https://github.com/philbjern/todo-list/blob/main/demo-assets/demo-todo-list.gif?raw=true"
                       alt="Project Todo List screenshot" />
@@ -248,7 +255,8 @@
                   </p>
                   <p class="text-right">
                     <a href="https://philbjern.github.io/todo-list/"><button>Live App</button></a>
-                    <a href="https://github.com/philbjern/todo-list"><button class="muted">GitHub Repository</button></a>
+                    <a href="https://github.com/philbjern/todo-list"><button class="muted">GitHub
+                        Repository</button></a>
                   </p>
                 </div>
               </div>
@@ -256,184 +264,190 @@
           </div>
         </div>
       </section>
+    </section>
+  </div>
 
-      <section>
-        <div class="project-list">
-          <div>
-            <div class="dash"></div>
-            <h3>HTML and CSS</h3>
-            <div class="cards">
-              <article>
-                <div class="card">
-                  <div class="flex-">
-                    <p class="title">Landing page</p>
-                    <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html">
-                      <img src="odin-project/foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
-                        alt="Project Landing Page screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      HTML5 + CSS3 with Flexbox project, landing page for
-                      fictional company Guitarly - Mobile guitar service
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/05-flex/00-PROJECT-landing-page"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
+  <div class="container" id="odin-projects">
 
-          <div>
-            <div class="dash"></div>
-            <h3>JavaScript</h3>
-            <div class="cards">
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Tic Tac Toe</p>
-                    <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/">
-                      <img src="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
-                        alt="Project Library screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Tic Tac Toe game written using Factory Functions and
-                      Module Pattern.
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
-                </div>
-              </article>
+    <section>
+      <header>
+        <h2 class="subtitle">Odin Project curriculum</h2>
+        <p class="narrow">
+          A collection of completed projects I made during my progress through
+          <a href="https://theodinproject.com" target="_blank" class="text-link">Odin Project</a>
+          curriculum. Projects range from landing page for fictional company
+          using modern HTML and CSS, to games like Etch-a-sketch, or rock paper scissors chat bot using
+          JavaScript.
+        </p>
+      </header>
+      <div class="project-list">
 
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Rock Paper Scissors</p>
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html">
-                      <img src="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
-                        alt="Project Rock Paper Scissors screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      JavaScript game of Rock Paper Scissors in form of a chat
-                      bot.
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
+        <div>
+          <div class="dash"></div>
+          <h3>JavaScript</h3>
+          <div class="cards">
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Tic Tac Toe</p>
+                  <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/">
+                    <img src="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/img/tick-tack-toe1.gif"
+                      alt="Project Library screenshot" />
+                  </a>
                 </div>
-              </article>
+                <div>
+                  <p class="description">
+                    Tic Tac Toe game written using Factory Functions and
+                    Module Pattern.
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-tic-tac-toe/"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
 
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Etch-a-Sketch</p>
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/">
-                      <img src="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
-                        alt="Etch-a-Sketch project screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Etch-a-Sketch application with variable grid size and
-                      different stroke colors
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Rock Paper Scissors</p>
+                  <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html">
+                    <img src="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/img/demo.gif"
+                      alt="Project Rock Paper Scissors screenshot" />
+                  </a>
                 </div>
-              </article>
+                <div>
+                  <p class="description">
+                    JavaScript game of Rock Paper Scissors in form of a chat
+                    bot.
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-rock-paper-scissors/"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
 
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Calculator</p>
-                    <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator">
-                      <img src="odin-project/foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
-                        alt="Etch-a-Sketch project screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      JavaScript calculator application with support for
-                      floating point numbers operations and keyboard input.
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-calculator/"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Etch-a-Sketch</p>
+                  <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/">
+                    <img src="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/img/demo.gif"
+                      alt="Etch-a-Sketch project screenshot" />
+                  </a>
                 </div>
-              </article>
+                <div>
+                  <p class="description">
+                    Etch-a-Sketch application with variable grid size and
+                    different stroke colors
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-etch-a-sketch/"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
 
-              <article>
-                <div class="card">
-                  <div class="flex-1">
-                    <p class="title">Library</p>
-                    <a href="odin-project/javascript/organizing-js-code/PROJECT-library">
-                      <img src="odin-project/javascript/organizing-js-code/PROJECT-library/img/demo.gif"
-                        alt="Project Library screenshot" />
-                    </a>
-                  </div>
-                  <div>
-                    <p class="description">
-                      Library project with adding new books, deleting books,
-                      toggling read status and saving to Local Storage.
-                    </p>
-                    <p class="text-right">
-                      <a href="odin-project/javascript/organizing-js-code/PROJECT-library/index.html"><button>Live
-                          App</button></a>
-                      <a
-                        href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-library/"><button
-                          class="muted">Code</button></a>
-                    </p>
-                  </div>
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Calculator</p>
+                  <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator">
+                    <img src="odin-project/foundations/06-javascript/00-PROJECT-calculator/img/demo.gif"
+                      alt="Etch-a-Sketch project screenshot" />
+                  </a>
                 </div>
-              </article>
-            </div>
+                <div>
+                  <p class="description">
+                    JavaScript calculator application with support for
+                    floating point numbers operations and keyboard input.
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/foundations/06-javascript/00-PROJECT-calculator/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/06-javascript/00-PROJECT-calculator/"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card">
+                <div class="flex-1">
+                  <p class="title">Library</p>
+                  <a href="odin-project/javascript/organizing-js-code/PROJECT-library">
+                    <img src="odin-project/javascript/organizing-js-code/PROJECT-library/img/demo.gif"
+                      alt="Project Library screenshot" />
+                  </a>
+                </div>
+                <div>
+                  <p class="description">
+                    Library project with adding new books, deleting books,
+                    toggling read status and saving to Local Storage.
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/javascript/organizing-js-code/PROJECT-library/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/javascript/organizing-js-code/PROJECT-library/"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card">
+                <div class="flex-">
+                  <p class="title">Landing page</p>
+                  <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html">
+                    <img src="odin-project/foundations/05-flex/00-PROJECT-landing-page/images/demo.gif"
+                      alt="Project Landing Page screenshot" />
+                  </a>
+                </div>
+                <div>
+                  <p class="description">
+                    HTML5 + CSS3 with Flexbox project, landing page for
+                    fictional company Guitarly - Mobile guitar service
+                  </p>
+                  <p class="text-right">
+                    <a href="odin-project/foundations/05-flex/00-PROJECT-landing-page/index.html"><button>Live
+                        App</button></a>
+                    <a
+                      href="https://github.com/philbjern/portfolio/tree/main/odin-project/foundations/05-flex/00-PROJECT-landing-page"><button
+                        class="muted">Code</button></a>
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   </div>
 
 
   <div class="container projects-fcc">
-
     <section>
-      <h2 class="subtitle" id="freecodecamp">freecodecamp.org</h2>
+      <h2 class="subtitle" id="freecodecamp">Code Camp</h2>
       <p class="narrow">
         A collection of completed projects I made during my progress
-        through
-        <a href="https://freecodecamp.org" target="_blank" class="text-link">freecodecamp.org</a>
-        curriculum. Below you can check few projects completed during my
+        through code camp tasks. Below you can check few projects completed during my
         data visualization certification. I used HTML, CSS and
         JavaScript with D3.js library to create and manipulate SVG
         charts.
@@ -676,9 +690,9 @@
 
   </div>
 
-  <div class="spacer-10"></div>
+</div>
 
-  <div id="last-fullpage">
+  <div id="last-fullpage" class="fullpage">
 
     <div class="spacer-10"></div>
 
@@ -762,10 +776,8 @@
       <div id="contact">
         <h2 class="subtitle">Contact</h2>
         <div class="dash"></div>
-        <p class="narrow text-lg playfair-display">If you are interested in contacting me, send me an email at
-          <a href="mailto:archloner@pm.me" class="text-link"><i>philbjern@gmail.com</i></a>
-        </p>
-        <p id="mail-icon"><a href="mailto:archloner@pm.me">📨</a></p>
+        <p class="text-lg playfair-display">If you are interested in working with me, please send me an email to this address: <a href="mailto:philbjern@gmail.com" class="text-link"><i>philbjern@gmail.com</i></a></p>
+        <p id="mail-icon"><a href="mailto:philbjern@gmail.com"></a></p>
       </div>
     </div>
 
