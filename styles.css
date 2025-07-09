@@ -93,7 +93,7 @@ h6 {
 .container {
   max-width: 1216px;
   width: auto;
-  margin: 30px auto;
+  margin: 3rem auto 7rem auto;
   padding: 30px 45px;
   border-radius: 20px;
   z-index: 10;
@@ -285,6 +285,14 @@ a.text-link:hover {
 
 .starred {
   position: relative;
+}
+
+.card.featured {
+  height: auto;
+}
+.card.featured img {
+  height: auto !important;
+  width: 100%;
 }
 
 .starred::after {
