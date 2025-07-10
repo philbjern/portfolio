@@ -52,34 +52,49 @@ modalSetBtn.addEventListener("click", (e) => {
 });
 
 const randomColorCheckbox = document.querySelector("#random-color");
+const fadeToBlackCheckbox = document.querySelector("#fade-to-black");
+const eraseCheckbox = document.querySelector("#erase");
+
 randomColorCheckbox.addEventListener("click", (e) => {
   etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.randomColor = true;
+
+    etchASketch.erase = false;
+    eraseCheckbox.checked = false;
   } else {
     etchASketch.randomColor = false;
   }
 });
 
-const fadeToBlackCheckbox = document.querySelector("#fade-to-black");
+
 fadeToBlackCheckbox.addEventListener("click", (e) => {
   etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.fadeToBlack = true;
     etchASketch.currentColor = null;
+
+    etchASketch.erase = false;
+    eraseCheckbox.checked = false;
   } else {
     etchASketch.fadeToBlack = false;
   }
 });
 
-const eraseCheckbox = document.querySelector("#erase");
+
 eraseCheckbox.addEventListener("click", (e) => {
   etchASketch.dimStep = 1;
   if (e.target.checked) {
     etchASketch.erase = true;
+
+    etchASketch.fadeToBlack = false;
+    fadeToBlackCheckbox.checked = false;
+    etchASketch.randomColor = false;
+    randomColorCheckbox.checked = false;
   } else {
     etchASketch.erase = false;
   }
+  
 });
 
 let etchASketch = {

@@ -3,6 +3,8 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,13 +26,16 @@ body {
 .container header {
   flex: 1 1;
   padding: 2rem 1rem;
-  width: 230px;
 }
 
 .title {
   font-size: 1.9rem;
   margin: 0;
-  color: lightcoral  ;
+  color: lightcoral;
+}
+
+.controls {
+  max-width: 300px;
 }
 
 button {
@@ -76,7 +81,7 @@ button:hover {
 .grid-item {
   flex: 0 auto;
   background-color: rgb(252, 181, 191);
-  border-radius: 3px;
+  border-radius: 7px;
 }
 
 .grid-item.active {
@@ -214,6 +219,8 @@ button:hover {
   margin-top: auto;
   padding: 10px;
   font-size: 0.8rem;
+  width: 100%;
+  text-align: left;
 }
 
 a {
