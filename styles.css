@@ -562,7 +562,6 @@ a {
 }
 
 .my-photo {
-  max-width: 50vh;
   width: 100%;
   height: auto;
   border-radius: var(--border-radius-1);
@@ -588,8 +587,11 @@ a {
   filter: hue-rotate(125deg) brightness(1.6);
 }
 
-.left-section {
+.photo-section {
   position: relative;
+  text-align: center;
+  margin: auto;
+  max-width: 70%;
 }
 
 .emoji {
