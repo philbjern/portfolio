@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.task-text {
+  flex: 1 0 auto;
+}
+
+.task-controls {
+
+}
