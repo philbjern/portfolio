@@ -8,18 +8,36 @@ import ClassInput from './components/ClassInput'
 import './App.css'
 import './styles/Input.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   const [count, setCount] = useState(0)
+
+//   return (
+//     <>
+//       <div>
+//         <FunctionalInput name="Functional component!" />
+//         <div className="divider" />
+//         <ClassInput name="Class based component!" />
+//       </div>
+//     </>
+//   )
+// }
+
+const App = () => {
+  const [heading, setHeading] = useState('Magnificent Monkeys');
+
+  const clickHandler = () => {
+    setHeading("Radical Rhinos");
+  }
 
   return (
     <>
-      <div>
-        <FunctionalInput name="Functional component!" />
-        <div className="divider" />
-        <ClassInput name="Class based component!" />
-      </div>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
+      <h1>{heading}</h1>
     </>
   )
+
 }
 
 export default App
