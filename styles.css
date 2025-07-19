@@ -578,16 +578,16 @@ a {
 }
 
 .blur {
-  filter: blur(3px);
+  filter: blur(1px);
 }
 
 .curly-line-my-photo {
   max-width: 500px;
   position: absolute;
-  top: 10px;
-  left: -20px;
+  top: -31px;
+  left: -30px;
   transform: rotate(7deg);
-  filter: hue-rotate(125deg) brightness(1.6);
+  filter: invert(100%) hue-rotate(70deg) saturate(20%);
 }
 
 .photo-section {
@@ -619,8 +619,8 @@ a {
 }
 
 #joystick-emoji {
-  bottom: -20px;
-  right: 10px;
+  bottom: -7px;
+  right: -40px;
   transform: rotate(-25deg);
 }
 
