@@ -517,6 +517,9 @@ a {
 
 #typing-automation::after {
   content: '_';
+  font-weight: 800;
+  margin-left: 0.5rem;
+  color: var(--clr-primary-a0);
   animation: blink 800ms infinite;
 }
 
