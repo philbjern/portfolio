@@ -1,40 +1,40 @@
 const NAV_OFFSET = 110;
 
 window.addEventListener("DOMContentLoaded", function () {
-    console.log('DOMContentLoaded')
-    document.querySelector("#nav-certificates").addEventListener("click", function (e) {
-        const certificatesEl = document.getElementById('last-fullpage');
-        const offsetTop = certificatesEl.offsetTop;
-        smoothScroll(offsetTop);
-        setActive('nav-certificates');
-    })
 
     document.querySelector("#nav-projects").addEventListener("click", function (e) {
-        const element = document.getElementById('projects-1');
+        const element = document.getElementById('projects');
         const offsetTop = element.offsetTop - NAV_OFFSET;
         smoothScroll(offsetTop);
-        setActive('nav-projects');
+        setActiveNavItem('nav-projects');
     })
 
     document.querySelector("#nav-about").addEventListener("click", function (e) {
         const element = document.getElementById('about');
         const offsetTop = element.offsetTop - NAV_OFFSET;
         smoothScroll(offsetTop);
-        setActive('nav-about');
+        setActiveNavItem('nav-about');
+    })
+
+    document.querySelector("#nav-certificates").addEventListener("click", function (e) {
+        const certificatesEl = document.getElementById('last-fullpage');
+        const offsetTop = certificatesEl.offsetTop;
+        smoothScroll(offsetTop);
+        setActiveNavItem('nav-certificates');
     })
 
     document.querySelector("#nav-contact").addEventListener("click", function (e) {
         const element = document.getElementById('last-fullpage');
         const offsetTop = element.offsetTop;
         smoothScroll(offsetTop);
-        setActive('nav-contact');
+        setActiveNavItem('nav-certificates');
     })
 
     document.querySelector("#lets-talk-btn").addEventListener("click", function (e) {
         const element = document.getElementById('last-fullpage');
         const offsetTop = element.offsetTop;
         smoothScroll(offsetTop);
-        setActive('nav-contact');
+        setActiveNavItem('nav-certificates');
     })
 
     document.querySelector(".my-photo").addEventListener('mouseover', function (e) {
@@ -47,7 +47,31 @@ window.addEventListener("DOMContentLoaded", function () {
         e.target.classList.add('magnifying-glass');
     });
 
+    const polishLanguageButton = document.getElementById('polish-button');
+    const englishLanguageButton = document.getElementById('english-button');
 
+    const polishAboutMe = this.document.getElementById('about-me-polish');
+    const englishAboutMe = this.document.getElementById('about-me-english');
+
+    polishAboutMe.classList.remove('hidden');
+    englishAboutMe.classList.add('hidden');
+
+    polishLanguageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        polishAboutMe.classList.remove('hidden');
+        englishAboutMe.classList.add('hidden');
+    })
+
+    englishLanguageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        polishAboutMe.classList.add('hidden');
+        englishAboutMe.classList.remove('hidden');
+    })
+
+    navigationDotAnimation();
+})
+
+function navigationDotAnimation() {
     const navDot = document.getElementById("nav-dot");
     const activeLink = document.querySelector('.nav-link.active')
     if (activeLink) {
@@ -55,13 +79,13 @@ window.addEventListener("DOMContentLoaded", function () {
         navDot.style.left = `${center}px`;
     }
 
-    const initialNavDotOffsetLeft = navDot.offsetLeft;
     let lastMouseOverTarget = activeLink;
 
     const rootStyles = getComputedStyle(document.documentElement);
     const primaryColor = rootStyles.getPropertyValue('--clr-primary-a0').trim();
 
     document.querySelectorAll(".nav-link").forEach(item => {
+
         item.addEventListener('mouseover', function (e) {
             const navItem = e.currentTarget;
             if (navItem !== lastMouseOverTarget) {
@@ -94,59 +118,36 @@ window.addEventListener("DOMContentLoaded", function () {
 
         item.addEventListener('mouseout', function (e) {
             const navItem = e.currentTarget;
+            const activeLink = document.querySelector(".nav-link.active");
+            const offsetLeft = activeLink.offsetLeft + activeLink.offsetWidth / 2;
 
+            // if (navItem !== lastMouseOverTarget) {
             anime({
                 targets: navDot,
                 backgroundColor: primaryColor,
             })
 
-            if (navItem !== lastMouseOverTarget) {
-                const activeLink = document.querySelector(".nav-link.active");
-                const offsetLeft = activeLink.offsetLeft + activeLink.offsetWidth / 2;
-
-                anime.timeline()
-                    .add({
-                        targets: navDot,
-                        width: 40,
-                        borderRadius: "8px",
-                        left: offsetLeft,
-                        duration: 300,
-                        easing: "easeInOutQuad"
-                    })
-                    .add({
-                        targets: navDot,
-                        width: 5,
-                        borderRadius: "50%",
-                        duration: 150,
-                        easing: "easeInOutQuad"
-                    });
-                lastMouseOverTarget = navItem;
-            }
+            anime.timeline()
+                .add({
+                    targets: navDot,
+                    width: 40,
+                    borderRadius: "8px",
+                    left: offsetLeft,
+                    duration: 300,
+                    easing: "easeInOutQuad"
+                })
+                .add({
+                    targets: navDot,
+                    width: 5,
+                    borderRadius: "50%",
+                    duration: 150,
+                    easing: "easeInOutQuad"
+                });
+            // lastMouseOverTarget = navItem;
+            // }
         });
     })
-
-    const polishLanguageButton = document.getElementById('polish-button');
-    const englishLanguageButton = document.getElementById('english-button');
-
-    const polishAboutMe = this.document.getElementById('about-me-polish');
-    const englishAboutMe = this.document.getElementById('about-me-english');
-
-    polishAboutMe.classList.remove('hidden');
-    englishAboutMe.classList.add('hidden');
-
-    polishLanguageButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        polishAboutMe.classList.remove('hidden');
-        englishAboutMe.classList.add('hidden');
-    })
-
-    englishLanguageButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        polishAboutMe.classList.add('hidden');
-        englishAboutMe.classList.remove('hidden');
-    })
-})
-
+}
 
 particlesJS("particles-container", {
     "particles": {
@@ -307,7 +308,7 @@ createAnimatedCounter('born-counter', 1991);
 createAnimatedCounter('experience-counter', 5);
 createAnimatedCounter('cert-counter', 6);
 
-setActive('nav-about');
+setActiveNavItem('nav-about');
 hideGoTopBtn();
 document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
 
@@ -330,7 +331,7 @@ mailIcon.addEventListener("click", function (e) {
     }, 400);
 })
 
-const context = {
+typingLoop("typing-automation", {
     mainText: "W <b class='color-primary'>phildekode</b> ",
     textToWrite: [
         "tworzymy aplikacje webowe",
@@ -339,9 +340,7 @@ const context = {
         "składamy komputery od zera",
         "wykonujemy solidne sieci LAN"
     ]
-}
-
-typingLoop("typing-automation", context);
+});
 
 let position = window.scrollY
 let lastScrollPostition = position;
@@ -379,16 +378,12 @@ window.addEventListener("scroll", function (e) {
         if (direction == 1) {
             // hide the nav
             if (!isHidden) {
-                console.log('hide nav')
                 hideNav();
-                isHidden = true;
             }
         } else {
             // show the nav
             if (isHidden) {
-                console.log('show nav')
                 showNav();
-                isHidden = false;
             }
         }
     }
@@ -408,32 +403,32 @@ window.addEventListener("scroll", function (e) {
         }
     }
 
-    const projectsTitle = document.getElementById("projects")
-    const projectsHeight = projectsTitle.offsetTop;
-    if (position > projectsHeight) {
-        if (!recentNavActiveChange) {
-            setActive('nav-projects')
-            recentNavActiveChange = true;
-        }
-    }
+    // const projectsTitle = document.getElementById("projects")
+    // const projectsHeight = projectsTitle.offsetTop;
+    // if (position > projectsHeight) {
+    //     if (!recentNavActiveChange) {
+    //         setActiveNavItem('nav-projects')
+    //         recentNavActiveChange = true;
+    //     }
+    // }
 
-    const aboutTitle = document.getElementById("about")
-    const aboutHeight = aboutTitle.offsetTop;
-    if (position > aboutHeight) {
-        if (!recentNavActiveChange) {
-            setActive('nav-about')
-            recentNavActiveChange = true;
-        }
-    }
+    // const aboutTitle = document.getElementById("about")
+    // const aboutHeight = aboutTitle.offsetTop;
+    // if (position > aboutHeight) {
+    //     if (!recentNavActiveChange) {
+    //         setActiveNavItem('nav-about')
+    //         recentNavActiveChange = true;
+    //     }
+    // }
 
-    const certTitle = document.querySelector(".certificates")
-    const certHeight = certTitle.offsetTop;
-    if (position > certHeight) {
-        if (!recentNavActiveChange) {
-            setActive('nav-certificates')
-            recentNavActiveChange = true;
-        }
-    }
+    // const certTitle = document.querySelector(".certificates")
+    // const certHeight = certTitle.offsetTop;
+    // if (position > certHeight) {
+    //     if (!recentNavActiveChange) {
+    //         setActiveNavItem('nav-certificates')
+    //         recentNavActiveChange = true;
+    //     }
+    // }
 
     setInterval(function () {
         recentNavActiveChange = false;
@@ -504,38 +499,43 @@ function hideNav() {
         easing: 'easeInOutQuad'
     })
 
-    anime({
-        targets: '.header nav',
-        opacity: 0,
-        duration: 200,
-        easing: 'easeInOutQuad'
-    });
+    // anime({
+    //     targets: '.header nav',
+    //     opacity: 0,
+    //     duration: 200,
+    //     easing: 'easeInOutQuad'
+    // });
 
-    anime({
-        targets: 'header.header',
-        backgroundColor: 'transparent',
-        duration: 500,
-        easing: 'easeInOutQuad'
-    })
+    // anime({
+    //     targets: 'header.header',
+    //     backgroundColor: 'transparent',
+    //     duration: 500,
+    //     easing: 'easeInOutQuad'
+    // })
 
     isHidden = true;
 }
 
 document.querySelector(".header").addEventListener('mouseover', function (e) {
-    showNav();
+    if (isHidden) {
+        showNav();
+    }
 });
 
 document.querySelector(".header").addEventListener('mouseout', function (e) {
     let position = window.scrollY;
     let totalHeight = document.body.scrollHeight;
 
-    if (position > totalHeight * 0.03) {
+    if (position > totalHeight * 0.03 && !isHidden) {
         hideNav();
     }
 });
 
-function setActive(navItemId) {
-    document.querySelector(".nav-link.active").classList.remove("active");
+function setActiveNavItem(navItemId) {
+    const navItems = document.querySelectorAll(".nav-link");
+    navItems.forEach(item => {
+        item.classList.remove('active');
+    })
     document.getElementById(navItemId).classList.add('active')
 }
 
