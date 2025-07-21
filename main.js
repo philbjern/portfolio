@@ -1,5 +1,41 @@
 const NAV_OFFSET = 110;
 
+let isGoTopHidden = true;
+let recentNavActiveChange = false;
+
+function amiateNavDotToTarget(targetId) {
+    const navItem = document.getElementById(targetId);
+    if (navItem === null) {
+        console.debug('Nav item target id is not valid')
+        return;
+    }
+    const navDot = document.getElementById("nav-dot");
+    const navItemOffsetLeft = navItem.offsetLeft;
+    const navItemWidth = navItem.offsetWidth;
+
+    const newDotOffsetLeft = navItemOffsetLeft + navItemWidth / 2;
+    anime.timeline()
+        .add({
+            targets: navDot,
+            width: 20,
+            height: 2,
+            borderRadius: "8px",
+            left: newDotOffsetLeft,
+            duration: 300,
+            backgroundColor: '#eee',
+            easing: "easeInOutQuad"
+        })
+        .add({
+            targets: navDot,
+            width: 5,
+            height: 5,
+            borderRadius: "50%",
+            duration: 150,
+            easing: "easeInOutQuad"
+        });
+
+}
+
 window.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector("#nav-projects").addEventListener("click", function (e) {
@@ -74,6 +110,7 @@ window.addEventListener("DOMContentLoaded", function () {
 function navigationDotAnimation() {
     const navDot = document.getElementById("nav-dot");
     const activeLink = document.querySelector('.nav-link.active')
+
     if (activeLink) {
         const center = activeLink.offsetLeft + activeLink.offsetWidth / 2;
         navDot.style.left = `${center}px`;
@@ -109,6 +146,7 @@ function navigationDotAnimation() {
                         width: 5,
                         height: 5,
                         borderRadius: "50%",
+                        backgroundColor: "#24f159",
                         duration: 150,
                         easing: "easeInOutQuad"
                     });
@@ -121,7 +159,7 @@ function navigationDotAnimation() {
             const activeLink = document.querySelector(".nav-link.active");
             const offsetLeft = activeLink.offsetLeft + activeLink.offsetWidth / 2;
 
-            // if (navItem !== lastMouseOverTarget) {
+            if (navItem !== lastMouseOverTarget) {
             anime({
                 targets: navDot,
                 backgroundColor: primaryColor,
@@ -141,10 +179,11 @@ function navigationDotAnimation() {
                     width: 5,
                     borderRadius: "50%",
                     duration: 150,
-                    easing: "easeInOutQuad"
+                    backgroundColor: "#24f159",
+                    easing: "easeInOutQuad",
                 });
-            // lastMouseOverTarget = navItem;
-            // }
+            lastMouseOverTarget = navItem;
+            }
         });
     })
 }
@@ -303,14 +342,6 @@ function createAnimatedCounterReverse(elementId, startValue, targetValue) {
     animateCounter();
 }
 
-// page initialisation
-createAnimatedCounter('born-counter', 1991);
-createAnimatedCounter('experience-counter', 5);
-createAnimatedCounter('cert-counter', 6);
-
-setActiveNavItem('nav-about');
-hideGoTopBtn();
-document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
 
 document.querySelector(".gotop-btn").addEventListener('click', function (e) {
     smoothScroll(0).then(() => {
@@ -331,27 +362,12 @@ mailIcon.addEventListener("click", function (e) {
     }, 400);
 })
 
-typingLoop("typing-automation", {
-    mainText: "W <b class='color-primary'>phildekode</b> ",
-    textToWrite: [
-        "tworzymy aplikacje webowe",
-        "naprawiamy komputery i laptopy",
-        "tworzymy sklepy intenertowe",
-        "składamy komputery od zera",
-        "wykonujemy solidne sieci LAN"
-    ]
-});
-
 let position = window.scrollY
 let lastScrollPostition = position;
 let changeDirectionPosition = lastScrollPostition;
 let direction = 0
 let changesCount = 0;
 let isHidden = false;
-
-let isGoTopHidden = true;
-
-let recentNavActiveChange = false;
 
 window.addEventListener("scroll", function (e) {
     position = window.scrollY;
@@ -392,50 +408,52 @@ window.addEventListener("scroll", function (e) {
     if ((position + viewportHeight) / totalHeight > 0.8) {
         if (isGoTopHidden) {
             showGoTopBtn();
-            isGoTopHidden = false;
         }
     }
 
     if ((position + viewportHeight) / totalHeight < 0.2) {
         if (!isGoTopHidden) {
             hideGoTopBtn();
-            isGoTopHidden = true;
         }
     }
 
-    // const projectsTitle = document.getElementById("projects")
-    // const projectsHeight = projectsTitle.offsetTop;
-    // if (position > projectsHeight) {
-    //     if (!recentNavActiveChange) {
-    //         setActiveNavItem('nav-projects')
-    //         recentNavActiveChange = true;
-    //     }
-    // }
+    // const activeNavItem = document.querySelector('.nav-link.active');
 
     // const aboutTitle = document.getElementById("about")
-    // const aboutHeight = aboutTitle.offsetTop;
-    // if (position > aboutHeight) {
-    //     if (!recentNavActiveChange) {
-    //         setActiveNavItem('nav-about')
-    //         recentNavActiveChange = true;
-    //     }
+    // const aboutOffset = aboutTitle.offsetTop;
+    // const aboutNavItem = document.querySelector('#nav-about');
+    // if (position > aboutOffset && activeNavItem !== aboutNavItem) {
+    //     setActiveNavItem('nav-about')
     // }
 
-    // const certTitle = document.querySelector(".certificates")
-    // const certHeight = certTitle.offsetTop;
-    // if (position > certHeight) {
-    //     if (!recentNavActiveChange) {
-    //         setActiveNavItem('nav-certificates')
-    //         recentNavActiveChange = true;
-    //     }
+    // const projectsTitle = document.getElementById("projects")
+    // const projectsOffset = projectsTitle.offsetTop;
+
+    // const projectsNavItem = document.querySelector('#nav-projects');
+    // console.log(activeNavItem === projectsNavItem);
+    // if (position > projectsOffset && activeNavItem !== projectsNavItem) {
+    //     setActiveNavItem('nav-projects')
     // }
 
-    setInterval(function () {
-        recentNavActiveChange = false;
-    }, 200);
+    // const certTitle = document.getElementById("certificates")
+    // const certOffset = certTitle.offsetTop;
+    // const certificatesNavItem = this.document.querySelector('#nav-certificates');
+    // if (position > certOffset && activeNavItem !== certificatesNavItem) {
+    //     setActiveNavItem('nav-certificates')
+    // }
 
     lastScrollPostition = position;
 })
+
+function recentNavActiveTimeout(timeout, activeChangeFlag) {
+    if (timeout == undefined) {
+        timeout = 800;
+    }
+
+    setTimeout(() => {
+        activeChangeFlag = false;
+    }, timeout);
+}
 
 function hideGoTopBtn() {
     const btn = document.querySelector(".gotop-btn");
@@ -448,6 +466,7 @@ function hideGoTopBtn() {
             isGoTopHidden = true;
         }
     })
+    isGoTopHidden = true;
 }
 
 function showGoTopBtn() {
@@ -461,6 +480,7 @@ function showGoTopBtn() {
             isGoTopHidden = false;
         }
     })
+    isGoTopHidden = false;
 }
 
 function showNav() {
@@ -537,6 +557,7 @@ function setActiveNavItem(navItemId) {
         item.classList.remove('active');
     })
     document.getElementById(navItemId).classList.add('active')
+    // amiateNavDotToTarget(navItemId);
 }
 
 function smoothScroll(offsetTop) {
@@ -639,3 +660,26 @@ function typingLoop(targetElementId, textContent) {
     main();
 }
 
+function init() {
+    // page initialisation
+    createAnimatedCounter('born-counter', 1991);
+    createAnimatedCounter('experience-counter', 5);
+    createAnimatedCounter('cert-counter', 6);
+
+    typingLoop("typing-automation", {
+        mainText: "W <b class='color-primary'>phildekode</b> ",
+        textToWrite: [
+            "tworzymy aplikacje webowe",
+            "naprawiamy komputery i laptopy",
+            "tworzymy sklepy intenertowe",
+            "składamy komputery od zera",
+            "wykonujemy solidne sieci LAN"
+        ]
+    });
+
+    setActiveNavItem('nav-about');
+    hideGoTopBtn();
+    document.querySelector(".footer-year-span").textContent = new Date().getFullYear();
+}
+
+init();
