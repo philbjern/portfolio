@@ -1,2 +1,6 @@
 #!/bin/bash
-npm create vite@latest $1 -- --template react
+if [[ -z $1 ]] then
+	echo "Error: Provide name of new react project as argument"
+else
+	npm create vite@latest $1 -- --template react
+fi
