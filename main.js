@@ -160,29 +160,29 @@ function navigationDotAnimation() {
             const offsetLeft = activeLink.offsetLeft + activeLink.offsetWidth / 2;
 
             if (navItem !== lastMouseOverTarget) {
-            anime({
-                targets: navDot,
-                backgroundColor: primaryColor,
-            })
-
-            anime.timeline()
-                .add({
+                anime({
                     targets: navDot,
-                    width: 40,
-                    borderRadius: "8px",
-                    left: offsetLeft,
-                    duration: 300,
-                    easing: "easeInOutQuad"
+                    backgroundColor: primaryColor,
                 })
-                .add({
-                    targets: navDot,
-                    width: 5,
-                    borderRadius: "50%",
-                    duration: 150,
-                    backgroundColor: "#24f159",
-                    easing: "easeInOutQuad",
-                });
-            lastMouseOverTarget = navItem;
+
+                anime.timeline()
+                    .add({
+                        targets: navDot,
+                        width: 40,
+                        borderRadius: "8px",
+                        left: offsetLeft,
+                        duration: 300,
+                        easing: "easeInOutQuad"
+                    })
+                    .add({
+                        targets: navDot,
+                        width: 5,
+                        borderRadius: "50%",
+                        duration: 150,
+                        backgroundColor: "#24f159",
+                        easing: "easeInOutQuad",
+                    });
+                lastMouseOverTarget = navItem;
             }
         });
     })
@@ -313,9 +313,7 @@ function createAnimatedCounter(elementId, targetValue) {
             innerHTML: [1, targetValue],
             round: 1,
             complete: function (anim) {
-                if (elementId == 'experience-counter') {
-                    element.textContent = '5+';
-                }
+                return
             }
         });
     }
@@ -417,30 +415,34 @@ window.addEventListener("scroll", function (e) {
         }
     }
 
-    // const activeNavItem = document.querySelector('.nav-link.active');
+    const activeNavItem = document.querySelector('.nav-link.active');
 
-    // const aboutTitle = document.getElementById("about")
-    // const aboutOffset = aboutTitle.offsetTop;
-    // const aboutNavItem = document.querySelector('#nav-about');
-    // if (position > aboutOffset && activeNavItem !== aboutNavItem) {
-    //     setActiveNavItem('nav-about')
-    // }
+    const aboutTitle = document.getElementById("about")
+    const aboutOffset = aboutTitle.offsetTop;
+    const aboutNavItem = document.querySelector('#nav-about');
 
-    // const projectsTitle = document.getElementById("projects")
-    // const projectsOffset = projectsTitle.offsetTop;
+    const projectsTitle = document.getElementById("projects")
+    const projectsOffset = projectsTitle.offsetTop;
+    const projectsNavItem = document.querySelector('#nav-projects');
 
-    // const projectsNavItem = document.querySelector('#nav-projects');
-    // console.log(activeNavItem === projectsNavItem);
-    // if (position > projectsOffset && activeNavItem !== projectsNavItem) {
-    //     setActiveNavItem('nav-projects')
-    // }
+    const certTitle = document.getElementById("last-fullpage")
+    const certOffset = certTitle.offsetTop;
+    const certificatesNavItem = document.querySelector('#nav-certificates');
 
-    // const certTitle = document.getElementById("certificates")
-    // const certOffset = certTitle.offsetTop;
-    // const certificatesNavItem = this.document.querySelector('#nav-certificates');
-    // if (position > certOffset && activeNavItem !== certificatesNavItem) {
-    //     setActiveNavItem('nav-certificates')
-    // }
+    if (position > aboutOffset && position < projectsOffset && activeNavItem !== aboutNavItem) {
+        setActiveNavItem('nav-about')
+        amiateNavDotToTarget('nav-about')
+    }
+
+    if (position > projectsOffset && position < certOffset && activeNavItem !== projectsNavItem) {
+        setActiveNavItem('nav-projects')
+        amiateNavDotToTarget('nav-projects')
+    }
+
+    if (position > certOffset && activeNavItem !== certificatesNavItem) {
+        setActiveNavItem('nav-certificates')
+        amiateNavDotToTarget('nav-certificates')
+    }
 
     lastScrollPostition = position;
 })
@@ -552,6 +554,9 @@ document.querySelector(".header").addEventListener('mouseout', function (e) {
 });
 
 function setActiveNavItem(navItemId) {
+    if (document.getElementById(navItemId).classList.contains('active')) {
+        return;
+    }
     const navItems = document.querySelectorAll(".nav-link");
     navItems.forEach(item => {
         item.classList.remove('active');
@@ -662,9 +667,9 @@ function typingLoop(targetElementId, textContent) {
 
 function init() {
     // page initialisation
-    createAnimatedCounter('born-counter', 1991);
+    createAnimatedCounter('projects-counter', 20);
     createAnimatedCounter('experience-counter', 5);
-    createAnimatedCounter('cert-counter', 6);
+    createAnimatedCounter('cert-counter', 7);
 
     typingLoop("typing-automation", {
         mainText: "W <b class='color-primary'>phildekode</b> ",

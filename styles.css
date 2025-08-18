@@ -189,6 +189,15 @@ h6 {
   position: relative;
 }
 
+.card-full {
+  /* min-height: 1250px; */
+  height: auto;
+}
+.card-full img {
+  min-height: 950px;
+  height: auto;
+}
+
 /* .sci-py-others-img::after {
   content: "...";
   
