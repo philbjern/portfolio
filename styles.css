@@ -461,6 +461,8 @@ a.text-link:hover {
 
 .flex-column {
   flex-direction: column;
+  align-items: center;
+  justify-content: center;;
 }
 
 footer {
@@ -488,10 +490,6 @@ footer a {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.page-section {
-  /* animation: 400ms ease-in-out fade-in; */
 }
 
 .icon-sm {
@@ -527,7 +525,7 @@ a {
 }
 
 .typing-automation-container {
-  align-self: flex-start;
+  
 }
 
 #typing-automation {
@@ -718,6 +716,7 @@ a {
   padding: 2rem 2rem;
   border-radius: var(--border-radius-1);
   opacity: 0.91;
+  font-size: 1rem;
 }
 
 .cert-title {
