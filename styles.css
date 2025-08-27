@@ -852,6 +852,7 @@ a {
 .counter h1 {
   font-size: 2.2rem;
   margin: 0.2rem;
+  color: var(--clr-primary-a40);
 }
 
 .strike-through {
